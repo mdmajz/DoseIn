@@ -1,197 +1,212 @@
-/* Dashboard.css - Complete Updated Stylesheet */
+/* Dashboard.css - Exact Design Match */
 
 /* Root Styles */
 .dashboard-root {
-    -fx-font-family: 'Poppins';
-    -fx-background-color: #f5f5f5;
+    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
+    -fx-background-color: #f8f9fa;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-    -fx-background-color: #00594E;
-    -fx-padding: 10;
+    -fx-background-color: #4CAF50;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
 }
 
 .nav-header {
-    -fx-padding: 0 0 10 0;
+    -fx-padding: 0 0 20 0;
 }
 
 .nav-logo {
-    -fx-font-size: 24px;
+    -fx-font-size: 28px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
 
-.nav-button {
-    -fx-background-color: #80cbc4;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-    -fx-font-weight: 500;
-    -fx-alignment: CENTER_LEFT;
-    -fx-padding: 8 15;
+.logo-container {
+    -fx-alignment: center;
 }
 
-.nav-button:hover {
-    -fx-background-color: #12594C;
+.logo-pill-green {
+    -fx-background-color: #2E7D32;
+    -fx-background-radius: 4;
+}
+
+.logo-pill-white {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+}
+
+/* Navigation Buttons */
+.nav-button-active {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-pref-width: 190px;
+    -fx-background-radius: 8px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
     -fx-cursor: hand;
+}
+
+.nav-button-active:hover {
+    -fx-background-color: #1B5E20;
 }
 
 .nav-item {
     -fx-background-color: transparent;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
+    -fx-text-fill: #2E7D32;
+    -fx-font-size: 15px;
+    -fx-pref-width: 190px;
+    -fx-background-radius: 8px;
     -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 500;
-    -fx-padding: 8 15;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
 }
 
 .nav-item:hover {
-    -fx-background-color: #4DB6AC;
-    -fx-cursor: hand;
+    -fx-background-color: rgba(255,255,255,0.1);
 }
 
 .nav-signout {
-    -fx-background-color: #E57373;
+    -fx-background-color: #F44336;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-    -fx-font-weight: 500;
-    -fx-padding: 8 15;
+    -fx-font-size: 15px;
+    -fx-pref-width: 190px;
+    -fx-background-radius: 8px;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
 }
 
 .nav-signout:hover {
-    -fx-background-color: #EF5350;
-    -fx-cursor: hand;
+    -fx-background-color: #D32F2F;
 }
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 20;
+    -fx-spacing: 25;
+    -fx-background-color: #f8f9fa;
 }
 
 /* WELCOME BANNER */
 .welcome-banner {
-    -fx-background-color: #C4E3D4;
-    -fx-spacing: 15;
-    -fx-background-radius: 8px;
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-alignment: CENTER_LEFT;
+    -fx-min-height: 120;
 }
 
 .greeting-text {
-    -fx-font-size: 24px;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #2E7D32;
 }
 
 .slogan-text {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-text-fill: #666666;
     -fx-font-weight: 500;
 }
 
+.time-container {
+    -fx-background-color: #2E7D32;
+    -fx-background-radius: 8px;
+    -fx-padding: 12 20;
+    -fx-min-width: 140;
+}
+
 .time-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-    -fx-font-weight: 500;
-    -fx-padding: 5 10;
-    -fx-background-radius: 5px;
-    -fx-background-color: white;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
 
 /* SCHEDULE SECTION */
 .schedule-header {
-    -fx-font-size: 20px;
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #00594E;
+    -fx-text-fill: #2E7D32;
 }
 
 .schedule-button {
-    -fx-background-color: #00594E;
+    -fx-background-color: #2E7D32;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-padding: 8 15;
-    -fx-background-radius: 5px;
-    -fx-font-weight: 500;
-}
-
-.schedule-button:hover {
-    -fx-background-color: #004D40;
+    -fx-font-size: 15px;
+    -fx-padding: 12 20;
+    -fx-background-radius: 8px;
+    -fx-font-weight: 600;
+    -fx-graphic-text-gap: 8;
     -fx-cursor: hand;
 }
 
-/* REMINDER CARDS */
-.schedule-scroll {
-    -fx-background: transparent;
-    -fx-border-color: transparent;
-    -fx-hbar-policy: never;
+.schedule-button:hover {
+    -fx-background-color: #1B5E20;
 }
 
+/* SCHEDULE LIST */
 .schedule-list {
     -fx-spacing: 15;
 }
 
+/* REMINDER CARDS */
 .reminder-card {
-    -fx-background-color: white;
-    -fx-background-radius: 8px;
-    -fx-padding: 15;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
-    -fx-spacing: 5;
+    -fx-background-color: #2E7D32;
+    -fx-background-radius: 12px;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);
+    -fx-min-height: 80;
+    -fx-alignment: CENTER_LEFT;
 }
 
-.reminder-time {
-    -fx-font-size: 16px;
+.reminder-card .reminder-time {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #00594E;
+    -fx-text-fill: white;
 }
 
-.reminder-medicine {
+.reminder-card .reminder-medicine {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+}
+
+.reminder-card .reminder-note {
     -fx-font-size: 14px;
-    -fx-text-fill: #333333;
-    -fx-font-weight: 500;
-}
-
-.reminder-note {
-    -fx-font-size: 12px;
-    -fx-text-fill: #666666;
+    -fx-text-fill: rgba(255,255,255,0.9);
     -fx-font-style: italic;
 }
 
 .empty-label {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-text-fill: #666666;
-    -fx-padding: 20;
+    -fx-padding: 40;
     -fx-alignment: center;
     -fx-font-weight: 500;
 }
 
-/* SCROLLBAR STYLING */
-.scroll-bar:vertical {
-    -fx-background-color: transparent;
+/* CARD LAYOUT */
+.reminder-card {
+    -fx-spacing: 8;
 }
 
-.scroll-bar:vertical .track {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
+.reminder-card HBox {
+    -fx-spacing: 15;
+    -fx-alignment: CENTER_LEFT;
 }
 
-.scroll-bar:vertical .thumb {
-    -fx-background-color: #B2DFDB;
-    -fx-background-radius: 5px;
+.reminder-time-container {
+    -fx-alignment: CENTER_LEFT;
 }
 
-.scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #80CBC4;
-}
-
-.scroll-bar .increment-button,
-.scroll-bar .decrement-button {
-    -fx-background-color: transparent;
-    -fx-padding: 0 0 0 0;
+.reminder-details-container {
+    -fx-spacing: 4;
 }
 
 /* MISC ELEMENTS */
@@ -201,4 +216,14 @@
 
 .label {
     -fx-wrap-text: true;
+}
+
+/* Focus and selection styles */
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.button:pressed {
+    -fx-background-color: derive(-fx-background-color, -10%);
 }

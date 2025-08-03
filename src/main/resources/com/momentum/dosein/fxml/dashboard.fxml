@@ -16,70 +16,119 @@
             fx:controller="com.momentum.dosein.controller.DashboardController"
             stylesheets="@../css/dashboard.css"
             styleClass="dashboard-root"
-            prefWidth="800" prefHeight="600">
+            prefWidth="1000" prefHeight="700">
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="220">
             <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
+                <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
 
-            <HBox fx:id="navHeader" styleClass="nav-header" alignment="CENTER_LEFT" spacing="10" prefHeight="60">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <Image url="@../images/logo.png"/>
-                </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+            <!-- Logo and App Name -->
+            <HBox fx:id="navHeader" styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
+                <HBox styleClass="logo-container" spacing="5">
+                    <Region styleClass="logo-pill-green" prefWidth="12" prefHeight="8"/>
+                    <Region styleClass="logo-pill-white" prefWidth="12" prefHeight="8"/>
+                </HBox>
+                <Label text="Doseln" styleClass="nav-logo"/>
             </HBox>
 
-            <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button"/>
-            <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item"/>
-            <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item"/>
-            <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item"/>
-            <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item"/>
+            <!-- Navigation Menu -->
+            <VBox spacing="8">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button-active">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
 
             <Region VBox.vgrow="ALWAYS"/>
 
-            <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout"/>
+            <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
+                <graphic>
+                    <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                        <Image url="@../images/signout-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
         </VBox>
     </left>
 
     <!-- CENTER CONTENT -->
     <center>
-        <VBox styleClass="main-content" spacing="20">
+        <VBox styleClass="main-content" spacing="25">
             <padding>
-                <Insets top="30" right="30" bottom="30" left="30"/>
+                <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
 
             <!-- Welcome Banner -->
-            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
+            <HBox styleClass="welcome-banner" spacing="20" alignment="CENTER_LEFT">
                 <padding>
-                    <Insets top="15" right="15" bottom="15" left="15"/>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
                 </padding>
 
-                <VBox>
+                <VBox spacing="8">
                     <Label fx:id="greetingLabel" styleClass="greeting-text"/>
                     <Label fx:id="sloganLabel" styleClass="slogan-text"/>
                 </VBox>
 
                 <Region HBox.hgrow="ALWAYS"/>
 
-                <Label fx:id="timeLabel" styleClass="time-label"/>
+                <VBox styleClass="time-container" alignment="CENTER">
+                    <Label fx:id="timeLabel" styleClass="time-label"/>
+                </VBox>
             </HBox>
 
             <!-- Schedule Header -->
-            <HBox alignment="CENTER_LEFT" spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="15">
                 <Label text="Today's Schedule" styleClass="schedule-header"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Button text="Set Reminder" onAction="#handleSetReminder" styleClass="schedule-button"/>
+                <Button text="+ Set Reminder" onAction="#handleSetReminder" styleClass="schedule-button">
+                    <graphic>
+                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                            <Image url="@../images/plus-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </HBox>
 
-            <!-- Scrollable Schedule List -->
-            <ScrollPane fitToWidth="true" styleClass="schedule-scroll" hbarPolicy="NEVER">
-                <content>
-                    <VBox fx:id="scheduleContainer" spacing="15" styleClass="schedule-list"/>
-                </content>
-            </ScrollPane>
+            <!-- Schedule Cards -->
+            <VBox fx:id="scheduleContainer" spacing="15" styleClass="schedule-list"/>
         </VBox>
     </center>
 </BorderPane>
