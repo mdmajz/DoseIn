@@ -17,10 +17,9 @@
             <!-- Logo and App Name -->
             <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
                 <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
-                    <HBox styleClass="logo-pills" spacing="4" alignment="CENTER">
-                        <Region styleClass="logo-pill-green" prefWidth="8" prefHeight="16"/>
-                        <Region styleClass="logo-pill-white" prefWidth="8" prefHeight="16"/>
-                    </HBox>
+                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                        <Image url="@../images/logo.png"/>
+                    </ImageView>
                     <Label text="Doseln" styleClass="nav-logo"/>
                 </HBox>
             </HBox>

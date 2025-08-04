@@ -33,20 +33,7 @@
     -fx-pref-width: 200;
 }
 
-.logo-pills {
-    -fx-spacing: 4;
-    -fx-alignment: center;
-}
 
-.logo-pill-green {
-    -fx-background-color: #2E7D32;
-    -fx-background-radius: 4;
-}
-
-.logo-pill-white {
-    -fx-background-color: white;
-    -fx-background-radius: 4;
-}
 
 /* Navigation Buttons */
 .nav-button-active {
