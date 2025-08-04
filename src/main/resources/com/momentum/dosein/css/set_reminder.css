@@ -142,13 +142,7 @@
     -fx-padding: 30;
 }
 
-/* SINGLE CARD CONTAINER */
-.reminder-card-container {
-    -fx-alignment: center;
-    -fx-pref-width: 600;
-    -fx-max-width: 600;
-}
-
+/* SINGLE CARD */
 .reminder-card {
     -fx-background-color: white;
     -fx-background-radius: 12px;
@@ -156,6 +150,7 @@
     -fx-alignment: top-center;
     -fx-pref-width: 600;
     -fx-max-width: 600;
+    -fx-min-width: 600;
 }
 
 /* TITLE */
