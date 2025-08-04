@@ -233,30 +233,27 @@
     -fx-background-color: #666666;
 }
 
-/* PRESET TIME BUTTONS */
-.preset-time-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
+/* TIMES LIST */
+.times-list {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #E9ECEF;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
     -fx-font-size: 12px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 8px;
-    -fx-padding: 6px 10px;
-    -fx-cursor: hand;
-    -fx-min-width: 75px;
-    -fx-pref-width: 75px;
-    -fx-pref-height: 30px;
 }
 
-.preset-time-button:hover {
-    -fx-background-color: #0F4A3F;
+.times-list .list-cell {
+    -fx-padding: 8px 12px;
+    -fx-background-color: transparent;
 }
 
-.preset-time-button:pressed {
-    -fx-background-color: #0A3A2F;
-}
-
-.preset-time-button:selected {
+.times-list .list-cell:selected {
     -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+}
+
+.times-list .list-cell:hover {
+    -fx-background-color: #E9ECEF;
 }
 
 /* TIME PICKER STYLES */

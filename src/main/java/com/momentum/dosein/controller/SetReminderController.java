@@ -34,9 +34,8 @@ public class SetReminderController {
     @FXML private DatePicker   startDatePicker, endDatePicker;
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
     @FXML private ToggleButton amToggle, pmToggle;
-    @FXML private ListView<String> timesList;
+    @FXML private ListView<String> timesListView;
     @FXML private TextArea    noteField;
-    @FXML private HBox        presetTimesContainer;
 
     private final ReminderService reminderService = new ReminderService();
     private final DateTimeFormatter displayFmt =
@@ -65,21 +64,6 @@ public class SetReminderController {
     }
 
     @FXML
-    private void handlePresetTime(ActionEvent e) {
-        Button button = (Button) e.getSource();
-        String timeText = button.getText();
-        
-        // Toggle selection
-        if (!selectedTimes.contains(timeText)) {
-            selectedTimes.add(timeText);
-            button.getStyleClass().add("selected");
-        } else {
-            selectedTimes.remove(timeText);
-            button.getStyleClass().remove("selected");
-        }
-    }
-
-    @FXML
     private void handleAddTime(ActionEvent e) {
         int hour = hourSpinner.getValue() % 12;
         if (pmToggle.isSelected()) hour += 12;
@@ -88,14 +72,17 @@ public class SetReminderController {
         
         if (!selectedTimes.contains(timeText)) {
             selectedTimes.add(timeText);
+            timesListView.getItems().add(timeText);
         }
     }
 
     @FXML
     private void handleRemoveTime(ActionEvent e) {
-        // Remove the last added custom time
-        if (!selectedTimes.isEmpty()) {
-            selectedTimes.remove(selectedTimes.size() - 1);
+        // Remove selected time from list
+        String selectedTime = timesListView.getSelectionModel().getSelectedItem();
+        if (selectedTime != null) {
+            selectedTimes.remove(selectedTime);
+            timesListView.getItems().remove(selectedTime);
         }
     }
 

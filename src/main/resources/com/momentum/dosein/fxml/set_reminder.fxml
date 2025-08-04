@@ -115,13 +115,10 @@
                         <Label text="Alert Time:" styleClass="form-label"/>
                         
                         <HBox spacing="15" alignment="TOP_LEFT">
-                            <!-- Pre-selected Time Blocks -->
+                            <!-- Dynamic Time List -->
                             <VBox spacing="5">
-                                <HBox spacing="5">
-                                    <Button text="12:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
-                                    <Button text="1:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
-                                    <Button text="2:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
-                                </HBox>
+                                <Label text="Selected Times:" styleClass="form-label"/>
+                                <ListView fx:id="timesListView" prefHeight="80" prefWidth="150" styleClass="times-list"/>
                             </VBox>
                             
                             <!-- Custom Time Picker -->
@@ -141,8 +138,8 @@
                                 
                                 <!-- Add/Remove Buttons -->
                                 <VBox spacing="3">
-                                    <Button fx:id="removeTimeButton" text="Remove" styleClass="remove-button" onAction="#handleRemoveTime"/>
                                     <Button fx:id="addTimeButton" text="Add" styleClass="add-button" onAction="#handleAddTime"/>
+                                    <Button fx:id="removeTimeButton" text="Remove" styleClass="remove-button" onAction="#handleRemoveTime"/>
                                 </VBox>
                             </VBox>
                         </HBox>
