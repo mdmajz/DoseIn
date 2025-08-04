@@ -44,13 +44,20 @@ public class SetReminderController {
 
     @FXML
     private void initialize() {
-        // Make spinners editable so user can type
+        // Initialize spinners with proper value factories
+        IntegerSpinnerValueFactory hourFactory = new IntegerSpinnerValueFactory(1, 12, 12);
+        IntegerSpinnerValueFactory minuteFactory = new IntegerSpinnerValueFactory(0, 59, 0);
+        
+        hourSpinner.setValueFactory(hourFactory);
+        minuteSpinner.setValueFactory(minuteFactory);
+        
+        // Make spinners editable
         hourSpinner.setEditable(true);
         minuteSpinner.setEditable(true);
-
-        // Spinner ranges
-        hourSpinner.setValueFactory(new IntegerSpinnerValueFactory(1, 12, 12));
-        minuteSpinner.setValueFactory(new IntegerSpinnerValueFactory(0, 59, 0));
+        
+        // Set default values
+        hourFactory.setValue(12);
+        minuteFactory.setValue(0);
 
         // Group AM/PM toggles
         ToggleGroup amPmGroup = new ToggleGroup();
@@ -62,9 +69,9 @@ public class SetReminderController {
         startDatePicker.setValue(LocalDate.now());
         endDatePicker.setValue(LocalDate.now().plusDays(7));
         
-        // Set default values for spinners
-        hourSpinner.getValueFactory().setValue(12);
-        minuteSpinner.getValueFactory().setValue(0);
+        // Debug: Print initial values
+        System.out.println("Initial hour: " + hourSpinner.getValue());
+        System.out.println("Initial minute: " + minuteSpinner.getValue());
     }
 
     @FXML
@@ -122,6 +129,27 @@ public class SetReminderController {
             selectedTimes.remove(selectedTime);
             timesListView.getItems().remove(selectedTime);
         }
+    }
+    
+    @FXML
+    private void testSpinners(ActionEvent e) {
+        System.out.println("=== SPINNER TEST ===");
+        System.out.println("Hour Spinner Value: " + hourSpinner.getValue());
+        System.out.println("Minute Spinner Value: " + minuteSpinner.getValue());
+        System.out.println("AM Selected: " + amToggle.isSelected());
+        System.out.println("PM Selected: " + pmToggle.isSelected());
+        
+        // Test setting values
+        hourSpinner.getValueFactory().setValue(3);
+        minuteSpinner.getValueFactory().setValue(30);
+        
+        System.out.println("After setting - Hour: " + hourSpinner.getValue() + ", Minute: " + minuteSpinner.getValue());
+        
+        new Alert(Alert.AlertType.INFORMATION, 
+            "Hour: " + hourSpinner.getValue() + 
+            "\nMinute: " + minuteSpinner.getValue() + 
+            "\nAM: " + amToggle.isSelected() + 
+            "\nPM: " + pmToggle.isSelected()).showAndWait();
     }
 
     @FXML

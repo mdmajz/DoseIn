@@ -295,6 +295,12 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
+    -fx-alignment: center;
+}
+
+.time-spinner .text-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
 
 .time-separator {
