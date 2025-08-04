@@ -83,37 +83,31 @@
 
     <center>
         <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card" stylesheets="@../css/set_reminder.css">
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card">
                 <padding>
                     <Insets bottom="35" left="35" right="35" top="35" />
                 </padding>
 
                 <!-- Title -->
-                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Add Medicine Information" />
+                <Label styleClass="set-reminder-title" text="Add Medicine Information" />
 
                 <!-- Name Field -->
                 <VBox spacing="8">
                     <Label styleClass="reminder-label" text="Name:" />
-                    <TextField fx:id="nameField" prefHeight="50.0" prefWidth="430.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
+                    <TextField fx:id="nameField" prefHeight="50.0" prefWidth="430.0" styleClass="reminder-field" />
                 </VBox>
 
                 <!-- Start Date & End Date -->
                 <HBox spacing="15">
                     <VBox spacing="8" HBox.hgrow="ALWAYS">
                         <Label styleClass="reminder-label" text="Start Date:" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" />
                     </VBox>
                     <VBox spacing="8" HBox.hgrow="ALWAYS">
                         <Label styleClass="reminder-label" text="End Date:" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" />
                     </VBox>
                 </HBox>
-
-                <!-- Additional Information -->
-                <VBox spacing="8">
-                    <Label styleClass="reminder-label" text="Additional Information:" />
-                    <TextArea fx:id="noteField" prefHeight="80.0" prefWidth="430.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" wrapText="true" />
-                </VBox>
 
                 <!-- Alert Time Section -->
                 <VBox spacing="12">
@@ -151,6 +145,12 @@
                             </VBox>
                         </VBox>
                     </HBox>
+                </VBox>
+
+                <!-- Additional Information -->
+                <VBox spacing="8">
+                    <Label styleClass="reminder-label" text="Additional Information:" />
+                    <TextArea fx:id="noteField" prefHeight="80.0" prefWidth="430.0" styleClass="reminder-field" wrapText="true" />
                 </VBox>
 
                 <!-- Bottom Action Buttons -->

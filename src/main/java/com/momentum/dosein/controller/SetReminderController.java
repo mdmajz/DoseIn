@@ -77,14 +77,13 @@ public class SetReminderController {
         Button button = (Button) e.getSource();
         String timeText = button.getText();
         
-        // Add to selected times if not already selected
+        // Toggle selection
         if (!selectedTimes.contains(timeText)) {
             selectedTimes.add(timeText);
-            button.setStyle("-fx-background-color: #4BA684; -fx-text-fill: white;");
+            button.getStyleClass().add("selected");
         } else {
-            // Remove from selected times
             selectedTimes.remove(timeText);
-            button.setStyle("-fx-background-color: #12594C; -fx-text-fill: white;");
+            button.getStyleClass().remove("selected");
         }
     }
 
