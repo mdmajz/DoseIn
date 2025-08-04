@@ -258,18 +258,19 @@
 
 /* TIME PICKER STYLES */
 .time-spinner {
-    -fx-background-color: #F8F9FA;
+    -fx-background-color: white;
     -fx-border-color: #E9ECEF;
-    -fx-border-radius: 6px;
-    -fx-border-width: 1px;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-pref-height: 35px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 60px;
 }
 
 .time-spinner:focused {
     -fx-border-color: #4BA684;
-    -fx-border-width: 2px;
+    -fx-border-width: 3px;
     -fx-background-color: white;
 }
 
@@ -277,37 +278,44 @@
 .time-spinner .decrement-arrow-button {
     -fx-background-color: #4BA684;
     -fx-border-color: transparent;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
 }
 
 .time-spinner .increment-arrow,
 .time-spinner .decrement-arrow {
     -fx-background-color: white;
+    -fx-padding: 2px;
 }
 
 .time-spinner .text-field {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-padding: 8px;
-}
-
-.time-separator {
+    -fx-padding: 8px 12px;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
+}
+
+.time-separator {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 8px;
 }
 
 /* AM/PM TOGGLE BUTTONS */
 .am-pm-toggle {
     -fx-background-color: #E0E0E0;
     -fx-text-fill: #666666;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
     -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 8px 16px;
     -fx-cursor: hand;
-    -fx-min-width: 40px;
-    -fx-pref-width: 40px;
-    -fx-pref-height: 30px;
+    -fx-min-width: 50px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 35px;
 }
 
 .am-pm-toggle:selected {

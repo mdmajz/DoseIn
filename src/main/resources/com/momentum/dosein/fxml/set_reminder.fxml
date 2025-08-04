@@ -125,9 +125,9 @@
                             <VBox spacing="5" alignment="TOP_CENTER">
                                 <!-- Time Input -->
                                 <HBox spacing="4" alignment="CENTER">
-                                    <Spinner fx:id="hourSpinner" editable="true" prefWidth="45" prefHeight="30" styleClass="time-spinner"/>
+                                    <Spinner fx:id="hourSpinner" editable="true" prefWidth="60" prefHeight="40" styleClass="time-spinner"/>
                                     <Label text=":" styleClass="time-separator"/>
-                                    <Spinner fx:id="minuteSpinner" editable="true" prefWidth="45" prefHeight="30" styleClass="time-spinner"/>
+                                    <Spinner fx:id="minuteSpinner" editable="true" prefWidth="60" prefHeight="40" styleClass="time-spinner"/>
                                 </HBox>
                                 
                                 <!-- AM/PM Toggle -->
