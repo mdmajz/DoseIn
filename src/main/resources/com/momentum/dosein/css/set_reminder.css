@@ -289,18 +289,25 @@
 }
 
 .time-spinner .text-field {
-    -fx-background-color: transparent;
+    -fx-background-color: white;
     -fx-border-color: transparent;
     -fx-padding: 8px 12px;
-    -fx-font-size: 16px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
     -fx-alignment: center;
+    -fx-text-alignment: center;
 }
 
 .time-spinner .text-field:focused {
-    -fx-background-color: transparent;
+    -fx-background-color: white;
     -fx-border-color: transparent;
+    -fx-text-fill: #333333;
+}
+
+.time-spinner .text-field:selected {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #333333;
 }
 
 .time-separator {
@@ -313,24 +320,34 @@
 /* AM/PM TOGGLE BUTTONS */
 .am-pm-toggle {
     -fx-background-color: #E0E0E0;
-    -fx-text-fill: #666666;
-    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-background-radius: 6px;
-    -fx-padding: 8px 16px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 15px;
     -fx-cursor: hand;
     -fx-min-width: 50px;
     -fx-pref-width: 50px;
     -fx-pref-height: 35px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
 }
 
 .am-pm-toggle:selected {
     -fx-background-color: #12594C;
     -fx-text-fill: white;
+    -fx-border-color: #0F4A3F;
 }
 
 .am-pm-toggle:hover {
     -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+    -fx-border-color: #3D9574;
+}
+
+.am-pm-toggle:pressed {
+    -fx-background-color: #0F4A3F;
     -fx-text-fill: white;
 }
 

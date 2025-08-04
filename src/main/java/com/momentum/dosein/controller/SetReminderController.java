@@ -44,34 +44,47 @@ public class SetReminderController {
 
     @FXML
     private void initialize() {
-        // Initialize spinners with proper value factories
-        IntegerSpinnerValueFactory hourFactory = new IntegerSpinnerValueFactory(1, 12, 12);
-        IntegerSpinnerValueFactory minuteFactory = new IntegerSpinnerValueFactory(0, 59, 0);
-        
-        hourSpinner.setValueFactory(hourFactory);
-        minuteSpinner.setValueFactory(minuteFactory);
-        
-        // Make spinners editable
-        hourSpinner.setEditable(true);
-        minuteSpinner.setEditable(true);
-        
-        // Set default values
-        hourFactory.setValue(12);
-        minuteFactory.setValue(0);
+        try {
+            // Initialize spinners with proper value factories
+            IntegerSpinnerValueFactory hourFactory = new IntegerSpinnerValueFactory(1, 12, 12);
+            IntegerSpinnerValueFactory minuteFactory = new IntegerSpinnerValueFactory(0, 59, 0);
+            
+            hourSpinner.setValueFactory(hourFactory);
+            minuteSpinner.setValueFactory(minuteFactory);
+            
+            // Make spinners editable
+            hourSpinner.setEditable(true);
+            minuteSpinner.setEditable(true);
+            
+            // Set default values
+            hourFactory.setValue(12);
+            minuteFactory.setValue(0);
 
-        // Group AM/PM toggles
-        ToggleGroup amPmGroup = new ToggleGroup();
-        amToggle.setToggleGroup(amPmGroup);
-        pmToggle.setToggleGroup(amPmGroup);
-        amToggle.setSelected(true);
-        
-        // Initialize date pickers with current date
-        startDatePicker.setValue(LocalDate.now());
-        endDatePicker.setValue(LocalDate.now().plusDays(7));
-        
-        // Debug: Print initial values
-        System.out.println("Initial hour: " + hourSpinner.getValue());
-        System.out.println("Initial minute: " + minuteSpinner.getValue());
+            // Group AM/PM toggles
+            ToggleGroup amPmGroup = new ToggleGroup();
+            amToggle.setToggleGroup(amPmGroup);
+            pmToggle.setToggleGroup(amPmGroup);
+            amToggle.setSelected(true);
+            
+            // Initialize date pickers with current date
+            startDatePicker.setValue(LocalDate.now());
+            endDatePicker.setValue(LocalDate.now().plusDays(7));
+            
+            // Debug: Print initial values
+            System.out.println("=== INITIALIZATION ===");
+            System.out.println("Hour Spinner: " + hourSpinner.getValue());
+            System.out.println("Minute Spinner: " + minuteSpinner.getValue());
+            System.out.println("AM Selected: " + amToggle.isSelected());
+            System.out.println("PM Selected: " + pmToggle.isSelected());
+            
+            // Force update display
+            hourSpinner.getValueFactory().setValue(12);
+            minuteSpinner.getValueFactory().setValue(0);
+            
+        } catch (Exception e) {
+            System.out.println("Error in initialize: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @FXML

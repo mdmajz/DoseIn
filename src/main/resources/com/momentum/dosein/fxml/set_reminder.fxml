@@ -131,9 +131,9 @@
                                 </HBox>
                                 
                                 <!-- AM/PM Toggle -->
-                                <HBox spacing="2" alignment="CENTER">
-                                    <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true"/>
-                                    <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle"/>
+                                <HBox spacing="4" alignment="CENTER">
+                                    <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true" prefWidth="50" prefHeight="35"/>
+                                    <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle" prefWidth="50" prefHeight="35"/>
                                 </HBox>
                                 
                                 <!-- Add/Remove Buttons -->
