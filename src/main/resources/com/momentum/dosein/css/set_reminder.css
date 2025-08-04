@@ -139,7 +139,7 @@
 .main-content {
     -fx-background-color: #B8E0D1;
     -fx-alignment: center;
-    -fx-padding: 40;
+    -fx-spacing: 25;
 }
 
 /* SINGLE CARD */
@@ -148,11 +148,6 @@
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-alignment: top-center;
-    -fx-pref-width: 800;
-    -fx-max-width: 800;
-    -fx-min-width: 800;
-    -fx-pref-height: 600;
-    -fx-max-height: 600;
 }
 
 /* TITLE */
