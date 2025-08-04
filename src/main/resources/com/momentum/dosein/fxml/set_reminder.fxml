@@ -85,7 +85,7 @@
         <VBox alignment="CENTER" styleClass="main-content">
             <VBox styleClass="reminder-card" maxHeight="600" prefHeight="600">
                 <padding>
-                    <Insets top="30" right="30" bottom="30" left="30"/>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
                 </padding>
                 
                 <VBox spacing="15" alignment="TOP_CENTER">
@@ -95,11 +95,11 @@
                     <!-- Name Field -->
                     <VBox spacing="5">
                         <Label text="Name:" styleClass="form-label"/>
-                        <TextField fx:id="nameField" styleClass="form-field" prefHeight="35"/>
+                        <TextField fx:id="nameField" styleClass="form-field" prefHeight="35" prefWidth="700"/>
                     </VBox>
 
                     <!-- Start Date & End Date -->
-                    <HBox spacing="15">
+                    <HBox spacing="30">
                         <VBox spacing="5" HBox.hgrow="ALWAYS">
                             <Label text="Start Date:" styleClass="form-label"/>
                             <DatePicker fx:id="startDatePicker" styleClass="form-field" prefHeight="35"/>
@@ -114,11 +114,11 @@
                     <VBox spacing="8">
                         <Label text="Alert Time:" styleClass="form-label"/>
                         
-                        <HBox spacing="15" alignment="TOP_LEFT">
+                        <HBox spacing="30" alignment="TOP_LEFT">
                             <!-- Dynamic Time List -->
                             <VBox spacing="5">
                                 <Label text="Selected Times:" styleClass="form-label"/>
-                                <ListView fx:id="timesListView" prefHeight="80" prefWidth="150" styleClass="times-list"/>
+                                <ListView fx:id="timesListView" prefHeight="80" prefWidth="250" styleClass="times-list"/>
                             </VBox>
                             
                             <!-- Custom Time Picker -->
@@ -149,7 +149,7 @@
                     <!-- Additional Information -->
                     <VBox spacing="5">
                         <Label text="Additional Information:" styleClass="form-label"/>
-                        <TextArea fx:id="noteField" styleClass="form-field" wrapText="true" prefRowCount="2" prefHeight="60"/>
+                        <TextArea fx:id="noteField" styleClass="form-field" wrapText="true" prefRowCount="2" prefHeight="60" prefWidth="700"/>
                     </VBox>
 
                     <!-- Bottom Action Buttons -->
