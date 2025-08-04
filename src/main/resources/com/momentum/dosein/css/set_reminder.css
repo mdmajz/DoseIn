@@ -138,7 +138,7 @@
 /* MAIN CONTENT AREA */
 .main-content {
     -fx-background-color: #B8E0D1;
-    -fx-alignment: center;
+    -fx-alignment: top-center;
     -fx-spacing: 25;
 }
 
@@ -190,7 +190,7 @@
     -fx-border-color: #E9ECEF;
     -fx-border-radius: 8px;
     -fx-border-width: 1px;
-    -fx-padding: 12px;
+    -fx-padding: 6px 8px;
     -fx-font-size: 14px;
 }
 
@@ -215,7 +215,7 @@
 .date-picker .text-field {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-padding: 12px;
+    -fx-padding: 6px 8px;
     -fx-font-size: 14px;
 }
 
