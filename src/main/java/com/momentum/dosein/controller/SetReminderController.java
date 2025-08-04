@@ -13,27 +13,35 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SetReminderController {
 
     @FXML private TextField    nameField;
     @FXML private DatePicker   startDatePicker, endDatePicker;
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
-    @FXML private RadioButton  amRadio, pmRadio;
+    @FXML private ToggleButton amToggle, pmToggle;
     @FXML private ListView<String> timesList;
-    @FXML private TextField    noteField;
+    @FXML private TextArea    noteField;
+    @FXML private HBox        presetTimesContainer;
 
     private final ReminderService reminderService = new ReminderService();
     private final DateTimeFormatter displayFmt =
             DateTimeFormatter.ofPattern("h:mm a");
+    private final List<String> selectedTimes = new ArrayList<>();
 
     @FXML
     private void initialize() {
@@ -46,31 +54,64 @@ public class SetReminderController {
         minuteSpinner.setValueFactory(new IntegerSpinnerValueFactory(0, 59, 0));
 
         // Group AM/PM toggles
-        var tg = new javafx.scene.control.ToggleGroup();
-        amRadio.setToggleGroup(tg);
-        pmRadio.setToggleGroup(tg);
-        amRadio.setSelected(true);
+        ToggleGroup amPmGroup = new ToggleGroup();
+        amToggle.setToggleGroup(amPmGroup);
+        pmToggle.setToggleGroup(amPmGroup);
+        amToggle.setSelected(true);
+        
+        // Set up preset time buttons
+        setupPresetTimeButtons();
+        
+        // Initialize date pickers with current date
+        startDatePicker.setValue(LocalDate.now());
+        endDatePicker.setValue(LocalDate.now().plusDays(7));
+    }
+
+    private void setupPresetTimeButtons() {
+        // The preset time buttons are already defined in FXML
+        // We just need to ensure they're properly connected
+    }
+
+    @FXML
+    private void handlePresetTime(ActionEvent e) {
+        Button button = (Button) e.getSource();
+        String timeText = button.getText();
+        
+        // Add to selected times if not already selected
+        if (!selectedTimes.contains(timeText)) {
+            selectedTimes.add(timeText);
+            button.setStyle("-fx-background-color: #4BA684; -fx-text-fill: white;");
+        } else {
+            // Remove from selected times
+            selectedTimes.remove(timeText);
+            button.setStyle("-fx-background-color: #12594C; -fx-text-fill: white;");
+        }
     }
 
     @FXML
     private void handleAddTime(ActionEvent e) {
         int hour = hourSpinner.getValue() % 12;
-        if (pmRadio.isSelected()) hour += 12;
+        if (pmToggle.isSelected()) hour += 12;
         LocalTime t = LocalTime.of(hour, minuteSpinner.getValue());
-        timesList.getItems().add(t.format(displayFmt));
+        String timeText = t.format(displayFmt);
+        
+        if (!selectedTimes.contains(timeText)) {
+            selectedTimes.add(timeText);
+        }
     }
 
     @FXML
     private void handleRemoveTime(ActionEvent e) {
-        var sel = timesList.getSelectionModel().getSelectedIndices();
-        sel.sorted((a, b) -> b - a)
-                .forEach(i -> timesList.getItems().remove((int) i));
+        // Remove the last added custom time
+        if (!selectedTimes.isEmpty()) {
+            selectedTimes.remove(selectedTimes.size() - 1);
+        }
     }
 
     @FXML
     private void handleSetReminder(ActionEvent e) {
         String name = nameField.getText().trim();
-        if (name.isEmpty() || timesList.getItems().isEmpty()) {
+        if (name.isEmpty() || selectedTimes.isEmpty()) {
             new Alert(Alert.AlertType.WARNING,
                     "Please enter a name and at least one alert time.")
                     .showAndWait();
@@ -81,7 +122,7 @@ public class SetReminderController {
         LocalDate start = startDatePicker.getValue();
         LocalDate end   = endDatePicker.getValue();
 
-        for (String ts : timesList.getItems()) {
+        for (String ts : selectedTimes) {
             LocalTime lt = LocalTime.parse(ts, displayFmt);
             MedicineReminder r = new MedicineReminder(name, "", lt, note);
             reminderService.addReminder(r);

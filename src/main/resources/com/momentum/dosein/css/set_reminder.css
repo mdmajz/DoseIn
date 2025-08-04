@@ -33,6 +33,21 @@
     -fx-pref-width: 200;
 }
 
+.logo-pills {
+    -fx-spacing: 4;
+    -fx-alignment: center;
+}
+
+.logo-pill-green {
+    -fx-background-color: #2E7D32;
+    -fx-background-radius: 4;
+}
+
+.logo-pill-white {
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+}
+
 /* Navigation Buttons */
 .nav-button-active {
     -fx-background-color: #12594C;
@@ -136,62 +151,233 @@
 }
 
 /* MAIN CONTENT AREA */
-.main-content {
-    -fx-spacing: 25;
-    -fx-padding: 30;
+.reminder-root {
     -fx-background-color: #B8E0D1;
+    -fx-alignment: center;
+}
+
+.reminder-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-alignment: top-center;
 }
 
 /* SET REMINDER SPECIFIC STYLES */
-.reminder-title {
+.set-reminder-title {
     -fx-font-size: 24px;
-    -fx-text-fill: #12594C;
+    -fx-text-fill: #333333;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
+    -fx-padding: 0 0 10px 0;
 }
 
-.reminder-slogan {
+.reminder-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: 600;
+}
+
+.reminder-field {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 12px;
+}
+
+.reminder-field:focused {
+    -fx-border-color: #4BA684;
+    -fx-border-width: 2px;
+}
+
+/* Preset Time Buttons */
+.preset-time-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
     -fx-font-size: 12px;
-    -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 80px;
+    -fx-pref-width: 80px;
 }
 
-.reminder-header {
-    -fx-background-color: white;
-    -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
+.preset-time-button:hover {
+    -fx-background-color: #0F4A3F;
 }
 
-.reminder-form {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
+.preset-time-button:pressed {
+    -fx-background-color: #0A3A2F;
 }
 
-.form-label {
+/* Time Picker Styles */
+.time-spinner {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
     -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
+    -fx-font-weight: 600;
+}
+
+.time-spinner:focused {
+    -fx-border-color: #4BA684;
+    -fx-border-width: 2px;
+}
+
+.time-separator {
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
+    -fx-text-fill: #333333;
 }
 
-.form-field {
-    -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
-    -fx-padding: 8px;
+/* AM/PM Toggle Buttons */
+.am-pm-toggle {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 40px;
+    -fx-pref-width: 40px;
 }
 
-.save-button {
+.am-pm-toggle:selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+}
+
+.am-pm-toggle:hover {
     -fx-background-color: #4BA684;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
-    -fx-background-radius: 5px;
+}
+
+/* Add/Remove Buttons */
+.add-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
     -fx-cursor: hand;
 }
 
-.save-button:hover {
-    -fx-background-color: #3D9574;
+.add-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+.remove-button {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+}
+
+.remove-button:hover {
+    -fx-background-color: #C55A54;
+}
+
+/* Action Buttons */
+.cancel-button {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+    -fx-min-width: 100px;
+    -fx-pref-width: 100px;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #C55A54;
+}
+
+.set-reminder-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+    -fx-pref-width: 120px;
+}
+
+.set-reminder-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+/* DatePicker Styling */
+.date-picker {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.date-picker .arrow {
+    -fx-background-color: #666666;
+}
+
+/* TextArea Styling */
+.text-area {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+.text-area:focused {
+    -fx-border-color: #4BA684;
+    -fx-border-width: 2px;
+}
+
+/* Focus and selection styles */
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.button:pressed {
+    -fx-background-color: derive(-fx-background-color, -10%);
+}
+
+/* MISC ELEMENTS */
+.button {
+    -fx-cursor: hand;
+}
+
+.label {
+    -fx-wrap-text: true;
 }
