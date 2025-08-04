@@ -144,26 +144,7 @@ public class SetReminderController {
         }
     }
     
-    @FXML
-    private void testSpinners(ActionEvent e) {
-        System.out.println("=== SPINNER TEST ===");
-        System.out.println("Hour Spinner Value: " + hourSpinner.getValue());
-        System.out.println("Minute Spinner Value: " + minuteSpinner.getValue());
-        System.out.println("AM Selected: " + amToggle.isSelected());
-        System.out.println("PM Selected: " + pmToggle.isSelected());
-        
-        // Test setting values
-        hourSpinner.getValueFactory().setValue(3);
-        minuteSpinner.getValueFactory().setValue(30);
-        
-        System.out.println("After setting - Hour: " + hourSpinner.getValue() + ", Minute: " + minuteSpinner.getValue());
-        
-        new Alert(Alert.AlertType.INFORMATION, 
-            "Hour: " + hourSpinner.getValue() + 
-            "\nMinute: " + minuteSpinner.getValue() + 
-            "\nAM: " + amToggle.isSelected() + 
-            "\nPM: " + pmToggle.isSelected()).showAndWait();
-    }
+
 
     @FXML
     private void handleSetReminder(ActionEvent e) {

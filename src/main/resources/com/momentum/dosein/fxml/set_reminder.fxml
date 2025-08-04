@@ -144,7 +144,6 @@
                                 <VBox spacing="1">
                                     <Button fx:id="addTimeButton" text="Add" styleClass="add-button" onAction="#handleAddTime"/>
                                     <Button fx:id="removeTimeButton" text="Remove" styleClass="remove-button" onAction="#handleRemoveTime"/>
-                                    <Button text="Test Spinners" styleClass="add-button" onAction="#testSpinners"/>
                                 </VBox>
                             </VBox>
                         </HBox>
