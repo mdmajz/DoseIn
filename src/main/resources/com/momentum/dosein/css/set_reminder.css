@@ -33,8 +33,6 @@
     -fx-pref-width: 200;
 }
 
-
-
 /* Navigation Buttons */
 .nav-button-active {
     -fx-background-color: #12594C;
@@ -138,10 +136,17 @@
 }
 
 /* MAIN CONTENT AREA */
-.reminder-root {
+.main-content {
     -fx-background-color: #B8E0D1;
     -fx-alignment: center;
     -fx-padding: 30;
+}
+
+/* SINGLE CARD CONTAINER */
+.reminder-card-container {
+    -fx-alignment: center;
+    -fx-pref-width: 600;
+    -fx-max-width: 600;
 }
 
 .reminder-card {
@@ -149,26 +154,27 @@
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-alignment: top-center;
-    -fx-min-width: 500;
-    -fx-pref-width: 500;
+    -fx-pref-width: 600;
     -fx-max-width: 600;
 }
 
-/* SET REMINDER SPECIFIC STYLES */
-.set-reminder-title {
+/* TITLE */
+.reminder-title {
     -fx-font-size: 24px;
     -fx-text-fill: #333333;
     -fx-font-weight: bold;
     -fx-padding: 0 0 10px 0;
 }
 
-.reminder-label {
+/* FORM LABELS */
+.form-label {
     -fx-font-size: 14px;
     -fx-text-fill: #333333;
     -fx-font-weight: 600;
 }
 
-.reminder-field {
+/* FORM FIELDS */
+.form-field {
     -fx-font-size: 14px;
     -fx-text-fill: #333333;
     -fx-background-color: #F8F9FA;
@@ -177,149 +183,39 @@
     -fx-border-radius: 8px;
     -fx-border-width: 1px;
     -fx-padding: 12px;
+    -fx-pref-height: 45px;
 }
 
-.reminder-field:focused {
+.form-field:focused {
     -fx-border-color: #4BA684;
     -fx-border-width: 2px;
     -fx-background-color: white;
 }
 
-/* Preset Time Buttons */
-.preset-time-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 8px;
-    -fx-padding: 8px 12px;
-    -fx-cursor: hand;
-    -fx-min-width: 80px;
-    -fx-pref-width: 80px;
-}
-
-.preset-time-button:hover {
-    -fx-background-color: #0F4A3F;
-}
-
-.preset-time-button:pressed {
-    -fx-background-color: #0A3A2F;
-}
-
-.preset-time-button:selected {
-    -fx-background-color: #4BA684;
-}
-
-/* Time Picker Styles */
-.time-spinner {
-    -fx-background-color: #F5F5F5;
-    -fx-border-color: #E0E0E0;
-    -fx-border-radius: 6px;
+/* TextArea specific styling */
+.text-area {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #E9ECEF;
+    -fx-border-radius: 8px;
     -fx-border-width: 1px;
+    -fx-padding: 12px;
     -fx-font-size: 14px;
-    -fx-font-weight: 600;
 }
 
-.time-spinner:focused {
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+.text-area:focused {
     -fx-border-color: #4BA684;
     -fx-border-width: 2px;
+    -fx-background-color: white;
 }
 
-.time-separator {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-}
-
-/* AM/PM Toggle Buttons */
-.am-pm-toggle {
-    -fx-background-color: #E0E0E0;
-    -fx-text-fill: #666666;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
-    -fx-cursor: hand;
-    -fx-min-width: 40px;
-    -fx-pref-width: 40px;
-}
-
-.am-pm-toggle:selected {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-}
-
-.am-pm-toggle:hover {
-    -fx-background-color: #4BA684;
-    -fx-text-fill: white;
-}
-
-/* Add/Remove Buttons */
-.add-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
-    -fx-cursor: hand;
-}
-
-.add-button:hover {
-    -fx-background-color: #0F4A3F;
-}
-
-.remove-button {
-    -fx-background-color: #DC6D67;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
-    -fx-cursor: hand;
-}
-
-.remove-button:hover {
-    -fx-background-color: #C55A54;
-}
-
-/* Action Buttons */
-.cancel-button {
-    -fx-background-color: #DC6D67;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 8px;
-    -fx-padding: 12px 24px;
-    -fx-cursor: hand;
-    -fx-min-width: 100px;
-    -fx-pref-width: 100px;
-}
-
-.cancel-button:hover {
-    -fx-background-color: #C55A54;
-}
-
-.set-reminder-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 8px;
-    -fx-padding: 12px 24px;
-    -fx-cursor: hand;
-    -fx-min-width: 120px;
-    -fx-pref-width: 120px;
-}
-
-.set-reminder-button:hover {
-    -fx-background-color: #0F4A3F;
-}
-
-/* DatePicker Styling */
+/* DatePicker styling */
 .date-picker {
-    -fx-background-color: #F5F5F5;
-    -fx-border-color: #E0E0E0;
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #E9ECEF;
     -fx-border-radius: 8px;
     -fx-border-width: 1px;
 }
@@ -340,23 +236,145 @@
     -fx-background-color: #666666;
 }
 
-/* TextArea Styling */
-.text-area {
-    -fx-background-color: #F5F5F5;
-    -fx-border-color: #E0E0E0;
-    -fx-border-radius: 8px;
+/* PRESET TIME BUTTONS */
+.preset-time-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 80px;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 35px;
+}
+
+.preset-time-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+.preset-time-button:pressed {
+    -fx-background-color: #0A3A2F;
+}
+
+.preset-time-button:selected {
+    -fx-background-color: #4BA684;
+}
+
+/* TIME PICKER STYLES */
+.time-spinner {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #E9ECEF;
+    -fx-border-radius: 6px;
     -fx-border-width: 1px;
-    -fx-padding: 12px;
     -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-pref-height: 35px;
 }
 
-.text-area .content {
-    -fx-background-color: transparent;
-}
-
-.text-area:focused {
+.time-spinner:focused {
     -fx-border-color: #4BA684;
     -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+
+.time-separator {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* AM/PM TOGGLE BUTTONS */
+.am-pm-toggle {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 40px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 30px;
+}
+
+.am-pm-toggle:selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+}
+
+.am-pm-toggle:hover {
+    -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+}
+
+/* ADD/REMOVE BUTTONS */
+.add-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+    -fx-pref-width: 70px;
+    -fx-pref-height: 30px;
+}
+
+.add-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+.remove-button {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+    -fx-pref-width: 70px;
+    -fx-pref-height: 30px;
+}
+
+.remove-button:hover {
+    -fx-background-color: #C55A54;
+}
+
+/* ACTION BUTTONS */
+.cancel-button {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+    -fx-min-width: 100px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 45px;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #C55A54;
+}
+
+.set-reminder-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 45px;
+}
+
+.set-reminder-button:hover {
+    -fx-background-color: #0F4A3F;
 }
 
 /* Focus and selection styles */

@@ -59,17 +59,9 @@ public class SetReminderController {
         pmToggle.setToggleGroup(amPmGroup);
         amToggle.setSelected(true);
         
-        // Set up preset time buttons
-        setupPresetTimeButtons();
-        
         // Initialize date pickers with current date
         startDatePicker.setValue(LocalDate.now());
         endDatePicker.setValue(LocalDate.now().plusDays(7));
-    }
-
-    private void setupPresetTimeButtons() {
-        // The preset time buttons are already defined in FXML
-        // We just need to ensure they're properly connected
     }
 
     @FXML
@@ -160,11 +152,74 @@ public class SetReminderController {
         }
     }
 
-    // stubs for the remaining nav buttons:
-    @FXML private void handleManageSchedule(ActionEvent e) { /* TODO */ }
-    @FXML private void handleDoctorContacts(ActionEvent e) { /* TODO */ }
-    @FXML private void handleEmergency(ActionEvent e)    { /* TODO */ }
-    @FXML private void handleAboutUs(ActionEvent e)      { /* TODO */ }
+    // Navigation handlers for all menu items
+    @FXML 
+    private void handleManageSchedule(ActionEvent e) {
+        try {
+            Parent schedule = FXMLLoader.load(
+                    getClass().getResource(
+                            "/com/momentum/dosein/fxml/manage_schedule.fxml"
+                    )
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(schedule);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Manage Schedule.").showAndWait();
+        }
+    }
+
+    @FXML 
+    private void handleDoctorContacts(ActionEvent e) {
+        try {
+            Parent contacts = FXMLLoader.load(
+                    getClass().getResource(
+                            "/com/momentum/dosein/fxml/doctor_contacts.fxml"
+                    )
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(contacts);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Doctor Contacts.").showAndWait();
+        }
+    }
+
+    @FXML 
+    private void handleEmergency(ActionEvent e) {
+        try {
+            Parent emergency = FXMLLoader.load(
+                    getClass().getResource(
+                            "/com/momentum/dosein/fxml/emergency.fxml"
+                    )
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(emergency);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Emergency.").showAndWait();
+        }
+    }
+
+    @FXML 
+    private void handleAboutUs(ActionEvent e) {
+        try {
+            Parent about = FXMLLoader.load(
+                    getClass().getResource(
+                            "/com/momentum/dosein/fxml/about_us.fxml"
+                    )
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(about);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load About Us.").showAndWait();
+        }
+    }
 
     @FXML
     private void handleSignOut(Event e) {

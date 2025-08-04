@@ -82,82 +82,85 @@
     </left>
 
     <center>
-        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card">
-                <padding>
-                    <Insets bottom="35" left="35" right="35" top="35" />
-                </padding>
+        <VBox alignment="CENTER" styleClass="main-content">
+            <!-- Single White Card Container -->
+            <VBox styleClass="reminder-card-container">
+                <VBox styleClass="reminder-card" spacing="24">
+                    <padding>
+                        <Insets top="40" right="40" bottom="40" left="40"/>
+                    </padding>
 
-                <!-- Title -->
-                <Label styleClass="set-reminder-title" text="Add Medicine Information" />
+                    <!-- Title -->
+                    <Label text="Add Medicine Information" styleClass="reminder-title"/>
 
-                <!-- Name Field -->
-                <VBox spacing="8">
-                    <Label styleClass="reminder-label" text="Name:" />
-                    <TextField fx:id="nameField" prefHeight="50.0" prefWidth="430.0" styleClass="reminder-field" />
-                </VBox>
-
-                <!-- Start Date & End Date -->
-                <HBox spacing="15">
-                    <VBox spacing="8" HBox.hgrow="ALWAYS">
-                        <Label styleClass="reminder-label" text="Start Date:" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" />
+                    <!-- Name Field -->
+                    <VBox spacing="8">
+                        <Label text="Name:" styleClass="form-label"/>
+                        <TextField fx:id="nameField" styleClass="form-field"/>
                     </VBox>
-                    <VBox spacing="8" HBox.hgrow="ALWAYS">
-                        <Label styleClass="reminder-label" text="End Date:" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="reminder-field" />
-                    </VBox>
-                </HBox>
 
-                <!-- Alert Time Section -->
-                <VBox spacing="12">
-                    <Label styleClass="reminder-label" text="Alert Time:" />
-                    
-                    <HBox spacing="16" alignment="TOP_LEFT">
-                        <!-- Pre-selected Time Blocks -->
-                        <VBox spacing="8">
-                            <HBox fx:id="presetTimesContainer" spacing="8">
-                                <Button text="12:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime" />
-                                <Button text="1:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime" />
-                                <Button text="2:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime" />
-                            </HBox>
+                    <!-- Start Date & End Date -->
+                    <HBox spacing="20">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Start Date:" styleClass="form-label"/>
+                            <DatePicker fx:id="startDatePicker" styleClass="form-field"/>
                         </VBox>
-                        
-                        <!-- Custom Time Picker -->
-                        <VBox spacing="8" alignment="TOP_CENTER">
-                            <!-- Time Input -->
-                            <HBox spacing="4" alignment="CENTER">
-                                <Spinner fx:id="hourSpinner" editable="true" prefHeight="30.0" prefWidth="50.0" styleClass="time-spinner" />
-                                <Label text=":" styleClass="time-separator" />
-                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="30.0" prefWidth="50.0" styleClass="time-spinner" />
-                            </HBox>
-                            
-                            <!-- AM/PM Toggle -->
-                            <HBox spacing="2" alignment="CENTER">
-                                <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true" />
-                                <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle" />
-                            </HBox>
-                            
-                            <!-- Add/Remove Buttons -->
-                            <VBox spacing="4">
-                                <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
-                                <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="25.0" prefWidth="70.0" styleClass="add-button" text="Add" />
-                            </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="End Date:" styleClass="form-label"/>
+                            <DatePicker fx:id="endDatePicker" styleClass="form-field"/>
                         </VBox>
                     </HBox>
-                </VBox>
 
-                <!-- Additional Information -->
-                <VBox spacing="8">
-                    <Label styleClass="reminder-label" text="Additional Information:" />
-                    <TextArea fx:id="noteField" prefHeight="80.0" prefWidth="430.0" styleClass="reminder-field" wrapText="true" />
-                </VBox>
+                    <!-- Alert Time Section -->
+                    <VBox spacing="12">
+                        <Label text="Alert Time:" styleClass="form-label"/>
+                        
+                        <HBox spacing="20" alignment="TOP_LEFT">
+                            <!-- Pre-selected Time Blocks -->
+                            <VBox spacing="8">
+                                <HBox spacing="8">
+                                    <Button text="12:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
+                                    <Button text="1:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
+                                    <Button text="2:00 AM" styleClass="preset-time-button" onAction="#handlePresetTime"/>
+                                </HBox>
+                            </VBox>
+                            
+                            <!-- Custom Time Picker -->
+                            <VBox spacing="8" alignment="TOP_CENTER">
+                                <!-- Time Input -->
+                                <HBox spacing="4" alignment="CENTER">
+                                    <Spinner fx:id="hourSpinner" editable="true" prefWidth="50" styleClass="time-spinner"/>
+                                    <Label text=":" styleClass="time-separator"/>
+                                    <Spinner fx:id="minuteSpinner" editable="true" prefWidth="50" styleClass="time-spinner"/>
+                                </HBox>
+                                
+                                <!-- AM/PM Toggle -->
+                                <HBox spacing="2" alignment="CENTER">
+                                    <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true"/>
+                                    <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle"/>
+                                </HBox>
+                                
+                                <!-- Add/Remove Buttons -->
+                                <VBox spacing="4">
+                                    <Button fx:id="removeTimeButton" text="Remove" styleClass="remove-button" onAction="#handleRemoveTime"/>
+                                    <Button fx:id="addTimeButton" text="Add" styleClass="add-button" onAction="#handleAddTime"/>
+                                </VBox>
+                            </VBox>
+                        </HBox>
+                    </VBox>
 
-                <!-- Bottom Action Buttons -->
-                <HBox alignment="BOTTOM_RIGHT" spacing="15">
-                    <Button onAction="#handleCancel" styleClass="cancel-button" text="Cancel" />
-                    <Button onAction="#handleSetReminder" styleClass="set-reminder-button" text="Set Reminder" />
-                </HBox>
+                    <!-- Additional Information -->
+                    <VBox spacing="8">
+                        <Label text="Additional Information:" styleClass="form-label"/>
+                        <TextArea fx:id="noteField" styleClass="form-field" wrapText="true" prefRowCount="3"/>
+                    </VBox>
+
+                    <!-- Bottom Action Buttons -->
+                    <HBox alignment="BOTTOM_RIGHT" spacing="15">
+                        <Button text="Cancel" styleClass="cancel-button" onAction="#handleCancel"/>
+                        <Button text="Set Reminder" styleClass="set-reminder-button" onAction="#handleSetReminder"/>
+                    </HBox>
+                </VBox>
             </VBox>
         </VBox>
     </center>
