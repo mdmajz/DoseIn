@@ -148,6 +148,12 @@
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-alignment: top-center;
+    -fx-pref-width: 560px;
+    -fx-min-width: 560px;
+    -fx-max-width: 560px;
+    -fx-pref-height: 450px;
+    -fx-min-height: 450px;
+    -fx-max-height: 450px;
 }
 
 /* TITLE */
