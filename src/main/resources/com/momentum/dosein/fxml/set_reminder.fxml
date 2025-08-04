@@ -92,56 +92,56 @@
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
                 
-                <VBox spacing="10" alignment="TOP_CENTER">
+                <VBox spacing="8" alignment="TOP_CENTER">
                     <!-- Title -->
                     <Label text="Add Medicine Information" styleClass="reminder-title"/>
 
                     <!-- Name Field -->
-                    <VBox spacing="3">
+                    <VBox spacing="2">
                         <Label text="Name:" styleClass="form-label"/>
-                        <TextField fx:id="nameField" styleClass="form-field" prefHeight="30"/>
+                        <TextField fx:id="nameField" styleClass="form-field" prefHeight="28"/>
                     </VBox>
 
                     <!-- Start Date & End Date -->
-                    <HBox spacing="20">
-                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                    <HBox spacing="15">
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
                             <Label text="Start Date:" styleClass="form-label"/>
-                            <DatePicker fx:id="startDatePicker" styleClass="form-field" prefHeight="30"/>
+                            <DatePicker fx:id="startDatePicker" styleClass="form-field" prefHeight="28"/>
                         </VBox>
-                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
                             <Label text="End Date:" styleClass="form-label"/>
-                            <DatePicker fx:id="endDatePicker" styleClass="form-field" prefHeight="30"/>
+                            <DatePicker fx:id="endDatePicker" styleClass="form-field" prefHeight="28"/>
                         </VBox>
                     </HBox>
 
                     <!-- Alert Time Section -->
-                    <VBox spacing="5">
+                    <VBox spacing="3">
                         <Label text="Alert Time:" styleClass="form-label"/>
                         
-                        <HBox spacing="20" alignment="TOP_LEFT">
+                        <HBox spacing="15" alignment="TOP_LEFT">
                             <!-- Dynamic Time List -->
-                            <VBox spacing="3">
+                            <VBox spacing="2">
                                 <Label text="Selected Times:" styleClass="form-label"/>
-                                <ListView fx:id="timesListView" prefHeight="60" prefWidth="180" styleClass="times-list"/>
+                                <ListView fx:id="timesListView" prefHeight="50" prefWidth="150" styleClass="times-list"/>
                             </VBox>
                             
                             <!-- Custom Time Picker -->
-                            <VBox spacing="3" alignment="TOP_CENTER">
+                            <VBox spacing="2" alignment="TOP_CENTER">
                                 <!-- Time Input -->
-                                <HBox spacing="4" alignment="CENTER">
-                                    <Spinner fx:id="hourSpinner" editable="true" prefWidth="50" prefHeight="35" styleClass="time-spinner"/>
+                                <HBox spacing="3" alignment="CENTER">
+                                    <Spinner fx:id="hourSpinner" editable="true" prefWidth="45" prefHeight="30" styleClass="time-spinner"/>
                                     <Label text=":" styleClass="time-separator"/>
-                                    <Spinner fx:id="minuteSpinner" editable="true" prefWidth="50" prefHeight="35" styleClass="time-spinner"/>
+                                    <Spinner fx:id="minuteSpinner" editable="true" prefWidth="45" prefHeight="30" styleClass="time-spinner"/>
                                 </HBox>
                                 
                                 <!-- AM/PM Toggle -->
-                                <HBox spacing="4" alignment="CENTER">
-                                    <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true" prefWidth="45" prefHeight="30"/>
-                                    <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle" prefWidth="45" prefHeight="30"/>
+                                <HBox spacing="3" alignment="CENTER">
+                                    <ToggleButton fx:id="amToggle" text="AM" styleClass="am-pm-toggle" selected="true" prefWidth="40" prefHeight="25"/>
+                                    <ToggleButton fx:id="pmToggle" text="PM" styleClass="am-pm-toggle" prefWidth="40" prefHeight="25"/>
                                 </HBox>
                                 
                                 <!-- Add/Remove Buttons -->
-                                <VBox spacing="2">
+                                <VBox spacing="1">
                                     <Button fx:id="addTimeButton" text="Add" styleClass="add-button" onAction="#handleAddTime"/>
                                     <Button fx:id="removeTimeButton" text="Remove" styleClass="remove-button" onAction="#handleRemoveTime"/>
                                     <Button text="Test Spinners" styleClass="add-button" onAction="#testSpinners"/>
@@ -151,9 +151,9 @@
                     </VBox>
 
                     <!-- Additional Information -->
-                    <VBox spacing="3">
+                    <VBox spacing="2">
                         <Label text="Additional Information:" styleClass="form-label"/>
-                        <TextArea fx:id="noteField" styleClass="form-field" wrapText="true" prefRowCount="2" prefHeight="50"/>
+                        <TextArea fx:id="noteField" styleClass="form-field" wrapText="true" prefRowCount="1" prefHeight="40"/>
                     </VBox>
 
                     <!-- Bottom Action Buttons -->

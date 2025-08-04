@@ -350,13 +350,13 @@
 .add-button {
     -fx-background-color: #12594C;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 4px 8px;
     -fx-cursor: hand;
-    -fx-pref-width: 70px;
-    -fx-pref-height: 30px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 22px;
 }
 
 .add-button:hover {
@@ -366,13 +366,13 @@
 .remove-button {
     -fx-background-color: #DC6D67;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 6px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 4px 8px;
     -fx-cursor: hand;
-    -fx-pref-width: 70px;
-    -fx-pref-height: 30px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 22px;
 }
 
 .remove-button:hover {
