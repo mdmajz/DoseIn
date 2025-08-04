@@ -61,18 +61,56 @@ public class SetReminderController {
         // Initialize date pickers with current date
         startDatePicker.setValue(LocalDate.now());
         endDatePicker.setValue(LocalDate.now().plusDays(7));
+        
+        // Set default values for spinners
+        hourSpinner.getValueFactory().setValue(12);
+        minuteSpinner.getValueFactory().setValue(0);
     }
 
     @FXML
     private void handleAddTime(ActionEvent e) {
-        int hour = hourSpinner.getValue() % 12;
-        if (pmToggle.isSelected()) hour += 12;
-        LocalTime t = LocalTime.of(hour, minuteSpinner.getValue());
-        String timeText = t.format(displayFmt);
-        
-        if (!selectedTimes.contains(timeText)) {
-            selectedTimes.add(timeText);
-            timesListView.getItems().add(timeText);
+        try {
+            // Test if spinners are accessible
+            if (hourSpinner == null || minuteSpinner == null) {
+                new Alert(Alert.AlertType.ERROR, "Spinners not initialized").showAndWait();
+                return;
+            }
+            
+            int hour = hourSpinner.getValue();
+            int minute = minuteSpinner.getValue();
+            
+            System.out.println("Hour: " + hour + ", Minute: " + minute);
+            System.out.println("AM Selected: " + amToggle.isSelected() + ", PM Selected: " + pmToggle.isSelected());
+            
+            // Convert to 24-hour format
+            if (pmToggle.isSelected() && hour != 12) {
+                hour += 12;
+            } else if (amToggle.isSelected() && hour == 12) {
+                hour = 0;
+            }
+            
+            System.out.println("Converted Hour: " + hour);
+            
+            LocalTime t = LocalTime.of(hour, minute);
+            String timeText = t.format(displayFmt);
+            
+            System.out.println("Time Text: " + timeText);
+            
+            if (!selectedTimes.contains(timeText)) {
+                selectedTimes.add(timeText);
+                timesListView.getItems().add(timeText);
+                System.out.println("Time added successfully");
+                
+                // Show success message
+                new Alert(Alert.AlertType.INFORMATION, "Time added: " + timeText).showAndWait();
+            } else {
+                System.out.println("Time already exists");
+                new Alert(Alert.AlertType.WARNING, "Time already exists: " + timeText).showAndWait();
+            }
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Invalid time format: " + ex.getMessage()).showAndWait();
         }
     }
 

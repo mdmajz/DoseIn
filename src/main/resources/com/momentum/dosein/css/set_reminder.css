@@ -273,6 +273,23 @@
     -fx-background-color: white;
 }
 
+.time-spinner .increment-arrow-button,
+.time-spinner .decrement-arrow-button {
+    -fx-background-color: #4BA684;
+    -fx-border-color: transparent;
+}
+
+.time-spinner .increment-arrow,
+.time-spinner .decrement-arrow {
+    -fx-background-color: white;
+}
+
+.time-spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px;
+}
+
 .time-separator {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
