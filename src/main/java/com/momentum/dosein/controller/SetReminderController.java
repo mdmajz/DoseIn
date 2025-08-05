@@ -32,7 +32,7 @@ public class SetReminderController {
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
     @FXML private RadioButton  amRadio, pmRadio;
     @FXML private HBox timeListContainer;
-    @FXML private TextArea    noteField;
+    @FXML private TextField    noteField;
 
     private final ReminderService reminderService = new ReminderService();
     private final DateTimeFormatter displayFmt =
