@@ -281,13 +281,6 @@
     -fx-text-fill: white;
 }
 
-.am-pm-button:!selected {
-    -fx-background-color: #E8F5E8;
-    -fx-text-fill: #2D7A5F;
-    -fx-border-color: #C4E3D4;
-    -fx-border-width: 1px;
-}
-
 .am-selected {
     -fx-background-color: #2D7A5F;
     -fx-text-fill: white;
