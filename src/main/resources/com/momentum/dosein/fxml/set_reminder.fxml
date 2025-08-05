@@ -83,9 +83,9 @@
 
     <center>
         <VBox alignment="TOP_CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_LEFT" minWidth="560.0" minHeight="500.0" prefWidth="560.0" prefHeight="500.0" spacing="12" styleClass="reminder-card">
+                            <VBox fx:id="cardBox" alignment="TOP_LEFT" minWidth="560.0" minHeight="500.0" prefWidth="560.0" prefHeight="500.0" spacing="12" styleClass="reminder-card">
                 <padding>
-                    <Insets bottom="25" left="0" right="25" top="0" />
+                    <Insets bottom="25" left="40" right="40" top="0" />
                 </padding>
 
                 <!-- Title -->
@@ -93,19 +93,19 @@
 
                 <!-- Name Field -->
                 <HBox spacing="8" alignment="CENTER_LEFT">
-                    <Label styleClass="form-label" text="Name :" />
+                    <Label styleClass="form-label" text="Name :" prefWidth="100.0" />
                     <TextField fx:id="nameField" prefHeight="30.0" prefWidth="380.0" styleClass="form-field" />
                 </HBox>
 
                 <!-- Start and End Date Fields (Side by Side) -->
                 <HBox spacing="20" alignment="CENTER_LEFT">
                     <HBox spacing="8" alignment="CENTER_LEFT">
-                        <Label styleClass="form-label" text="Start Date :" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="30.0" prefWidth="140.0" styleClass="form-field" />
+                        <Label styleClass="form-label" text="Start Date :" prefWidth="100.0" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="30.0" prefWidth="150.0" styleClass="form-field" />
                     </HBox>
                     <HBox spacing="8" alignment="CENTER_LEFT">
-                        <Label styleClass="form-label" text="End Date :" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="30.0" prefWidth="140.0" styleClass="form-field" />
+                        <Label styleClass="form-label" text="End Date :" prefWidth="86.0" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="30.0" prefWidth="150.0" styleClass="form-field" />
                     </HBox>
                 </HBox>
 

@@ -166,8 +166,7 @@
 .form-label {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
-    -fx-font-weight: 600;
-    -fx-min-width: 120px;
+    -fx-font-weight: bold;
     -fx-alignment: center-left;
 }
 
