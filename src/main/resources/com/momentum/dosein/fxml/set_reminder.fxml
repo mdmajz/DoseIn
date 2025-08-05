@@ -97,16 +97,16 @@
                     <TextField fx:id="nameField" prefHeight="40.0" prefWidth="350.0" styleClass="form-field" />
                 </HBox>
 
-                <!-- Start Date Field -->
-                <HBox spacing="15" alignment="CENTER_LEFT">
-                    <Label styleClass="form-label" text="Start Date :" />
-                    <DatePicker fx:id="startDatePicker" prefHeight="40.0" prefWidth="200.0" styleClass="form-field" />
-                </HBox>
-
-                <!-- End Date Field -->
-                <HBox spacing="15" alignment="CENTER_LEFT">
-                    <Label styleClass="form-label" text="End Date :" />
-                    <DatePicker fx:id="endDatePicker" prefHeight="40.0" prefWidth="200.0" styleClass="form-field" />
+                <!-- Start and End Date Fields (Side by Side) -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label styleClass="form-label" text="Start Date :" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="40.0" prefWidth="150.0" styleClass="form-field" />
+                    </HBox>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label styleClass="form-label" text="End Date :" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="40.0" prefWidth="150.0" styleClass="form-field" />
+                    </HBox>
                 </HBox>
 
                                 <!-- Alert Time Section -->
