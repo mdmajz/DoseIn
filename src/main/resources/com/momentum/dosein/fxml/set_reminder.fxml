@@ -85,11 +85,11 @@
         <VBox alignment="TOP_CENTER" spacing="0" styleClass="reminder-root">
             <VBox fx:id="cardBox" alignment="TOP_CENTER" minWidth="560.0" minHeight="500.0" prefWidth="560.0" prefHeight="500.0" spacing="12" styleClass="reminder-card">
                 <padding>
-                    <Insets bottom="25" left="25" right="25" top="25" />
+                    <Insets bottom="25" left="0" right="25" top="0" />
                 </padding>
 
                 <!-- Title -->
-                <Label styleClass="set-reminder-title" text="Add Medicine Information" />
+                <Label styleClass="set-reminder-title" text="Add Medicine Information" alignment="TOP_LEFT" />
 
                 <!-- Name Field -->
                 <VBox spacing="6">

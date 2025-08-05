@@ -159,7 +159,8 @@
     -fx-font-size: 22px;
     -fx-text-fill: #2D7A5F;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 8px 0;
+    -fx-padding: 35px 0 8px 35px;
+    -fx-alignment: top-left;
 }
 
 .form-label {
