@@ -20,13 +20,13 @@
                     <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
                         <Image url="@../images/logo.png"/>
                     </ImageView>
-                    <Label text="Doseln" styleClass="nav-logo"/>
+                    <Label text="DoseIn" styleClass="nav-logo"/>
                 </HBox>
             </HBox>
 
             <!-- Navigation Menu -->
             <VBox spacing="8" styleClass="nav-menu-container">
-                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button-active">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/dashboard-icon.png"/>
@@ -34,7 +34,7 @@
                     </graphic>
                 </Button>
 
-                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item-schedule">
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/calendar-icon.png"/>
@@ -42,7 +42,7 @@
                     </graphic>
                 </Button>
 
-                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/doctor-icon.png"/>
@@ -83,69 +83,72 @@
 
     <center>
         <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card" stylesheets="@../css/set_reminder.css">
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card">
                 <padding>
                     <Insets bottom="35" left="35" right="35" top="35" />
                 </padding>
 
                 <!-- Title -->
-                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Add Medicine Information" />
+                <Label styleClass="set-reminder-title" text="Add Medicine Information" />
 
-                <!-- Name & Dates (compact form) -->
-                <GridPane hgap="15" styleClass="time-date" stylesheets="@../css/set_reminder.css" vgap="15">
-                    <children>
-                        <Label styleClass="reminder-level" stylesheets="@../css/set_reminder.css" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <TextField fx:id="nameField" prefHeight="62.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-
-                        <Label styleClass="reminder-level" text="Start Date :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="66.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-                        <Label styleClass="reminder-level" text="End Date :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="38.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    </children>
-                    <columnConstraints>
-                        <ColumnConstraints />
-                        <ColumnConstraints />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints />
-                    </rowConstraints>
-                </GridPane>
-
-                <!-- Alert Time Card -->
-                <VBox alignment="TOP_LEFT" spacing="12" styleClass="reminder-mini-card" stylesheets="@../css/set_reminder.css">
-                    <padding>
-                        <Insets bottom="12" left="15" right="15" top="12" />
-                    </padding>
-                    <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Alert Time" />
-                    <HBox alignment="TOP_LEFT" spacing="16">
-                        <!-- Time List -->
-                        <ListView fx:id="timesList" prefHeight="70" prefWidth="143.0" styleClass="reminder-list" stylesheets="@../css/set_reminder.css" />
-                        <!-- Spinner + AM/PM -->
-                        <VBox alignment="CENTER" spacing="7">
-                            <HBox alignment="CENTER" spacing="5">
-                                <Spinner fx:id="hourSpinner" editable="true" prefHeight="23.0" prefWidth="63.0" />
-                                <Label text=":" />
-                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="23.0" prefWidth="68.0" />
-                            </HBox>
-                            <HBox alignment="CENTER" spacing="6">
-                                <RadioButton fx:id="amRadio" prefHeight="16.0" prefWidth="62.0" styleClass="am" stylesheets="@../css/set_reminder.css" text="AM" />
-                                <RadioButton fx:id="pmRadio" prefHeight="16.0" prefWidth="60.0" styleClass="pm" stylesheets="@../css/set_reminder.css" text="PM" />
-                            </HBox>
-                        </VBox>
-                        <!-- Add/Remove Buttons -->
-                        <VBox alignment="CENTER" spacing="7">
-                            <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="23.0" prefWidth="72.0" styleClass="add" stylesheets="@../css/set_reminder.css" text="Add" />
-                            <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="23.0" prefWidth="73.0" styleClass="remove" stylesheets="@../css/set_reminder.css" text="Remove" />
-                        </VBox>
-                    </HBox>
+                <!-- Name Field -->
+                <VBox spacing="8">
+                    <Label styleClass="form-label" text="Name :" />
+                    <TextField fx:id="nameField" prefHeight="50.0" prefWidth="430.0" styleClass="form-field" />
                 </VBox>
 
-                <!-- Additional Info -->
-                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Additional Information :" />
-                <TextField fx:id="noteField" prefHeight="35.0" prefWidth="430.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
+                <!-- Start Date Field -->
+                <VBox spacing="8">
+                    <Label styleClass="form-label" text="Start Date :" />
+                    <DatePicker fx:id="startDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="form-field" />
+                </VBox>
+
+                <!-- End Date Field -->
+                <VBox spacing="8">
+                    <Label styleClass="form-label" text="End Date :" />
+                    <DatePicker fx:id="endDatePicker" prefHeight="50.0" prefWidth="200.0" styleClass="form-field" />
+                </VBox>
+
+                <!-- Alert Time Section -->
+                <VBox spacing="12">
+                    <Label styleClass="form-label" text="Alert Time :" />
+                    
+                    <!-- Pre-set Time Buttons -->
+                    <HBox spacing="10">
+                        <Button text="12:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
+                        <Button text="1:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
+                        <Button text="2:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
+                    </HBox>
+                    
+                    <!-- Time Picker -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <HBox alignment="CENTER" spacing="5" styleClass="time-picker-container">
+                            <Spinner fx:id="hourSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-spinner" />
+                            <Label text=":" styleClass="time-separator" />
+                            <Spinner fx:id="minuteSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-spinner" />
+                        </HBox>
+                        
+                        <VBox spacing="5">
+                            <RadioButton fx:id="amRadio" prefHeight="20.0" prefWidth="40.0" styleClass="am-pm-button am-selected" text="AM" />
+                            <RadioButton fx:id="pmRadio" prefHeight="20.0" prefWidth="40.0" styleClass="am-pm-button" text="PM" />
+                        </VBox>
+                    </HBox>
+                    
+                                    <!-- Add/Remove Buttons -->
+                    <HBox spacing="10">
+                        <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="30.0" prefWidth="80.0" styleClass="remove-button" text="Remove" />
+                        <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="30.0" prefWidth="80.0" styleClass="add-button" text="Add" />
+                    </HBox>
+                    
+                    <!-- Time List (hidden but needed for functionality) -->
+                    <ListView fx:id="timesList" visible="false" managed="false" />
+                </VBox>
+
+                <!-- Additional Information Field -->
+                <VBox spacing="8">
+                    <Label styleClass="form-label" text="Additional Information :" />
+                    <TextArea fx:id="noteField" prefHeight="80.0" prefWidth="430.0" styleClass="form-field" wrapText="true" />
+                </VBox>
 
                 <!-- Bottom Action Buttons -->
                 <HBox alignment="CENTER" spacing="18">

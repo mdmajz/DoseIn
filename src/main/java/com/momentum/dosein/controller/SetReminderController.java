@@ -16,7 +16,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -29,7 +31,7 @@ public class SetReminderController {
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
     @FXML private RadioButton  amRadio, pmRadio;
     @FXML private ListView<String> timesList;
-    @FXML private TextField    noteField;
+    @FXML private TextArea    noteField;
 
     private final ReminderService reminderService = new ReminderService();
     private final DateTimeFormatter displayFmt =
@@ -50,6 +52,44 @@ public class SetReminderController {
         amRadio.setToggleGroup(tg);
         pmRadio.setToggleGroup(tg);
         amRadio.setSelected(true);
+        
+        // Set initial AM/PM styling
+        updateAmPmStyling();
+        
+        // Add listeners for AM/PM radio buttons
+        amRadio.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) updateAmPmStyling();
+        });
+        pmRadio.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) updateAmPmStyling();
+        });
+    }
+    
+    private void updateAmPmStyling() {
+        if (amRadio.isSelected()) {
+            amRadio.getStyleClass().add("am-selected");
+            pmRadio.getStyleClass().remove("am-selected");
+        } else {
+            pmRadio.getStyleClass().add("am-selected");
+            amRadio.getStyleClass().remove("am-selected");
+        }
+    }
+
+    @FXML
+    private void handlePresetTime(ActionEvent e) {
+        Button source = (Button) e.getSource();
+        String timeText = source.getText();
+        
+        // Parse the preset time and add to list
+        try {
+            LocalTime time = LocalTime.parse(timeText, displayFmt);
+            if (!timesList.getItems().contains(timeText)) {
+                timesList.getItems().add(timeText);
+            }
+        } catch (Exception ex) {
+            // Handle parsing error
+            System.err.println("Error parsing preset time: " + timeText);
+        }
     }
 
     @FXML
@@ -57,7 +97,11 @@ public class SetReminderController {
         int hour = hourSpinner.getValue() % 12;
         if (pmRadio.isSelected()) hour += 12;
         LocalTime t = LocalTime.of(hour, minuteSpinner.getValue());
-        timesList.getItems().add(t.format(displayFmt));
+        String timeText = t.format(displayFmt);
+        
+        if (!timesList.getItems().contains(timeText)) {
+            timesList.getItems().add(timeText);
+        }
     }
 
     @FXML
