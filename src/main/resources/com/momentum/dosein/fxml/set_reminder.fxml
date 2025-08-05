@@ -26,7 +26,7 @@
 
             <!-- Navigation Menu -->
             <VBox spacing="8" styleClass="nav-menu-container">
-                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button-active">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/dashboard-icon.png"/>
@@ -34,7 +34,7 @@
                     </graphic>
                 </Button>
 
-                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item">
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item-schedule">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/calendar-icon.png"/>
@@ -42,7 +42,7 @@
                     </graphic>
                 </Button>
 
-                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item">
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/doctor-icon.png"/>

@@ -3,12 +3,12 @@
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #87C9A9;
+    -fx-background-color: #B8E0D1;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-    -fx-background-color: #2D7A5F;
+    -fx-background-color: #4BA684;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
@@ -26,7 +26,7 @@
 }
 
 .logo-container {
-    -fx-background-color: #2D7A5F;
+    -fx-background-color: #12594C;
     -fx-padding: 15 20;
     -fx-alignment: center-left;
     -fx-min-width: 200;
@@ -35,7 +35,7 @@
 
 /* Navigation Buttons */
 .nav-button-active {
-    -fx-background-color: #2D7A5F;
+    -fx-background-color: #12594C;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -53,7 +53,7 @@
 }
 
 .nav-item {
-    -fx-background-color: #58A887;
+    -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -67,7 +67,43 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: #4BA684;
+    -fx-background-color: #24675B;
+}
+
+.nav-item-schedule {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-schedule:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-item-contacts {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-contacts:hover {
+    -fx-background-color: #24675B;
 }
 
 .nav-menu-container {
@@ -76,7 +112,7 @@
 }
 
 .nav-signout {
-    -fx-background-color: #E76F51;
+    -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -90,7 +126,7 @@
 }
 
 .nav-signout:hover {
-    -fx-background-color: #D65A44;
+    -fx-background-color: #C55A54;
 }
 
 .signout-container {
@@ -101,7 +137,7 @@
 
 /* MAIN CONTENT AREA */
 .reminder-root {
-    -fx-background-color: #87C9A9;
+    -fx-background-color: #B8E0D1;
     -fx-alignment: center;
 }
 
