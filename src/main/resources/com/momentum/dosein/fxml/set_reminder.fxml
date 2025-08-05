@@ -147,9 +147,9 @@
                 </VBox>
 
                 <!-- Additional Information Field -->
-                <HBox spacing="8" alignment="TOP_LEFT">
+                <HBox spacing="8" alignment="CENTER_LEFT">
                     <Label styleClass="form-label" text="Additional Information :" prefWidth="100.0" />
-                    <TextArea fx:id="noteField" prefHeight="70.0" prefWidth="380.0" styleClass="form-field" wrapText="true" />
+                    <TextField fx:id="noteField" prefHeight="30.0" prefWidth="380.0" styleClass="form-field" />
                 </HBox>
 
                 <!-- Bottom Action Buttons -->
