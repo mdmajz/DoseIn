@@ -308,7 +308,11 @@
     -fx-border-color: transparent;
 }
 
-.time-spinner .increment-arrow,
+.time-spinner .increment-arrow {
+    -fx-background-color: #12594C;
+    -fx-shape: "M 0 4 L 4 0 L 8 4 Z";
+}
+
 .time-spinner .decrement-arrow {
     -fx-background-color: #12594C;
     -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
@@ -329,10 +333,7 @@
     -fx-border-color: transparent;
 }
 
-.time-spinner .increment-arrow,
-.time-spinner .decrement-arrow {
-    -fx-background-color: #2D7A5F;
-}
+
 
 .time-separator {
     -fx-font-size: 18px;

@@ -58,7 +58,7 @@ public class SetReminderController {
         // Set initial AM/PM styling
         updateAmPmStyling();
         
-        // Add listeners for AM/PM radio buttons
+        // Add listeners for AM/PM toggle buttons
         amRadio.selectedProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal) updateAmPmStyling();
         });

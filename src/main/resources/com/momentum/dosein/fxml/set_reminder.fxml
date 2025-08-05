@@ -131,17 +131,17 @@
                                 <Spinner fx:id="minuteSpinner" editable="true" prefHeight="35.0" prefWidth="50.0" styleClass="time-spinner" />
                             </HBox>
                             
-                            <!-- AM/PM Buttons -->
+                                                        <!-- AM/PM Buttons -->
                             <HBox spacing="3" alignment="CENTER">
-                                <ToggleButton fx:id="amRadio" prefHeight="25.0" prefWidth="40.0" styleClass="am-pm-button am-selected" text="AM" />
+                                <ToggleButton fx:id="amRadio" prefHeight="25.0" prefWidth="40.0" styleClass="am-pm-button" text="AM" />
                                 <ToggleButton fx:id="pmRadio" prefHeight="25.0" prefWidth="40.0" styleClass="am-pm-button" text="PM" />
                             </HBox>
-                            
+
                             <!-- Add/Remove Buttons -->
-                            <VBox spacing="5">
+                            <HBox spacing="5" alignment="CENTER">
                                 <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="25.0" prefWidth="70.0" styleClass="add-button" text="Add" />
                                 <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
-                            </VBox>
+                            </HBox>
                         </VBox>
                     </HBox>
                 </VBox>
