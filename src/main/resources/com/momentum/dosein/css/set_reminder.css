@@ -3,12 +3,12 @@
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #B8E0D1;
+    -fx-background-color: #B4E8D4;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-    -fx-background-color: #4BA684;
+    -fx-background-color: #12594C;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
@@ -36,7 +36,7 @@
 /* Navigation Buttons */
 .nav-button-active {
     -fx-background-color: #12594C;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -49,12 +49,12 @@
 }
 
 .nav-button-active:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
 }
 
 .nav-item {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
+    -fx-background-color: #B4E8D4;
+    -fx-text-fill: #12594C;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -67,12 +67,13 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
 }
 
 .nav-item-schedule {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
+    -fx-background-color: #B4E8D4;
+    -fx-text-fill: #12594C;
     -fx-font-size: 12px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -85,12 +86,13 @@
 }
 
 .nav-item-schedule:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
 }
 
 .nav-item-contacts {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
+    -fx-background-color: #B4E8D4;
+    -fx-text-fill: #12594C;
     -fx-font-size: 12px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -103,7 +105,8 @@
 }
 
 .nav-item-contacts:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
 }
 
 .nav-menu-container {
@@ -113,7 +116,7 @@
 
 .nav-signout {
     -fx-background-color: #DC6D67;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -126,7 +129,7 @@
 }
 
 .nav-signout:hover {
-    -fx-background-color: #C55A54;
+    -fx-background-color: #DC6D67;
 }
 
 .signout-container {
@@ -137,13 +140,13 @@
 
 /* MAIN CONTENT AREA */
 .reminder-root {
-    -fx-background-color: #B8E0D1;
+    -fx-background-color: #B4E8D4;
     -fx-alignment: top-center;
     -fx-padding: 40 0 0 0;
 }
 
 .reminder-card {
-    -fx-background-color: white;
+    -fx-background-color: #FFFFFF;
     -fx-background-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-left;
@@ -157,7 +160,7 @@
 /* Form Elements */
 .set-reminder-title {
     -fx-font-size: 22px;
-    -fx-text-fill: #2D7A5F;
+    -fx-text-fill: #12594C;
     -fx-font-weight: bold;
     -fx-padding: 35px 0 8px 20px;
     -fx-alignment: center-left;
@@ -165,7 +168,7 @@
 
 .form-label {
     -fx-font-size: 14px;
-    -fx-text-fill: #2D7A5F;
+    -fx-text-fill: #12594C;
     -fx-font-weight: 600;
     -fx-min-width: 120px;
     -fx-alignment: center-left;
@@ -173,40 +176,40 @@
 
 .form-field {
     -fx-font-size: 13px;
-    -fx-text-fill: #2D7A5F;
-    -fx-background-color: #E8F5E8;
+    -fx-text-fill: #12594C;
+    -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #C4E3D4;
+    -fx-border-color: #12594C;
     -fx-border-width: 1px;
     -fx-padding: 8px;
-    -fx-prompt-text-fill: #7A9A8A;
+    -fx-prompt-text-fill: #12594C;
 }
 
 .form-field:focused {
-    -fx-border-color: #2D7A5F;
+    -fx-border-color: #12594C;
     -fx-border-width: 2px;
 }
 
 /* DatePicker styling */
 .date-picker {
     -fx-font-size: 14px;
-    -fx-text-fill: #2D7A5F;
-    -fx-background-color: #E8F5E8;
+    -fx-text-fill: #12594C;
+    -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #C4E3D4;
+    -fx-border-color: #12594C;
     -fx-border-width: 1px;
 }
 
 .date-picker .text-field {
-    -fx-background-color: #E8F5E8;
+    -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #C4E3D4;
+    -fx-border-color: #12594C;
     -fx-border-width: 1px;
     -fx-padding: 12px;
-    -fx-prompt-text-fill: #7A9A8A;
+    -fx-prompt-text-fill: #12594C;
 }
 
 .date-picker .arrow-button {
@@ -215,7 +218,7 @@
 }
 
 .date-picker .arrow-button .arrow {
-    -fx-background-color: #2D7A5F;
+    -fx-background-color: #12594C;
 }
 
 /* Time List Scroll */
@@ -233,7 +236,7 @@
 }
 
 .time-list-scroll .scroll-bar:horizontal .thumb {
-    -fx-background-color: #C4E3D4;
+    -fx-background-color: #12594C;
     -fx-background-radius: 5px;
 }
 
@@ -244,8 +247,8 @@
 
 /* Time Buttons */
 .time-button {
-    -fx-background-color: #2D7A5F;
-    -fx-text-fill: white;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
@@ -255,24 +258,24 @@
 }
 
 .time-button:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
 }
 
 .time-button.selected {
-    -fx-background-color: #E76F51;
-    -fx-text-fill: white;
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: #FFFFFF;
 }
 
 .time-button.selected:hover {
-    -fx-background-color: #D65A44;
+    -fx-background-color: #DC6D67;
 }
 
 /* Time Picker Container */
 .time-picker-container {
-    -fx-background-color: #E8F5E8;
+    -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #C4E3D4;
+    -fx-border-color: #12594C;
     -fx-border-width: 1px;
     -fx-padding: 10px;
     -fx-min-width: 120px;
@@ -283,7 +286,7 @@
 .time-spinner {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2D7A5F;
+    -fx-text-fill: #12594C;
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-alignment: center;
@@ -303,7 +306,7 @@
 .time-separator {
     -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2D7A5F;
+    -fx-text-fill: #12594C;
     -fx-alignment: center;
 }
 
@@ -319,19 +322,19 @@
 }
 
 .am-pm-button:selected {
-    -fx-background-color: #2D7A5F;
-    -fx-text-fill: white;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
 }
 
 .am-selected {
-    -fx-background-color: #2D7A5F;
-    -fx-text-fill: white;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
 }
 
 /* Add/Remove Buttons */
 .add-button {
-    -fx-background-color: #2D7A5F;
-    -fx-text-fill: white;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
@@ -340,12 +343,12 @@
 }
 
 .add-button:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
 }
 
 .remove-button {
-    -fx-background-color: #E76F51;
-    -fx-text-fill: white;
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
@@ -354,13 +357,13 @@
 }
 
 .remove-button:hover {
-    -fx-background-color: #D65A44;
+    -fx-background-color: #DC6D67;
 }
 
 /* Action Buttons */
 .cancel-button {
-    -fx-background-color: #E76F51;
-    -fx-text-fill: white;
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
@@ -369,12 +372,12 @@
 }
 
 .cancel-button:hover {
-    -fx-background-color: #D65A44;
+    -fx-background-color: #DC6D67;
 }
 
 .set-reminder-button {
-    -fx-background-color: #2D7A5F;
-    -fx-text-fill: white;
+    -fx-background-color: #12594C;
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
@@ -383,17 +386,17 @@
 }
 
 .set-reminder-button:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #12594C;
 }
 
 /* TextArea styling */
 .text-area {
     -fx-font-size: 14px;
-    -fx-text-fill: #2D7A5F;
-    -fx-background-color: #E8F5E8;
+    -fx-text-fill: #12594C;
+    -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #C4E3D4;
+    -fx-border-color: #12594C;
     -fx-border-width: 1px;
     -fx-padding: 12px;
 }
@@ -403,6 +406,6 @@
 }
 
 .text-area:focused {
-    -fx-border-color: #2D7A5F;
+    -fx-border-color: #12594C;
     -fx-border-width: 2px;
 }
