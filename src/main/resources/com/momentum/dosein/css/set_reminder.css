@@ -146,7 +146,7 @@
     -fx-background-color: white;
     -fx-background-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-alignment: top-center;
+    -fx-alignment: top-left;
     -fx-spacing: 12;
     -fx-min-width: 560px;
     -fx-min-height: 500px;
@@ -159,8 +159,8 @@
     -fx-font-size: 22px;
     -fx-text-fill: #2D7A5F;
     -fx-font-weight: bold;
-    -fx-padding: 35px 0 8px 35px;
-    -fx-alignment: top-left;
+    -fx-padding: 35px 0 8px 20px;
+    -fx-alignment: center-left;
 }
 
 .form-label {
