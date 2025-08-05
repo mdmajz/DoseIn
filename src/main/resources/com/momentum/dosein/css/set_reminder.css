@@ -218,8 +218,32 @@
     -fx-background-color: #2D7A5F;
 }
 
-/* Preset Time Buttons */
-.preset-time-button {
+/* Time List Scroll */
+.time-list-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.time-list-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.time-list-scroll .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.time-list-scroll .scroll-bar:horizontal .thumb {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+}
+
+.time-list-container {
+    -fx-alignment: center-left;
+    -fx-padding: 5px;
+}
+
+/* Time Buttons */
+.time-button {
     -fx-background-color: #2D7A5F;
     -fx-text-fill: white;
     -fx-font-size: 12px;
@@ -227,10 +251,20 @@
     -fx-background-radius: 8px;
     -fx-padding: 6px 12px;
     -fx-cursor: hand;
+    -fx-min-width: 80px;
 }
 
-.preset-time-button:hover {
+.time-button:hover {
     -fx-background-color: #24675B;
+}
+
+.time-button.selected {
+    -fx-background-color: #E76F51;
+    -fx-text-fill: white;
+}
+
+.time-button.selected:hover {
+    -fx-background-color: #D65A44;
 }
 
 /* Time Picker Container */

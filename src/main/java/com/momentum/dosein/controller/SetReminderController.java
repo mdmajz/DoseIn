@@ -19,6 +19,7 @@ import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -30,7 +31,7 @@ public class SetReminderController {
     @FXML private DatePicker   startDatePicker, endDatePicker;
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
     @FXML private RadioButton  amRadio, pmRadio;
-    @FXML private ListView<String> timesList;
+    @FXML private HBox timeListContainer;
     @FXML private TextArea    noteField;
 
     private final ReminderService reminderService = new ReminderService();
@@ -75,22 +76,7 @@ public class SetReminderController {
         }
     }
 
-    @FXML
-    private void handlePresetTime(ActionEvent e) {
-        Button source = (Button) e.getSource();
-        String timeText = source.getText();
-        
-        // Parse the preset time and add to list
-        try {
-            LocalTime time = LocalTime.parse(timeText, displayFmt);
-            if (!timesList.getItems().contains(timeText)) {
-                timesList.getItems().add(timeText);
-            }
-        } catch (Exception ex) {
-            // Handle parsing error
-            System.err.println("Error parsing preset time: " + timeText);
-        }
-    }
+
 
     @FXML
     private void handleAddTime(ActionEvent e) {
@@ -99,16 +85,39 @@ public class SetReminderController {
         LocalTime t = LocalTime.of(hour, minuteSpinner.getValue());
         String timeText = t.format(displayFmt);
         
-        if (!timesList.getItems().contains(timeText)) {
-            timesList.getItems().add(timeText);
+        // Check if time already exists
+        boolean timeExists = timeListContainer.getChildren().stream()
+            .anyMatch(node -> node instanceof Button && ((Button) node).getText().equals(timeText));
+        
+        if (!timeExists) {
+            Button timeButton = new Button(timeText);
+            timeButton.getStyleClass().add("time-button");
+            timeButton.setOnAction(event -> handleTimeButtonClick(timeButton));
+            timeListContainer.getChildren().add(timeButton);
         }
     }
 
     @FXML
     private void handleRemoveTime(ActionEvent e) {
-        var sel = timesList.getSelectionModel().getSelectedIndices();
-        sel.sorted((a, b) -> b - a)
-                .forEach(i -> timesList.getItems().remove((int) i));
+        // Remove selected time button
+        timeListContainer.getChildren().removeIf(node -> 
+            node instanceof Button && node.getStyleClass().contains("selected"));
+    }
+    
+    private void handleTimeButtonClick(Button timeButton) {
+        // Toggle selection
+        if (timeButton.getStyleClass().contains("selected")) {
+            timeButton.getStyleClass().remove("selected");
+        } else {
+            // Deselect all other buttons
+            timeListContainer.getChildren().forEach(node -> {
+                if (node instanceof Button) {
+                    node.getStyleClass().remove("selected");
+                }
+            });
+            // Select this button
+            timeButton.getStyleClass().add("selected");
+        }
     }
 
     @FXML
@@ -117,7 +126,7 @@ public class SetReminderController {
         LocalDate start = startDatePicker.getValue();
         LocalDate end = endDatePicker.getValue();
 
-        if (name.isEmpty() || timesList.getItems().isEmpty()) {
+        if (name.isEmpty() || timeListContainer.getChildren().isEmpty()) {
             new Alert(Alert.AlertType.WARNING,
                     "Please enter a name and at least one alert time.")
                     .showAndWait();
@@ -140,10 +149,13 @@ public class SetReminderController {
 
         String note = noteField.getText().trim();
 
-        for (String ts : timesList.getItems()) {
-            LocalTime lt = LocalTime.parse(ts, displayFmt);
-            MedicineReminder r = new MedicineReminder(name, "", start, end, lt, note);
-            reminderService.addReminder(r);
+        for (javafx.scene.Node node : timeListContainer.getChildren()) {
+            if (node instanceof Button) {
+                String ts = ((Button) node).getText();
+                LocalTime lt = LocalTime.parse(ts, displayFmt);
+                MedicineReminder r = new MedicineReminder(name, "", start, end, lt, note);
+                reminderService.addReminder(r);
+            }
         }
 
         new Alert(Alert.AlertType.INFORMATION,

@@ -113,13 +113,6 @@
                 <VBox spacing="8">
                     <Label styleClass="form-label" text="Alert Time :" />
                     
-                    <!-- Pre-set Time Buttons -->
-                    <HBox spacing="8">
-                        <Button text="12:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
-                        <Button text="1:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
-                        <Button text="2:00 AM" onAction="#handlePresetTime" styleClass="preset-time-button" />
-                    </HBox>
-                    
                     <!-- Time Picker -->
                     <HBox alignment="CENTER_LEFT" spacing="8">
                         <HBox alignment="CENTER" spacing="5" styleClass="time-picker-container">
@@ -136,12 +129,14 @@
                     
                     <!-- Add/Remove Buttons -->
                     <HBox spacing="8">
-                        <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
                         <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="25.0" prefWidth="70.0" styleClass="add-button" text="Add" />
+                        <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
                     </HBox>
                     
-                    <!-- Time List (hidden but needed for functionality) -->
-                    <ListView fx:id="timesList" visible="false" managed="false" />
+                    <!-- Scrollable Time List -->
+                    <ScrollPane fitToWidth="true" prefHeight="60" styleClass="time-list-scroll">
+                        <HBox fx:id="timeListContainer" spacing="8" styleClass="time-list-container" />
+                    </ScrollPane>
                 </VBox>
 
                 <!-- Additional Information Field -->
