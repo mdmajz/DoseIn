@@ -82,10 +82,10 @@
     </left>
 
     <center>
-        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="500.0" prefHeight="500.0" prefWidth="480.0" spacing="15" styleClass="reminder-card">
+        <VBox alignment="TOP_CENTER" spacing="0" styleClass="reminder-root">
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="450.0" prefHeight="450.0" prefWidth="430.0" spacing="12" styleClass="reminder-card">
                 <padding>
-                    <Insets bottom="25" left="25" right="25" top="25" />
+                    <Insets bottom="20" left="20" right="20" top="20" />
                 </padding>
 
                 <!-- Title -->
@@ -94,20 +94,20 @@
                 <!-- Name Field -->
                 <VBox spacing="6">
                     <Label styleClass="form-label" text="Name :" />
-                    <TextField fx:id="nameField" prefHeight="40.0" prefWidth="400.0" styleClass="form-field" />
+                    <TextField fx:id="nameField" prefHeight="35.0" prefWidth="350.0" styleClass="form-field" />
                 </VBox>
 
-                <!-- Start Date Field -->
-                <VBox spacing="6">
-                    <Label styleClass="form-label" text="Start Date :" />
-                    <DatePicker fx:id="startDatePicker" prefHeight="40.0" prefWidth="180.0" styleClass="form-field" />
-                </VBox>
-
-                <!-- End Date Field -->
-                <VBox spacing="6">
-                    <Label styleClass="form-label" text="End Date :" />
-                    <DatePicker fx:id="endDatePicker" prefHeight="40.0" prefWidth="180.0" styleClass="form-field" />
-                </VBox>
+                <!-- Start and End Date Fields (Side by Side) -->
+                <HBox spacing="15">
+                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                        <Label styleClass="form-label" text="Start Date :" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="35.0" prefWidth="150.0" styleClass="form-field" />
+                    </VBox>
+                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                        <Label styleClass="form-label" text="End Date :" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="35.0" prefWidth="150.0" styleClass="form-field" />
+                    </VBox>
+                </HBox>
 
                                 <!-- Alert Time Section -->
                 <VBox spacing="8">
@@ -147,7 +147,7 @@
                 <!-- Additional Information Field -->
                 <VBox spacing="6">
                     <Label styleClass="form-label" text="Additional Information :" />
-                    <TextArea fx:id="noteField" prefHeight="60.0" prefWidth="400.0" styleClass="form-field" wrapText="true" />
+                    <TextArea fx:id="noteField" prefHeight="50.0" prefWidth="350.0" styleClass="form-field" wrapText="true" />
                 </VBox>
 
                 <!-- Bottom Action Buttons -->

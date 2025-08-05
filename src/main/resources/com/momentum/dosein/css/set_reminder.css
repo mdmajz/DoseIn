@@ -138,7 +138,8 @@
 /* MAIN CONTENT AREA */
 .reminder-root {
     -fx-background-color: #B8E0D1;
-    -fx-alignment: center;
+    -fx-alignment: top-center;
+    -fx-padding: 20 0 0 0;
 }
 
 .reminder-card {
@@ -146,34 +147,34 @@
     -fx-background-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
-    -fx-spacing: 12;
-    -fx-max-width: 500px;
-    -fx-max-height: 500px;
+    -fx-spacing: 10;
+    -fx-max-width: 450px;
+    -fx-max-height: 450px;
 }
 
 /* Form Elements */
 .set-reminder-title {
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
     -fx-text-fill: #2D7A5F;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 8px 0;
+    -fx-padding: 0 0 6px 0;
 }
 
 .form-label {
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-text-fill: #2D7A5F;
     -fx-font-weight: 600;
 }
 
 .form-field {
-    -fx-font-size: 13px;
+    -fx-font-size: 12px;
     -fx-text-fill: #2D7A5F;
     -fx-background-color: #E8F5E8;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
     -fx-border-color: #C4E3D4;
     -fx-border-width: 1px;
-    -fx-padding: 8px;
+    -fx-padding: 6px;
     -fx-prompt-text-fill: #7A9A8A;
 }
 
@@ -216,10 +217,10 @@
 .preset-time-button {
     -fx-background-color: #2D7A5F;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 5px 10px;
     -fx-cursor: hand;
 }
 
@@ -234,14 +235,14 @@
     -fx-border-radius: 8px;
     -fx-border-color: #C4E3D4;
     -fx-border-width: 1px;
-    -fx-padding: 10px;
-    -fx-min-width: 120px;
-    -fx-min-height: 40px;
+    -fx-padding: 8px;
+    -fx-min-width: 100px;
+    -fx-min-height: 35px;
 }
 
 /* Time Spinner */
 .time-spinner {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #2D7A5F;
     -fx-background-color: transparent;
@@ -261,7 +262,7 @@
 }
 
 .time-separator {
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #2D7A5F;
     -fx-alignment: center;
@@ -269,13 +270,13 @@
 
 /* AM/PM Buttons */
 .am-pm-button {
-    -fx-font-size: 11px;
+    -fx-font-size: 10px;
     -fx-font-weight: 600;
     -fx-background-radius: 5px;
-    -fx-padding: 6px 10px;
+    -fx-padding: 5px 8px;
     -fx-cursor: hand;
-    -fx-min-width: 35px;
-    -fx-min-height: 20px;
+    -fx-min-width: 30px;
+    -fx-min-height: 18px;
 }
 
 .am-pm-button:selected {
@@ -292,10 +293,10 @@
 .add-button {
     -fx-background-color: #2D7A5F;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 5px 10px;
     -fx-cursor: hand;
 }
 
@@ -306,10 +307,10 @@
 .remove-button {
     -fx-background-color: #E76F51;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 5px 10px;
     -fx-cursor: hand;
 }
 
@@ -321,10 +322,10 @@
 .cancel-button {
     -fx-background-color: #E76F51;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 10px 20px;
+    -fx-padding: 8px 16px;
     -fx-cursor: hand;
 }
 
@@ -335,10 +336,10 @@
 .set-reminder-button {
     -fx-background-color: #2D7A5F;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 10px 20px;
+    -fx-padding: 8px 16px;
     -fx-cursor: hand;
 }
 
