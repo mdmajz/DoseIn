@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/set_reminder.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.SetReminderController">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/set_reminder.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.SetReminderController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -82,8 +82,9 @@
     </left>
 
     <center>
-        <VBox alignment="TOP_CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="560.0" prefHeight="500.0" prefWidth="540.0" spacing="12" styleClass="reminder-card">
+        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
+            <Region VBox.vgrow="ALWAYS" minHeight="50"/>
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" minWidth="560.0" minHeight="500.0" prefWidth="560.0" prefHeight="500.0" spacing="12" styleClass="reminder-card">
                 <padding>
                     <Insets bottom="25" left="25" right="25" top="25" />
                 </padding>
