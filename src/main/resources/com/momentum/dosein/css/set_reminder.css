@@ -167,6 +167,8 @@
     -fx-font-size: 14px;
     -fx-text-fill: #2D7A5F;
     -fx-font-weight: 600;
+    -fx-min-width: 120px;
+    -fx-alignment: center-left;
 }
 
 .form-field {
