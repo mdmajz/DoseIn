@@ -138,8 +138,8 @@
 /* MAIN CONTENT AREA */
 .reminder-root {
     -fx-background-color: #B8E0D1;
-    -fx-alignment: center;
-    -fx-padding: 0;
+    -fx-alignment: top-center;
+    -fx-padding: 40 0 0 0;
 }
 
 .reminder-card {

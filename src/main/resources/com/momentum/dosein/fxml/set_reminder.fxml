@@ -82,8 +82,7 @@
     </left>
 
     <center>
-        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <Region VBox.vgrow="ALWAYS" minHeight="50"/>
+        <VBox alignment="TOP_CENTER" spacing="0" styleClass="reminder-root">
             <VBox fx:id="cardBox" alignment="TOP_CENTER" minWidth="560.0" minHeight="500.0" prefWidth="560.0" prefHeight="500.0" spacing="12" styleClass="reminder-card">
                 <padding>
                     <Insets bottom="25" left="25" right="25" top="25" />
