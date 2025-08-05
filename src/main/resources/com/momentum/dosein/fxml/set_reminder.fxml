@@ -92,20 +92,20 @@
                 <Label styleClass="set-reminder-title" text="Add Medicine Information" />
 
                 <!-- Name Field -->
-                <HBox spacing="15" alignment="CENTER_LEFT">
+                <HBox spacing="8" alignment="CENTER_LEFT">
                     <Label styleClass="form-label" text="Name :" />
-                    <TextField fx:id="nameField" prefHeight="40.0" prefWidth="350.0" styleClass="form-field" />
+                    <TextField fx:id="nameField" prefHeight="30.0" prefWidth="380.0" styleClass="form-field" />
                 </HBox>
 
                 <!-- Start and End Date Fields (Side by Side) -->
                 <HBox spacing="20" alignment="CENTER_LEFT">
-                    <HBox spacing="15" alignment="CENTER_LEFT">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
                         <Label styleClass="form-label" text="Start Date :" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="40.0" prefWidth="150.0" styleClass="form-field" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="30.0" prefWidth="140.0" styleClass="form-field" />
                     </HBox>
-                    <HBox spacing="15" alignment="CENTER_LEFT">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
                         <Label styleClass="form-label" text="End Date :" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="40.0" prefWidth="150.0" styleClass="form-field" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="30.0" prefWidth="140.0" styleClass="form-field" />
                     </HBox>
                 </HBox>
 
