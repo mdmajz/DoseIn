@@ -113,32 +113,37 @@
                 <VBox spacing="8">
                     <Label styleClass="form-label" text="Alert Time :" />
                     
-                    <!-- Time Picker and Add/Remove Buttons Side by Side -->
-                    <HBox spacing="15" alignment="CENTER_LEFT">
-                        <!-- Time Picker -->
-                        <HBox alignment="CENTER" spacing="5" styleClass="time-picker-container">
-                            <Spinner fx:id="hourSpinner" editable="true" prefHeight="35.0" prefWidth="50.0" styleClass="time-spinner" />
-                            <Label text=":" styleClass="time-separator" />
-                            <Spinner fx:id="minuteSpinner" editable="true" prefHeight="35.0" prefWidth="50.0" styleClass="time-spinner" />
-                        </HBox>
-                        
-                        <!-- AM/PM Buttons -->
-                        <VBox spacing="3">
-                            <RadioButton fx:id="amRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button am-selected" text="AM" />
-                            <RadioButton fx:id="pmRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button" text="PM" />
+                    <!-- Time List and Controls Side by Side -->
+                    <HBox spacing="15" alignment="TOP_LEFT">
+                        <!-- Scrollable Time List Box -->
+                        <VBox styleClass="time-list-box">
+                            <ScrollPane fitToWidth="true" prefHeight="90" prefWidth="300" styleClass="time-list-scroll">
+                                <HBox fx:id="timeListContainer" spacing="8" styleClass="time-list-container" />
+                            </ScrollPane>
                         </VBox>
                         
-                        <!-- Add/Remove Buttons -->
-                        <VBox spacing="5">
-                            <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="25.0" prefWidth="70.0" styleClass="add-button" text="Add" />
-                            <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
+                        <!-- Time Picker and Add/Remove Buttons -->
+                        <VBox spacing="8" alignment="TOP_LEFT">
+                            <!-- Time Picker -->
+                            <HBox alignment="CENTER" spacing="5" styleClass="time-picker-container">
+                                <Spinner fx:id="hourSpinner" editable="true" prefHeight="35.0" prefWidth="50.0" styleClass="time-spinner" />
+                                <Label text=":" styleClass="time-separator" />
+                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="35.0" prefWidth="50.0" styleClass="time-spinner" />
+                            </HBox>
+                            
+                            <!-- AM/PM Buttons -->
+                            <VBox spacing="3">
+                                <RadioButton fx:id="amRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button am-selected" text="AM" />
+                                <RadioButton fx:id="pmRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button" text="PM" />
+                            </VBox>
+                            
+                            <!-- Add/Remove Buttons -->
+                            <VBox spacing="5">
+                                <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="25.0" prefWidth="70.0" styleClass="add-button" text="Add" />
+                                <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="25.0" prefWidth="70.0" styleClass="remove-button" text="Remove" />
+                            </VBox>
                         </VBox>
                     </HBox>
-                    
-                    <!-- Scrollable Time List -->
-                    <ScrollPane fitToWidth="true" prefHeight="60" styleClass="time-list-scroll">
-                        <HBox fx:id="timeListContainer" spacing="8" styleClass="time-list-container" />
-                    </ScrollPane>
                 </VBox>
 
                 <!-- Additional Information Field -->

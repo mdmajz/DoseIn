@@ -3,12 +3,12 @@
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #B4E8D4;
+    -fx-background-color: #B8E0D1;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-    -fx-background-color: #12594C;
+    -fx-background-color: #4BA684;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
@@ -36,7 +36,7 @@
 /* Navigation Buttons */
 .nav-button-active {
     -fx-background-color: #12594C;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -49,12 +49,12 @@
 }
 
 .nav-button-active:hover {
-    -fx-background-color: #12594C;
+    -fx-background-color: #24675B;
 }
 
 .nav-item {
-    -fx-background-color: #B4E8D4;
-    -fx-text-fill: #12594C;
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -67,13 +67,12 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: #12594C;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #24675B;
 }
 
 .nav-item-schedule {
-    -fx-background-color: #B4E8D4;
-    -fx-text-fill: #12594C;
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
     -fx-font-size: 12px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -86,13 +85,12 @@
 }
 
 .nav-item-schedule:hover {
-    -fx-background-color: #12594C;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #24675B;
 }
 
 .nav-item-contacts {
-    -fx-background-color: #B4E8D4;
-    -fx-text-fill: #12594C;
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
     -fx-font-size: 12px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -105,8 +103,7 @@
 }
 
 .nav-item-contacts:hover {
-    -fx-background-color: #12594C;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #24675B;
 }
 
 .nav-menu-container {
@@ -116,7 +113,7 @@
 
 .nav-signout {
     -fx-background-color: #DC6D67;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
@@ -129,7 +126,7 @@
 }
 
 .nav-signout:hover {
-    -fx-background-color: #DC6D67;
+    -fx-background-color: #C55A54;
 }
 
 .signout-container {
@@ -219,6 +216,20 @@
 
 .date-picker .arrow-button .arrow {
     -fx-background-color: #12594C;
+}
+
+/* Time List Box */
+.time-list-box {
+    -fx-background-color: #96CBB8;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #12594C;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+    -fx-min-width: 300px;
+    -fx-min-height: 90px;
+    -fx-max-width: 300px;
+    -fx-max-height: 90px;
 }
 
 /* Time List Scroll */
