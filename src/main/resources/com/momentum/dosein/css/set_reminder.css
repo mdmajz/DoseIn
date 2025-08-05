@@ -294,7 +294,28 @@
 
 /* Time Spinner */
 .time-spinner {
-    -fx-font-size: 16px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-alignment: center;
+}
+
+.time-spinner .increment-arrow-button,
+.time-spinner .decrement-arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.time-spinner .increment-arrow,
+.time-spinner .decrement-arrow {
+    -fx-background-color: #12594C;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+}
+
+.time-spinner .text-field {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
     -fx-background-color: transparent;
@@ -322,18 +343,23 @@
 
 /* AM/PM Buttons */
 .am-pm-button {
-    -fx-font-size: 11px;
+    -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 5px;
-    -fx-padding: 6px 10px;
+    -fx-padding: 8px 12px;
     -fx-cursor: hand;
-    -fx-min-width: 35px;
-    -fx-min-height: 20px;
+    -fx-min-width: 40px;
+    -fx-min-height: 25px;
+    -fx-background-color: #B4E8D4;
+    -fx-text-fill: #12594C;
+    -fx-border-color: #12594C;
+    -fx-border-width: 1px;
 }
 
 .am-pm-button:selected {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
+    -fx-border-color: #12594C;
 }
 
 .am-selected {

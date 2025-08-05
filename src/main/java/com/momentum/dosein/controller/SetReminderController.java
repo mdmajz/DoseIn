@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
 import javafx.scene.control.TextArea;
@@ -30,7 +31,7 @@ public class SetReminderController {
     @FXML private TextField    nameField;
     @FXML private DatePicker   startDatePicker, endDatePicker;
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
-    @FXML private RadioButton  amRadio, pmRadio;
+    @FXML private ToggleButton  amRadio, pmRadio;
     @FXML private HBox timeListContainer;
     @FXML private TextField    noteField;
 

@@ -132,10 +132,10 @@
                             </HBox>
                             
                             <!-- AM/PM Buttons -->
-                            <VBox spacing="3">
-                                <RadioButton fx:id="amRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button am-selected" text="AM" />
-                                <RadioButton fx:id="pmRadio" prefHeight="18.0" prefWidth="35.0" styleClass="am-pm-button" text="PM" />
-                            </VBox>
+                            <HBox spacing="3" alignment="CENTER">
+                                <ToggleButton fx:id="amRadio" prefHeight="25.0" prefWidth="40.0" styleClass="am-pm-button am-selected" text="AM" />
+                                <ToggleButton fx:id="pmRadio" prefHeight="25.0" prefWidth="40.0" styleClass="am-pm-button" text="PM" />
+                            </HBox>
                             
                             <!-- Add/Remove Buttons -->
                             <VBox spacing="5">
