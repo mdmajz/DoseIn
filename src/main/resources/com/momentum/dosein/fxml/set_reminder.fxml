@@ -101,11 +101,11 @@
                 <HBox spacing="20" alignment="CENTER_LEFT">
                     <HBox spacing="8" alignment="CENTER_LEFT">
                         <Label styleClass="form-label" text="Start Date :" prefWidth="100.0" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="30.0" prefWidth="150.0" styleClass="form-field" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="30.0" prefWidth="170.0" styleClass="form-field" />
                     </HBox>
                     <HBox spacing="8" alignment="CENTER_LEFT">
                         <Label styleClass="form-label" text="End Date :" prefWidth="86.0" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="30.0" prefWidth="150.0" styleClass="form-field" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="30.0" prefWidth="170.0" styleClass="form-field" />
                     </HBox>
                 </HBox>
 

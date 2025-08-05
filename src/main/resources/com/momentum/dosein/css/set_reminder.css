@@ -184,7 +184,7 @@
 
 .form-field:focused {
     -fx-border-color: #12594C;
-    -fx-border-width: 2px;
+    -fx-border-width: 1px;
 }
 
 /* DatePicker styling */
@@ -417,5 +417,5 @@
 
 .text-area:focused {
     -fx-border-color: #12594C;
-    -fx-border-width: 2px;
+    -fx-border-width: 1px;
 }
