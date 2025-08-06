@@ -139,7 +139,7 @@
 .reminder-root {
     -fx-background-color: #B4E8D4;
     -fx-alignment: top-center;
-    -fx-padding: 30 40;
+    -fx-padding: 20 40;
 }
 
 /* CARD STYLES */
@@ -159,7 +159,7 @@
 
 /* CARD TITLES */
 .card-title {
-    -fx-font-size: 20px;
+    -fx-font-size: 18px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
     -fx-alignment: center-left;
@@ -167,18 +167,18 @@
 
 /* FORM FIELDS */
 .field-label {
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
 }
 
 .medicine-field {
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-text-fill: #12594C;
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-color: transparent;
-    -fx-padding: 12px;
+    -fx-padding: 8px;
     -fx-prompt-text-fill: #12594C;
 }
 
@@ -189,7 +189,7 @@
 
 /* DatePicker styling for medicine fields */
 .date-picker {
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-text-fill: #12594C;
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
@@ -200,7 +200,7 @@
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
     -fx-border-color: transparent;
-    -fx-padding: 12px;
+    -fx-padding: 8px;
     -fx-prompt-text-fill: #12594C;
 }
 
@@ -217,19 +217,19 @@
 .time-selector-container {
     -fx-alignment: center;
     -fx-spacing: 8;
-    -fx-padding: 15px;
+    -fx-padding: 10px;
 }
 
 .time-display-box {
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
-    -fx-padding: 8px 15px;
+    -fx-padding: 6px 12px;
     -fx-alignment: center;
     -fx-spacing: 3;
 }
 
 .time-number-spinner {
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
     -fx-background-color: transparent;
@@ -245,7 +245,7 @@
 }
 
 .time-number-spinner .text-field {
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
     -fx-background-color: transparent;
@@ -254,16 +254,16 @@
 }
 
 .time-colon {
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
 }
 
 .time-caret {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
-    -fx-padding: 0 0 0 5px;
+    -fx-padding: 0 0 0 3px;
 }
 
 /* AM/PM BUTTONS */
@@ -313,25 +313,25 @@
 /* TIME DISPLAY SECTION */
 .times-display-section {
     -fx-alignment: center-left;
-    -fx-min-height: 60px;
+    -fx-min-height: 45px;
 }
 
 .time-pills-container {
     -fx-alignment: center-left;
-    -fx-spacing: 8;
-    -fx-padding: 10px;
+    -fx-spacing: 6;
+    -fx-padding: 8px;
 }
 
 /* TIME PILLS/BUTTONS */
 .time-button {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-font-weight: 600;
     -fx-background-radius: 15px;
-    -fx-padding: 8px 15px;
+    -fx-padding: 6px 12px;
     -fx-cursor: hand;
-    -fx-min-width: 75px;
+    -fx-min-width: 70px;
 }
 
 .time-button:hover {
@@ -351,16 +351,16 @@
 .action-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 15;
-    -fx-padding: 15px 0 0 0;
+    -fx-padding: 10px 0 0 0;
 }
 
 .cancel-button {
     -fx-background-color: #DC6D67;
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 12px 25px;
+    -fx-padding: 10px 20px;
     -fx-cursor: hand;
 }
 
@@ -371,10 +371,10 @@
 .set-reminder-button {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 12px 25px;
+    -fx-padding: 10px 20px;
     -fx-cursor: hand;
 }
 
