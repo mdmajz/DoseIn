@@ -179,7 +179,7 @@
     -fx-background-radius: 8px;
     -fx-border-color: transparent;
     -fx-padding: 8px;
-    -fx-prompt-text-fill: #12594C;
+    -fx-prompt-text-fill: derive(#12594C, 50%);
 }
 
 .medicine-field:focused {
@@ -201,7 +201,7 @@
     -fx-background-radius: 8px;
     -fx-border-color: transparent;
     -fx-padding: 8px;
-    -fx-prompt-text-fill: #12594C;
+    -fx-prompt-text-fill: derive(#12594C, 50%);
 }
 
 .date-picker .arrow-button {
