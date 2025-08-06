@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" maxHeight="700" maxWidth="1000" minHeight="700" minWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
 
     <!-- LEFT NAVIGATION -->
     <left>

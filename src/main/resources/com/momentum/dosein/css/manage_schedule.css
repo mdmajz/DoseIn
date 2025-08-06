@@ -70,10 +70,28 @@
     -fx-background-color: #24675B;
 }
 
+.nav-item-schedule {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-schedule:hover {
+    -fx-background-color: #24675B;
+}
+
 .nav-item-contacts {
     -fx-background-color: #3D9574;
     -fx-text-fill: white;
-    -fx-font-size: 15px;
+    -fx-font-size: 12px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
