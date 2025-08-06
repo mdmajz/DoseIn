@@ -238,46 +238,26 @@
     -fx-padding: 0;
 }
 
-/* DOCTOR CONTACTS LIST */
-.doctor-contacts-list {
+/* CONTACTS VBOX */
+.contacts-vbox {
     -fx-background-color: transparent;
-    -fx-background-radius: 0;
-    -fx-border-radius: 0;
-    -fx-pref-height: 270;
-    -fx-max-height: 270;
-    -fx-min-height: 270;
+    -fx-spacing: 10;
     -fx-padding: 10;
 }
 
-.doctor-contacts-list .list-cell {
+/* CONTACT BAR */
+.contact-bar {
     -fx-background-color: #4BA684;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
     -fx-min-height: 50;
     -fx-pref-height: 50;
     -fx-max-height: 50;
-    -fx-padding: 8 15 8 15;
-    -fx-margin: 0 0 10 0;
+    -fx-cursor: hand;
 }
 
-.doctor-contacts-list .list-cell:selected {
-    -fx-background-color: #12594C;
-}
-
-.doctor-contacts-list .list-cell:hover {
+.contact-bar:hover {
     -fx-background-color: #3D9574;
-}
-
-.doctor-contacts-list .list-cell:empty {
-    -fx-background-color: transparent;
-    -fx-padding: 0;
-    -fx-min-height: 0;
-    -fx-pref-height: 0;
-    -fx-max-height: 0;
-    -fx-margin: 0;
 }
 
 /* For Additional Information specifically */

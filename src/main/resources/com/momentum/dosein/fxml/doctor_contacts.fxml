@@ -118,7 +118,7 @@
                     <!-- Doctor Contact Bars Container -->
                     <VBox styleClass="contacts-container">
                         <ScrollPane styleClass="contacts-scrollpane" fitToWidth="true" fitToHeight="true">
-                            <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
+                            <VBox fx:id="contactsVBox" styleClass="contacts-vbox" />
                         </ScrollPane>
                     </VBox>
                 </VBox>

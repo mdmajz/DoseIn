@@ -14,12 +14,13 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.scene.layout.Priority;
 import javafx.geometry.Insets;
+import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.util.List;
 
 public class DoctorContactsController {
 
-    @FXML private ListView<DoctorContact> contactsList;
+    @FXML private VBox contactsVBox;
 
     private final DoctorService service = new DoctorService();
 
@@ -27,49 +28,42 @@ public class DoctorContactsController {
     public void initialize() {
         // load persisted contacts
         List<DoctorContact> all = service.getAllContacts();
-        contactsList.getItems().setAll(all);
+        loadContacts(all);
+    }
 
-        // Create custom cell factory for doctor contact bars
-        contactsList.setCellFactory(lv -> new ListCell<DoctorContact>() {
-            @Override
-            protected void updateItem(DoctorContact dc, boolean empty) {
-                super.updateItem(dc, empty);
-                if (empty || dc == null) {
-                    setGraphic(null);
-                    setText(null);
-                } else {
-                    // Create custom layout for doctor contact bar
-                    HBox contactBar = new HBox();
-                    contactBar.setAlignment(Pos.CENTER_LEFT);
-                    contactBar.setSpacing(10);
-                    contactBar.setStyle("-fx-padding: 0 15;");
-                    
-                    // Doctor name on the left
-                    Label nameLabel = new Label(dc.getName());
-                    nameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
-                    
-                    // Spacer to push phone to the right
-                    Region spacer = new Region();
-                    HBox.setHgrow(spacer, Priority.ALWAYS);
-                    
-                    // Phone number on the right
-                    Label phoneLabel = new Label(dc.getPhone());
-                    phoneLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
-                    
-                    contactBar.getChildren().addAll(nameLabel, spacer, phoneLabel);
-                    setGraphic(contactBar);
-                    setText(null);
-                }
-            }
-        });
-
-        // Handle contact selection - navigate to doctor info scene
-        contactsList.setOnMouseClicked(event -> {
-            DoctorContact selected = contactsList.getSelectionModel().getSelectedItem();
-            if (selected != null) {
-                navigateToDoctorInfo(selected);
-            }
-        });
+    private void loadContacts(List<DoctorContact> contacts) {
+        contactsVBox.getChildren().clear();
+        
+        for (DoctorContact dc : contacts) {
+            // Create doctor contact bar
+            HBox contactBar = new HBox();
+            contactBar.setAlignment(Pos.CENTER_LEFT);
+            contactBar.setSpacing(10);
+            contactBar.setStyle("-fx-padding: 0 15;");
+            contactBar.getStyleClass().add("contact-bar");
+            
+            // Doctor name on the left
+            Label nameLabel = new Label(dc.getName());
+            nameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+            
+            // Spacer to push phone to the right
+            Region spacer = new Region();
+            HBox.setHgrow(spacer, Priority.ALWAYS);
+            
+            // Phone number on the right
+            Label phoneLabel = new Label(dc.getPhone());
+            phoneLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+            
+            contactBar.getChildren().addAll(nameLabel, spacer, phoneLabel);
+            
+            // Add click handler
+            contactBar.setOnMouseClicked(event -> {
+                navigateToDoctorInfo(dc);
+            });
+            
+            // Add to VBox
+            contactsVBox.getChildren().add(contactBar);
+        }
     }
 
     private void navigateToDoctorInfo(DoctorContact doctor) {
@@ -81,7 +75,7 @@ public class DoctorContactsController {
             DoctorInfoController controller = loader.getController();
             controller.setDoctor(doctor);
             
-            Scene scene = contactsList.getScene();
+            Scene scene = contactsVBox.getScene();
             scene.setRoot(root);
         } catch (IOException ex) {
             ex.printStackTrace();
