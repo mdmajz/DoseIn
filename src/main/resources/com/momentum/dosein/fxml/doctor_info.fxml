@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_info.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorInfoController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_info.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorInfoController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -20,7 +25,7 @@
                     <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                         <Image url="@../images/logo.png" />
                     </ImageView>
-                    <Label styleClass="nav-logo" text="Doseln" />
+                    <Label styleClass="nav-logo" text="DoseIn" />
                 </HBox>
             </HBox>
 
@@ -42,7 +47,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleDoctorContacts" styleClass="nav-button-active" text="Doctor Contacts">
+                <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
                         <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
                             <Image url="@../images/doctor-icon.png" />
@@ -81,78 +86,62 @@
         </VBox>
     </left>
 
-    <!-- CENTER CONTENT -->
     <center>
-        <VBox spacing="15" styleClass="main-content">
-            <padding>
-                <Insets bottom="30" left="40" right="40" top="30" />
-            </padding>
+        <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" spacing="15" styleClass="doctor-info-root">
+            <!-- Doctor Information Card -->
+            <VBox fx:id="doctorInfoCard" alignment="TOP_LEFT" prefHeight="600.0" prefWidth="520.0" spacing="12" styleClass="doctor-info-card">
+                <padding>
+                    <Insets bottom="18" left="30" right="30" top="18" />
+                </padding>
 
-            <!-- Header -->
-            <VBox spacing="0" styleClass="welcome-banner">
-                <Label styleClass="manage-title" text="Doctor Contacts" />
-                <Region HBox.hgrow="ALWAYS" />
-                <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
-            </VBox>
+                <!-- Title -->
+                <Label styleClass="card-title" text="Doctor Information" />
 
-            <!-- Doctor Information Container -->
-            <VBox spacing="20" styleClass="doctor-info-container">
-                <Label styleClass="manage-panel-title" text="Doctor Information" />
-
-                <GridPane hgap="10" vgap="10" styleClass="info-grid">
-                    <!-- Regular inline fields (Name, Speciality, etc.) -->
-                    <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-
-                    <Label styleClass="manage-label" text="Speciality :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label fx:id="specialtyLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-                    <Label styleClass="manage-label" text="Phone :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <Label fx:id="phoneLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-                    <Label styleClass="manage-label" text="Email :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <Label fx:id="emailLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-
-                    <Label styleClass="manage-label" text="Location :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <Label fx:id="locationLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-
-                    <!-- Additional Information (special handling) -->
-                    <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                    <VBox GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.rowIndex="5" GridPane.halignment="LEFT">
-                        <Label fx:id="noteLabel" styleClass="manage-value" style="-fx-padding: 0 0 0 0;" />
+                <!-- Doctor Information Fields -->
+                <VBox spacing="12" styleClass="info-fields-container">
+                    <!-- Name -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Name :" />
+                        <Label fx:id="nameLabel" styleClass="info-value" />
                     </VBox>
 
-                    <columnConstraints>
-                        <ColumnConstraints halignment="LEFT" prefWidth="180"/>
-                        <ColumnConstraints halignment="LEFT" prefWidth="400" hgrow="ALWAYS"/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints /> <!-- For Additional Info label -->
-                        <RowConstraints /> <!-- For Additional Info content -->
-                    </rowConstraints>
-                </GridPane>
+                    <!-- Specialty -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Specialty :" />
+                        <Label fx:id="specialtyLabel" styleClass="info-value" />
+                    </VBox>
 
-                <Region VBox.vgrow="ALWAYS" />
+                    <!-- Phone -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Phone :" />
+                        <Label fx:id="phoneLabel" styleClass="info-value" />
+                    </VBox>
 
-                <!-- Action Buttons -->
-                <HBox alignment="CENTER" spacing="10" styleClass="action-buttons-container">
-                    <Button onAction="#handleGoBack" prefWidth="120" styleClass="go-back-button" text="Go back">
-                    </Button>
+                    <!-- Email -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Email :" />
+                        <Label fx:id="emailLabel" styleClass="info-value" />
+                    </VBox>
 
-                    <Button onAction="#handleDelete" prefWidth="120" styleClass="delete-button" text="Delete">
-                        <graphic>
-                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                <Image url="@../images/delete-icon.png" />
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                </HBox>
+                    <!-- Location -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Location :" />
+                        <Label fx:id="locationLabel" styleClass="info-value" />
+                    </VBox>
+
+                    <!-- Additional Information -->
+                    <VBox spacing="3">
+                        <Label styleClass="field-label" text="Additional Information :" />
+                        <Label fx:id="noteLabel" styleClass="info-value" wrapText="true" />
+                    </VBox>
+                </VBox>
             </VBox>
+
+            <!-- Bottom Action Buttons (Outside of card) -->
+            <HBox alignment="CENTER" prefHeight="82.0" prefWidth="520.0" spacing="5.0" styleClass="action-buttons-container">
+                <Button onAction="#handleGoBack" styleClass="go-back-button" text="Go Back" />
+                <Button onAction="#handleDelete" styleClass="delete-button" text="Delete" />
+            </HBox>
         </VBox>
     </center>
 </BorderPane>
