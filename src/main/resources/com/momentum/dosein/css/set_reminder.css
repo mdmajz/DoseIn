@@ -323,10 +323,10 @@
 /* TIME DISPLAY SECTION */
 .times-display-section {
     -fx-alignment: center-left;
-    -fx-min-height: 50px;
+    -fx-min-height: 60px;
     -fx-background-color: #96CBB8;
     -fx-background-radius: 8px;
-    -fx-padding: 8px;
+    -fx-padding: 10px;
 }
 
 /* HORIZONTAL SCROLL PANE */
@@ -336,8 +336,8 @@
     -fx-fit-to-height: true;
     -fx-hbar-policy: as-needed;
     -fx-vbar-policy: never;
-    -fx-max-height: 40px;
-    -fx-min-height: 40px;
+    -fx-max-height: 45px;
+    -fx-min-height: 45px;
 }
 
 .time-scroll-pane .viewport {
@@ -395,7 +395,7 @@
 .action-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 15;
-    -fx-padding: 8px 0 15px 0;
+    -fx-padding: 5px 0 10px 0;
 }
 
 .cancel-button {
