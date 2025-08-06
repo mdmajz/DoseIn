@@ -179,8 +179,9 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-min-width: 530;
     -fx-max-width: 530;
-    -fx-pref-height: 350;
-    -fx-padding: 15;
+    -fx-pref-height: 500;
+    -fx-min-height: 500;
+    -fx-padding: 20;
 }
 
 /* SECTION TITLES */
@@ -198,7 +199,8 @@
     -fx-background-radius: 8px;
     -fx-padding: 10px;
     -fx-pref-width: 250px;
-    -fx-pref-height: 300px;
+    -fx-pref-height: 450px;
+    -fx-min-height: 450px;
     -fx-alignment: top-center;
 }
 
@@ -213,7 +215,8 @@
 .medicine-scroll {
     -fx-background-color: transparent;
     -fx-fit-to-width: true;
-    -fx-pref-height: 280px;
+    -fx-pref-height: 430px;
+    -fx-min-height: 430px;
     -fx-hbar-policy: NEVER;
     -fx-vbar-policy: AS_NEEDED;
 }
@@ -238,7 +241,8 @@
     -fx-pref-width: 270;
     -fx-min-width: 270;
     -fx-max-width: 270;
-    -fx-pref-height: 300;
+    -fx-pref-height: 450;
+    -fx-min-height: 450;
     -fx-alignment: top-center;
 }
 
