@@ -49,6 +49,39 @@ public class SetReminderController {
         hourSpinner.setValueFactory(new IntegerSpinnerValueFactory(1, 12, 12));
         minuteSpinner.setValueFactory(new IntegerSpinnerValueFactory(0, 59, 0));
 
+        // Set date picker format to DD/MM/YYYY
+        startDatePicker.setConverter(new javafx.util.StringConverter<LocalDate>() {
+            private final java.time.format.DateTimeFormatter formatter = 
+                java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            
+            @Override
+            public String toString(LocalDate date) {
+                return date != null ? formatter.format(date) : "";
+            }
+            
+            @Override
+            public LocalDate fromString(String string) {
+                return (string != null && !string.isEmpty()) 
+                    ? LocalDate.parse(string, formatter) : null;
+            }
+        });
+
+        endDatePicker.setConverter(new javafx.util.StringConverter<LocalDate>() {
+            private final java.time.format.DateTimeFormatter formatter = 
+                java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            
+            @Override
+            public String toString(LocalDate date) {
+                return date != null ? formatter.format(date) : "";
+            }
+            
+            @Override
+            public LocalDate fromString(String string) {
+                return (string != null && !string.isEmpty()) 
+                    ? LocalDate.parse(string, formatter) : null;
+            }
+        });
+
         // Group AM/PM toggles
         var tg = new javafx.scene.control.ToggleGroup();
         amRadio.setToggleGroup(tg);
