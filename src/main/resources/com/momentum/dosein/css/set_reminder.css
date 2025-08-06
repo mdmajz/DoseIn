@@ -139,71 +139,67 @@
 .reminder-root {
     -fx-background-color: #B4E8D4;
     -fx-alignment: top-center;
-    -fx-padding: 40 0 0 0;
+    -fx-padding: 30 40;
 }
 
-.reminder-card {
+/* CARD STYLES */
+.medicine-info-card {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-left;
-    -fx-spacing: 12;
-    -fx-min-width: 560px;
-    -fx-min-height: 500px;
-    -fx-max-width: 560px;
-    -fx-max-height: 500px;
 }
 
-/* Form Elements */
-.set-reminder-title {
-    -fx-font-size: 22px;
+.alert-time-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-alignment: top-center;
+}
+
+/* CARD TITLES */
+.card-title {
+    -fx-font-size: 20px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-    -fx-padding: 35px 0 8px 20px;
     -fx-alignment: center-left;
 }
 
-.form-label {
+/* FORM FIELDS */
+.field-label {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-    -fx-alignment: center-left;
 }
 
-.form-field {
+.medicine-field {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
     -fx-border-color: transparent;
-    -fx-border-width: 0px;
     -fx-padding: 12px;
     -fx-prompt-text-fill: #12594C;
 }
 
-.form-field:focused {
+.medicine-field:focused {
     -fx-border-color: #12594C;
     -fx-border-width: 1px;
 }
 
-/* DatePicker styling */
+/* DatePicker styling for medicine fields */
 .date-picker {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
     -fx-border-color: transparent;
-    -fx-border-width: 0px;
 }
 
 .date-picker .text-field {
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
     -fx-border-color: transparent;
-    -fx-border-width: 0px;
     -fx-padding: 12px;
     -fx-prompt-text-fill: #12594C;
 }
@@ -217,41 +213,22 @@
     -fx-background-color: #12594C;
 }
 
-/* Removed old time list styles - no longer needed */
-
-/* Alert Time Section */
-.alert-time-title {
-    -fx-font-size: 22px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-alignment: center;
-    -fx-padding: 10px 0 5px 0;
-}
-
-.alert-time-container {
-    -fx-alignment: center;
-    -fx-spacing: 15;
-}
-
-.time-input-container {
+/* TIME SELECTOR STYLES */
+.time-selector-container {
     -fx-alignment: center;
     -fx-spacing: 8;
     -fx-padding: 15px;
 }
 
-/* Time Display Container */
-.time-display-container {
+.time-display-box {
     -fx-background-color: #B4E8D4;
     -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
-    -fx-border-color: #12594C;
-    -fx-border-width: 1px;
-    -fx-padding: 8px 12px;
+    -fx-padding: 8px 15px;
     -fx-alignment: center;
-    -fx-spacing: 2;
+    -fx-spacing: 3;
 }
 
-.time-display-spinner {
+.time-number-spinner {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
@@ -260,14 +237,14 @@
     -fx-alignment: center;
 }
 
-.time-display-spinner .increment-arrow-button,
-.time-display-spinner .decrement-arrow-button {
+.time-number-spinner .increment-arrow-button,
+.time-number-spinner .decrement-arrow-button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-opacity: 0;
 }
 
-.time-display-spinner .text-field {
+.time-number-spinner .text-field {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
@@ -280,89 +257,79 @@
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
-    -fx-alignment: center;
 }
 
 .time-caret {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
-    -fx-alignment: center;
     -fx-padding: 0 0 0 5px;
 }
 
-/* AM/PM Buttons */
+/* AM/PM BUTTONS */
 .am-button, .pm-button {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
     -fx-background-radius: 5px;
-    -fx-padding: 8px;
     -fx-cursor: hand;
     -fx-background-color: #B4E8D4;
     -fx-text-fill: #12594C;
-    -fx-border-color: #12594C;
-    -fx-border-width: 1px;
     -fx-alignment: center;
 }
 
 .am-button:selected, .pm-button:selected {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
-    -fx-border-color: #12594C;
 }
 
-/* Add/Remove Buttons */
-.add-time-button {
+/* ADD/REMOVE BUTTONS */
+.add-time-btn {
     -fx-background-color: #B4E8D4;
     -fx-text-fill: #12594C;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
-    -fx-border-color: #12594C;
-    -fx-border-width: 1px;
-    -fx-padding: 8px;
     -fx-cursor: hand;
 }
 
-.add-time-button:hover {
+.add-time-btn:hover {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
 }
 
-.remove-time-button {
+.remove-time-btn {
     -fx-background-color: #DC6D67;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
     -fx-background-radius: 8px;
-    -fx-padding: 8px;
     -fx-cursor: hand;
 }
 
-.remove-time-button:hover {
+.remove-time-btn:hover {
     -fx-background-color: #C55A54;
 }
 
-/* Time Display Area */
-.time-display-area {
+/* TIME DISPLAY SECTION */
+.times-display-section {
     -fx-alignment: center-left;
-    -fx-padding: 10px 0;
+    -fx-min-height: 60px;
 }
 
-.time-buttons-container {
+.time-pills-container {
     -fx-alignment: center-left;
     -fx-spacing: 8;
+    -fx-padding: 10px;
 }
 
-/* Time Buttons - Updated styling to match design */
+/* TIME PILLS/BUTTONS */
 .time-button {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 12px;
     -fx-font-weight: 600;
-    -fx-background-radius: 8px;
-    -fx-padding: 8px 12px;
+    -fx-background-radius: 15px;
+    -fx-padding: 8px 15px;
     -fx-cursor: hand;
     -fx-min-width: 75px;
 }
@@ -380,19 +347,25 @@
     -fx-background-color: #C55A54;
 }
 
-/* Action Buttons */
+/* ACTION BUTTONS */
+.action-buttons-container {
+    -fx-alignment: center;
+    -fx-spacing: 15;
+    -fx-padding: 15px 0 0 0;
+}
+
 .cancel-button {
     -fx-background-color: #DC6D67;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 10px 20px;
+    -fx-padding: 12px 25px;
     -fx-cursor: hand;
 }
 
 .cancel-button:hover {
-    -fx-background-color: #DC6D67;
+    -fx-background-color: #C55A54;
 }
 
 .set-reminder-button {
@@ -401,12 +374,12 @@
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-background-radius: 10px;
-    -fx-padding: 10px 20px;
+    -fx-padding: 12px 25px;
     -fx-cursor: hand;
 }
 
 .set-reminder-button:hover {
-    -fx-background-color: #12594C;
+    -fx-background-color: #0F4A3F;
 }
 
 /* TextArea styling */
