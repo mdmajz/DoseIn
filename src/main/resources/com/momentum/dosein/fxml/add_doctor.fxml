@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/add_doctor.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.AddDoctorController">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/add_doctor.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.AddDoctorController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -42,7 +42,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleDoctorContacts" styleClass="nav-button-active" text="Doctor Contacts">
+                <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
                         <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
                             <Image url="@../images/doctor-icon.png" />
@@ -81,24 +81,21 @@
         </VBox>
     </left>
 
-    <!-- CENTER: Add Doctor Form -->
+    <!-- CENTER CONTENT -->
     <center>
-        <VBox spacing="20" alignment="TOP_LEFT" styleClass="main-content">
-            <!-- Header -->
-            <VBox spacing="0" styleClass="welcome-banner">
-                <Label styleClass="manage-title" text="Doctor Contacts" />
-                <Region HBox.hgrow="ALWAYS" />
-                <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
-            </VBox>
+        <VBox spacing="15" styleClass="main-content">
+            <padding>
+                <Insets bottom="30" left="40" right="40" top="30" />
+            </padding>
+
+            <!-- Form Title -->
+            <Label text="Add Doctor Information" styleClass="form-title"/>
 
             <!-- White Form Container -->
             <VBox styleClass="add-form-container" alignment="TOP_LEFT">
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
-
-                <!-- Form Title -->
-                <Label text="Add Medicine Information" styleClass="form-section-title"/>
 
                 <!-- Form Fields -->
                 <VBox spacing="15" styleClass="form-fields-container">
@@ -108,9 +105,9 @@
                         <TextField fx:id="nameField" styleClass="form-field"/>
                     </HBox>
 
-                    <!-- Speciality -->
+                    <!-- Specialty -->
                     <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="Speciality :" styleClass="form-label" minWidth="120"/>
+                        <Label text="Specialty :" styleClass="form-label" minWidth="120"/>
                         <TextField fx:id="specialtyField" styleClass="form-field"/>
                     </HBox>
 
@@ -132,22 +129,21 @@
                         <TextField fx:id="locationField" styleClass="form-field"/>
                     </HBox>
 
-                    <!-- Additional Info -->
+                    <!-- Additional Information -->
                     <VBox spacing="5">
                         <Label text="Additional Information :" styleClass="form-label"/>
                         <TextArea fx:id="noteArea" styleClass="additional-field" wrapText="true"/>
                     </VBox>
                 </VBox>
-
-                <!-- Action Buttons -->
-                <HBox alignment="BOTTOM_RIGHT" spacing="10" styleClass="action-buttons-container">
-                    <Button onAction="#handleCancel" prefWidth="120" styleClass="cancel-button" text="Cancel">
-                    </Button>
-
-                    <Button onAction="#handleAddEntry" prefWidth="120" styleClass="add-button" text="Add">
-                    </Button>
-                </HBox>
             </VBox>
+
+            <!-- Action Buttons (Outside White Card) -->
+            <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="action-buttons-container">
+                <Button onAction="#handleCancel" prefWidth="120" styleClass="cancel-button" text="Cancel">
+                </Button>
+                <Button onAction="#handleAddEntry" prefWidth="120" styleClass="add-button" text="Add">
+                </Button>
+            </HBox>
         </VBox>
     </center>
 </BorderPane>

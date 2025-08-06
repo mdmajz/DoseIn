@@ -1,4 +1,5 @@
 /* add_doctor.css */
+
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
@@ -136,76 +137,50 @@
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 15;
     -fx-background-color: #B8E0D1;
     -fx-padding: 30 40 30 40;
 }
 
-/* TITLE & SUBTITLE */
-.manage-title {
-    -fx-font-size: 28px;
+/* FORM TITLE */
+.form-title {
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
-    -fx-padding: 0 0 0 25;
-}
-
-.manage-slogan {
-    -fx-font-size: 14px;
-    -fx-text-fill: #666666;
-    -fx-font-weight: 500;
-    -fx-wrap-text: true;
-    -fx-padding: 0 0 0 25;
-}
-
-.welcome-banner {
-    -fx-background-color: "white";
-    -fx-spacing: "0";
-    -fx-alignment:"CENTER_LEFT";
+    -fx-padding: 0 0 10 0;
 }
 
 /* ADD FORM CONTAINER */
 .add-form-container {
     -fx-background-color: white;
     -fx-background-radius: 10px;
-    -fx-padding: 25;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-pref-height: 500;
-    -fx-max-height: 500;
-    -fx-min-height: 500;
-}
-
-/* FORM SECTION TITLE */
-.form-section-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 20 0;
+    -fx-pref-height: 350;
+    -fx-min-height: 350;
+    -fx-max-height: 350;
 }
 
 /* FORM FIELDS CONTAINER */
 .form-fields-container {
     -fx-spacing: 15;
-    -fx-padding: 0 0 20 0;
 }
 
-/* Form Elements */
+/* FORM LABEL */
 .form-label {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-min-width: 120px;
+    -fx-font-weight: 600;
 }
 
+/* FORM FIELD */
 .form-field {
-    -fx-pref-width: 400px;
-    -fx-pref-height: 35px;
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 5px;
     -fx-border-color: #E0E0E0;
+    -fx-border-radius: 5px;
     -fx-border-width: 1px;
-    -fx-padding: 8px 12px;
-    -fx-font-size: 13px;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+    -fx-pref-width: 300;
 }
 
 .form-field:focused {
@@ -213,16 +188,18 @@
     -fx-border-width: 2px;
 }
 
+/* ADDITIONAL FIELD */
 .additional-field {
-    -fx-pref-width: 400px;
-    -fx-pref-height: 100px;
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 5px;
     -fx-border-color: #E0E0E0;
+    -fx-border-radius: 5px;
     -fx-border-width: 1px;
-    -fx-padding: 8px 12px;
-    -fx-font-size: 13px;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+    -fx-pref-width: 300;
+    -fx-pref-height: 80;
+    -fx-min-height: 80;
 }
 
 .additional-field:focused {
@@ -233,25 +210,21 @@
 /* ACTION BUTTONS CONTAINER */
 .action-buttons-container {
     -fx-padding: 20 0 0 0;
-    -fx-alignment: center;
-    -fx-spacing: 10;
 }
 
 /* CANCEL BUTTON */
 .cancel-button {
-    -fx-background-color: #E57373;
+    -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
-    -fx-graphic-text-gap: 8px;
-    -fx-content-display: left;
+    -fx-padding: 10 20;
     -fx-cursor: hand;
 }
 
 .cancel-button:hover {
-    -fx-background-color: #EF5350;
+    -fx-background-color: #C55A54;
 }
 
 /* ADD BUTTON */
@@ -260,10 +233,8 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
-    -fx-graphic-text-gap: 8px;
-    -fx-content-display: left;
+    -fx-padding: 10 20;
     -fx-cursor: hand;
 }
 
