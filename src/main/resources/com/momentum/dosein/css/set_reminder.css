@@ -314,12 +314,15 @@
 .times-display-section {
     -fx-alignment: center-left;
     -fx-min-height: 45px;
+    -fx-background-color: #96CBB8;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
 }
 
 .time-pills-container {
     -fx-alignment: center-left;
     -fx-spacing: 6;
-    -fx-padding: 8px;
+    -fx-padding: 5px;
 }
 
 /* TIME PILLS/BUTTONS */
@@ -351,7 +354,7 @@
 .action-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 15;
-    -fx-padding: 10px 0 0 0;
+    -fx-padding: 15px 0 20px 0;
 }
 
 .cancel-button {
