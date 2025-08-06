@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorContactsController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_info.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorInfoController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -95,27 +95,63 @@
                 <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
             </VBox>
 
-            <!-- Main Content Container with White Background -->
-            <VBox spacing="20" styleClass="main-content-container">
-                <!-- Saved Contacts Section -->
-                <VBox spacing="10" styleClass="saved-contacts-pane">
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <Label styleClass="manage-section-title" text="Saved Contacts" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Button onAction="#handleAdd" styleClass="add-contact-button" text="Add">
-                            <graphic>
-                                <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                    <Image url="@../images/plus-icon.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                    </HBox>
-                    
-                    <!-- Doctor Contact Bars -->
-                    <VBox spacing="8" styleClass="contacts-list">
-                        <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
+            <!-- Doctor Information Container -->
+            <VBox spacing="20" styleClass="doctor-info-container">
+                <Label styleClass="manage-panel-title" text="Doctor Information" />
+
+                <GridPane hgap="10" vgap="10" styleClass="info-grid">
+                    <!-- Regular inline fields (Name, Speciality, etc.) -->
+                    <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label styleClass="manage-label" text="Speciality :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label fx:id="specialtyLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label styleClass="manage-label" text="Phone :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Label fx:id="phoneLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label styleClass="manage-label" text="Email :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <Label fx:id="emailLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label styleClass="manage-label" text="Location :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <Label fx:id="locationLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <!-- Additional Information (special handling) -->
+                    <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <VBox GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.rowIndex="5" GridPane.halignment="LEFT">
+                        <Label fx:id="noteLabel" styleClass="manage-value" style="-fx-padding: 0 0 0 0;" />
                     </VBox>
-                </VBox>
+
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" prefWidth="180"/>
+                        <ColumnConstraints halignment="LEFT" prefWidth="400" hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints /> <!-- For Additional Info label -->
+                        <RowConstraints /> <!-- For Additional Info content -->
+                    </rowConstraints>
+                </GridPane>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER" spacing="10" styleClass="action-buttons-container">
+                    <Button onAction="#handleGoBack" prefWidth="120" styleClass="go-back-button" text="Go back">
+                    </Button>
+
+                    <Button onAction="#handleDelete" prefWidth="120" styleClass="delete-button" text="Delete">
+                        <graphic>
+                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                <Image url="@../images/delete-icon.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
             </VBox>
         </VBox>
     </center>

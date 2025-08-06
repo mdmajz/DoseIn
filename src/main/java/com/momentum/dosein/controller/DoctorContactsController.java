@@ -19,12 +19,6 @@ import java.util.List;
 public class DoctorContactsController {
 
     @FXML private ListView<DoctorContact> contactsList;
-    @FXML private Label nameLabel;
-    @FXML private Label specialtyLabel;
-    @FXML private Label phoneLabel;
-    @FXML private Label emailLabel;
-    @FXML private Label locationLabel;
-    @FXML private Label noteLabel;
 
     private final DoctorService service = new DoctorService();
 
@@ -68,26 +62,30 @@ public class DoctorContactsController {
             }
         });
 
-        contactsList.getSelectionModel()
-                .selectedItemProperty()
-                .addListener((obs, oldDc, newDc) -> showDetails(newDc));
+        // Handle contact selection - navigate to doctor info scene
+        contactsList.setOnMouseClicked(event -> {
+            DoctorContact selected = contactsList.getSelectionModel().getSelectedItem();
+            if (selected != null) {
+                navigateToDoctorInfo(selected);
+            }
+        });
     }
 
-    private void showDetails(DoctorContact dc) {
-        if (dc==null) {
-            nameLabel.setText("");
-            specialtyLabel.setText("");
-            phoneLabel.setText("");
-            emailLabel.setText("");
-            locationLabel.setText("");
-            noteLabel.setText("");
-        } else {
-            nameLabel.setText(dc.getName());
-            specialtyLabel.setText(dc.getSpecialty());
-            phoneLabel.setText(dc.getPhone());
-            emailLabel.setText(dc.getEmail());
-            locationLabel.setText(dc.getLocation());
-            noteLabel.setText(dc.getNote());
+    private void navigateToDoctorInfo(DoctorContact doctor) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/momentum/dosein/fxml/doctor_info.fxml"));
+            Parent root = loader.load();
+            
+            // Get the controller and set the doctor
+            DoctorInfoController controller = loader.getController();
+            controller.setDoctor(doctor);
+            
+            Scene scene = contactsList.getScene();
+            scene.setRoot(root);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Doctor Information screen.").showAndWait();
         }
     }
 
@@ -104,25 +102,6 @@ public class DoctorContactsController {
             new Alert(Alert.AlertType.ERROR,
                     "Could not load Add Doctor screen.").showAndWait();
         }
-    }
-
-    @FXML
-    private void handleGoBack(ActionEvent e) {
-        // This method is for the "Go back" button in the doctor info panel
-        // For now, it just clears the selection
-        contactsList.getSelectionModel().clearSelection();
-    }
-
-    @FXML
-    private void handleDelete(ActionEvent e) {
-        DoctorContact sel = contactsList.getSelectionModel().getSelectedItem();
-        if (sel==null) {
-            new Alert(Alert.AlertType.WARNING,
-                    "Select a contact first.").showAndWait();
-            return;
-        }
-        service.deleteContact(sel);
-        initialize();  // reload list & clear details
     }
 
     // sidebar navigation stubs:
