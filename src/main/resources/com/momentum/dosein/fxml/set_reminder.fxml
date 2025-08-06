@@ -128,9 +128,9 @@
             </VBox>
 
             <!-- Second Card: Alert Time -->
-            <VBox fx:id="alertTimeCard" alignment="TOP_CENTER" prefWidth="560.0" spacing="12" styleClass="alert-time-card">
+            <VBox fx:id="alertTimeCard" alignment="TOP_CENTER" prefWidth="560.0" spacing="8" styleClass="alert-time-card">
                 <padding>
-                    <Insets bottom="18" left="30" right="30" top="18" />
+                    <Insets bottom="15" left="30" right="30" top="15" />
                 </padding>
 
                 <!-- Alert Time Title -->
@@ -140,10 +140,10 @@
                 <HBox alignment="CENTER" spacing="8" styleClass="time-selector-container">
                     <!-- Hour:Minute Display with colons -->
                     <HBox alignment="CENTER" spacing="3" styleClass="time-display-box">
-                        <Spinner fx:id="hourSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-number-spinner" />
+                        <Spinner fx:id="hourSpinner" editable="true" prefHeight="40.0" prefWidth="80.0" styleClass="time-number-spinner" />
                         <Label styleClass="time-colon" text=":" />
                         <Label styleClass="time-colon" text=":" />
-                        <Spinner fx:id="minuteSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-number-spinner" />
+                        <Spinner fx:id="minuteSpinner" editable="true" prefHeight="40.0" prefWidth="80.0" styleClass="time-number-spinner" />
                         <Label styleClass="time-caret" text="^" />
                     </HBox>
 
