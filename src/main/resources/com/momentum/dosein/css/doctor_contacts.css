@@ -205,6 +205,7 @@
     -fx-pref-height: 270;
     -fx-max-height: 270;
     -fx-min-height: 270;
+    -fx-padding: 5;
 }
 
 .doctor-contacts-list .list-cell {
@@ -218,7 +219,7 @@
     -fx-pref-height: 50;
     -fx-max-height: 50;
     -fx-padding: 8 15 8 15;
-    -fx-margin: 0 0 5 0;
+    -fx-margin: 0 0 8 0;
 }
 
 .doctor-contacts-list .list-cell:selected {
@@ -235,6 +236,7 @@
     -fx-min-height: 0;
     -fx-pref-height: 0;
     -fx-max-height: 0;
+    -fx-margin: 0;
 }
 
 /* For Additional Information specifically */
