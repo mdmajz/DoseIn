@@ -13,7 +13,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.Insets;
+import javafx.geometry.Insets;
 import java.io.IOException;
 import java.util.List;
 
