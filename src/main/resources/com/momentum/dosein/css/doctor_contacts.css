@@ -142,17 +142,6 @@
     -fx-padding: 30 40 30 40;
 }
 
-/* MAIN CONTENT CONTAINER */
-.main-content-container {
-    -fx-background-color: white;
-    -fx-background-radius: 10px;
-    -fx-padding: 25;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-pref-height: 380;
-    -fx-max-height: 380;
-    -fx-min-height: 380;
-}
-
 /* TITLE & SUBTITLE */
 .manage-title {
     -fx-font-size: 28px;
@@ -183,17 +172,9 @@
     -fx-font-weight: bold;
 }
 
-/* SAVED CONTACTS PANE */
-.saved-contacts-pane {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-padding: 15;
-    -fx-border-color: #E0E0E0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 8px;
-    -fx-pref-height: 340;
-    -fx-min-height: 340;
-    -fx-max-height: 340;
+/* SAVED CONTACTS SECTION */
+.saved-contacts-section {
+    -fx-spacing: 10;
 }
 
 /* ADD CONTACT BUTTON */
@@ -213,33 +194,41 @@
     -fx-background-color: #3D9574;
 }
 
-/* CONTACTS LIST */
-.contacts-list {
-    -fx-spacing: 8;
-    -fx-padding: 10 0 0 0;
+/* CONTACTS CONTAINER */
+.contacts-container {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 8px;
+    -fx-padding: 15;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
+/* DOCTOR CONTACTS LIST */
 .doctor-contacts-list {
     -fx-background-color: transparent;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
-    -fx-pref-height: 250;
-    -fx-max-height: 250;
-    -fx-min-height: 250;
+    -fx-pref-height: 370;
+    -fx-max-height: 370;
+    -fx-min-height: 370;
 }
 
 .doctor-contacts-list .list-cell {
     -fx-background-color: #4BA684;
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-padding: 12 15;
-    -fx-margin: 0 0 8 0;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-min-height: 50;
     -fx-pref-height: 50;
     -fx-max-height: 50;
+    -fx-padding: 8 15 8 15;
+    -fx-margin: 0 0 5 0;
 }
 
 .doctor-contacts-list .list-cell:selected {

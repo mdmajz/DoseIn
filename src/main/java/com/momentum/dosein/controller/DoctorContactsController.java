@@ -13,6 +13,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.Insets;
 import java.io.IOException;
 import java.util.List;
 
@@ -61,6 +62,9 @@ public class DoctorContactsController {
                 }
             }
         });
+
+        // Add padding between list items
+        contactsList.setStyle("-fx-padding: 5;");
 
         // Handle contact selection - navigate to doctor info scene
         contactsList.setOnMouseClicked(event -> {

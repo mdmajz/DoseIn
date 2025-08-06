@@ -95,26 +95,23 @@
                 <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
             </VBox>
 
-            <!-- Main Content Container with White Background -->
-            <VBox spacing="20" styleClass="main-content-container">
-                <!-- Saved Contacts Section -->
-                <VBox spacing="10" styleClass="saved-contacts-pane">
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <Label styleClass="manage-section-title" text="Saved Contacts" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Button onAction="#handleAdd" styleClass="add-contact-button" text="Add">
-                            <graphic>
-                                <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                    <Image url="@../images/plus-icon.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                    </HBox>
-                    
-                    <!-- Doctor Contact Bars -->
-                    <VBox spacing="8" styleClass="contacts-list">
-                        <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
-                    </VBox>
+            <!-- Saved Contacts Section -->
+            <VBox spacing="10" styleClass="saved-contacts-section">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="manage-section-title" text="Saved Contacts" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleAdd" styleClass="add-contact-button" text="Add">
+                        <graphic>
+                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                <Image url="@../images/plus-icon.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                
+                <!-- Doctor Contact Bars Container -->
+                <VBox styleClass="contacts-container">
+                    <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
                 </VBox>
             </VBox>
         </VBox>
