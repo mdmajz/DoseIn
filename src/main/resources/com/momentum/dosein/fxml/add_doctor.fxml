@@ -81,21 +81,27 @@
         </VBox>
     </left>
 
-
     <!-- CENTER: Add Doctor Form -->
     <center>
         <VBox spacing="20" alignment="TOP_LEFT" styleClass="main-content">
-            <!-- Title -->
-            <Label text="Add Doctor Information" styleClass="section-title"/>
+            <!-- Header -->
+            <VBox spacing="0" styleClass="welcome-banner">
+                <Label styleClass="manage-title" text="Doctor Contacts" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
+            </VBox>
 
             <!-- White Form Container -->
-            <VBox styleClass="form-container" alignment="TOP_LEFT">
+            <VBox styleClass="add-form-container" alignment="TOP_LEFT">
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
 
-                <!-- Form Fields - Line by Line -->
-                <VBox spacing="15">
+                <!-- Form Title -->
+                <Label text="Add Medicine Information" styleClass="form-section-title"/>
+
+                <!-- Form Fields -->
+                <VBox spacing="15" styleClass="form-fields-container">
                     <!-- Name -->
                     <HBox spacing="10" alignment="CENTER_LEFT">
                         <Label text="Name :" styleClass="form-label" minWidth="120"/>
@@ -132,26 +138,16 @@
                         <TextArea fx:id="noteArea" styleClass="additional-field" wrapText="true"/>
                     </VBox>
                 </VBox>
+
                 <!-- Action Buttons -->
                 <HBox alignment="BOTTOM_RIGHT" spacing="10" styleClass="action-buttons-container">
-                    <Button onAction="#handleAddEntry" prefWidth="120" styleClass="add-button" text="Add Entry">
-                        <graphic>
-                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-
-                            </ImageView>
-                        </graphic>
+                    <Button onAction="#handleCancel" prefWidth="120" styleClass="cancel-button" text="Cancel">
                     </Button>
 
-                    <Button onAction="#handleCancel" prefWidth="120" styleClass="delete-button" text="Cancel">
-                        <graphic>
-                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                <Image url="@../images/delete-icon.png" />
-                            </ImageView>
-                        </graphic>
+                    <Button onAction="#handleAddEntry" prefWidth="120" styleClass="add-button" text="Add">
                     </Button>
                 </HBox>
             </VBox>
-
         </VBox>
     </center>
 </BorderPane>

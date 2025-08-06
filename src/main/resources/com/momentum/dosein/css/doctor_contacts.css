@@ -183,8 +183,8 @@
     -fx-font-weight: bold;
 }
 
-/* SAVED ENTRIES PANE */
-.manage-alerts-pane {
+/* SAVED CONTACTS PANE */
+.saved-contacts-pane {
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 8px;
     -fx-padding: 15;
@@ -194,19 +194,75 @@
     -fx-pref-height: 340;
     -fx-min-height: 340;
     -fx-max-height: 340;
+    -fx-pref-width: 300;
+    -fx-min-width: 300;
+    -fx-max-width: 300;
 }
 
-.manage-listview {
-    -fx-background-radius: 10px;
-    -fx-border-radius: 5px;
-    -fx-background-color: white;
-    -fx-pref-height: 200;
-    -fx-max-height: 200;
-    -fx-min-height: 200;
+/* ADD CONTACT BUTTON */
+.add-contact-button {
+    -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px 8px 10px;
+    -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+
+.add-contact-button:hover {
+    -fx-background-color: #3D9574;
+}
+
+/* CONTACTS LIST */
+.contacts-list {
+    -fx-spacing: 8;
+    -fx-padding: 10 0 0 0;
+}
+
+.doctor-contacts-list {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-height: 250;
+    -fx-max-height: 250;
+    -fx-min-height: 250;
+}
+
+.doctor-contacts-list .list-cell {
+    -fx-background-color: #4BA684;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12 15;
+    -fx-margin: 0 0 8 0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-min-height: 50;
+    -fx-pref-height: 50;
+    -fx-max-height: 50;
+}
+
+.doctor-contacts-list .list-cell:selected {
+    -fx-background-color: #12594C;
+}
+
+.doctor-contacts-list .list-cell:hover {
+    -fx-background-color: #3D9574;
+}
+
+.doctor-contacts-list .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
 }
 
 /* DOCTOR INFO PANEL */
-.manage-info-pane {
+.doctor-info-pane {
     -fx-background-radius: 8px;
     -fx-padding: 20;
     -fx-spacing: 15;
@@ -239,7 +295,6 @@
     -fx-font-size: 13px;
     -fx-text-fill: #12594C;
     -fx-padding: 0 0 0 15;
-
 }
 
 /* ACTION BUTTONS CONTAINER */
@@ -248,8 +303,8 @@
     -fx-alignment: center;
 }
 
-/* ADD BUTTON */
-.add-button {
+/* GO BACK BUTTON */
+.go-back-button {
     -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-weight: bold;
@@ -261,7 +316,7 @@
     -fx-cursor: hand;
 }
 
-.add-button:hover {
+.go-back-button:hover {
     -fx-background-color: #3D9574;
 }
 
@@ -281,7 +336,6 @@
 .delete-button:hover {
     -fx-background-color: #EF5350;
 }
-
 
 /* For Additional Information specifically */
 .manage-listview .manage-value {

@@ -8,6 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
+import javafx.scene.layout.Priority;
 import java.io.IOException;
 import java.util.List;
 
@@ -29,11 +34,37 @@ public class DoctorContactsController {
         List<DoctorContact> all = service.getAllContacts();
         contactsList.getItems().setAll(all);
 
-        contactsList.setCellFactory(lv -> new ListCell<>() {
+        // Create custom cell factory for doctor contact bars
+        contactsList.setCellFactory(lv -> new ListCell<DoctorContact>() {
             @Override
             protected void updateItem(DoctorContact dc, boolean empty) {
                 super.updateItem(dc, empty);
-                setText(empty || dc==null ? null : dc.getName());
+                if (empty || dc == null) {
+                    setGraphic(null);
+                    setText(null);
+                } else {
+                    // Create custom layout for doctor contact bar
+                    HBox contactBar = new HBox();
+                    contactBar.setAlignment(Pos.CENTER_LEFT);
+                    contactBar.setSpacing(10);
+                    contactBar.setStyle("-fx-padding: 0 15;");
+                    
+                    // Doctor name on the left
+                    Label nameLabel = new Label(dc.getName());
+                    nameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+                    
+                    // Spacer to push phone to the right
+                    Region spacer = new Region();
+                    HBox.setHgrow(spacer, Priority.ALWAYS);
+                    
+                    // Phone number on the right
+                    Label phoneLabel = new Label(dc.getPhone());
+                    phoneLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+                    
+                    contactBar.getChildren().addAll(nameLabel, spacer, phoneLabel);
+                    setGraphic(contactBar);
+                    setText(null);
+                }
             }
         });
 
@@ -73,6 +104,13 @@ public class DoctorContactsController {
             new Alert(Alert.AlertType.ERROR,
                     "Could not load Add Doctor screen.").showAndWait();
         }
+    }
+
+    @FXML
+    private void handleGoBack(ActionEvent e) {
+        // This method is for the "Go back" button in the doctor info panel
+        // For now, it just clears the selection
+        contactsList.getSelectionModel().clearSelection();
     }
 
     @FXML
