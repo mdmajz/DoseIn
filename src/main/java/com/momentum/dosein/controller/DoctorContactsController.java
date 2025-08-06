@@ -63,9 +63,6 @@ public class DoctorContactsController {
             }
         });
 
-        // Add padding between list items
-        contactsList.setStyle("-fx-padding: 5;");
-
         // Handle contact selection - navigate to doctor info scene
         contactsList.setOnMouseClicked(event -> {
             DoctorContact selected = contactsList.getSelectionModel().getSelectedItem();

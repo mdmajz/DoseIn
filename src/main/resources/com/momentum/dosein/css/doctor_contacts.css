@@ -88,24 +88,6 @@
     -fx-background-color: #24675B;
 }
 
-.nav-item-contacts {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 600;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-item-contacts:hover {
-    -fx-background-color: #24675B;
-}
-
 .nav-menu-container {
     -fx-alignment: center;
     -fx-halignment: center;
@@ -137,9 +119,18 @@
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 15;
     -fx-background-color: #B8E0D1;
     -fx-padding: 30 40 30 40;
+}
+
+/* WHITE CARD CONTAINER */
+.white-card-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
 /* TITLE & SUBTITLE */
@@ -159,9 +150,8 @@
 }
 
 .welcome-banner {
-    -fx-background-color: "white";
-    -fx-spacing: "0";
-    -fx-alignment:"CENTER_LEFT";
+    -fx-background-color: white;
+    -fx-alignment: CENTER_LEFT;
 }
 
 /* SECTION HEADER */
@@ -196,15 +186,15 @@
 
 /* CONTACTS CONTAINER */
 .contacts-container {
-    -fx-background-color: #C4E3D4;
+    -fx-background-color: #B8E0D1;
     -fx-background-radius: 8px;
     -fx-padding: 15;
     -fx-border-color: #E0E0E0;
     -fx-border-width: 1px;
     -fx-border-radius: 8px;
-    -fx-pref-height: 400;
-    -fx-min-height: 400;
-    -fx-max-height: 400;
+    -fx-pref-height: 300;
+    -fx-min-height: 300;
+    -fx-max-height: 300;
 }
 
 /* DOCTOR CONTACTS LIST */
@@ -212,9 +202,9 @@
     -fx-background-color: transparent;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
-    -fx-pref-height: 370;
-    -fx-max-height: 370;
-    -fx-min-height: 370;
+    -fx-pref-height: 270;
+    -fx-max-height: 270;
+    -fx-min-height: 270;
 }
 
 .doctor-contacts-list .list-cell {
@@ -257,7 +247,6 @@
 /* Remove extra spacing for Additional Info */
 .grid-pane > .vbox {
     -fx-padding: 0;
-    -fx-spacing: 0;
 }
 
 .manage-scrollpane {

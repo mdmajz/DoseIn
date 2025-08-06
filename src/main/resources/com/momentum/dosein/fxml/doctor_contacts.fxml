@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorContactsController">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorContactsController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -95,23 +95,30 @@
                 <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
             </VBox>
 
-            <!-- Saved Contacts Section -->
-            <VBox spacing="10" styleClass="saved-contacts-section">
-                <HBox alignment="CENTER_LEFT" spacing="10">
-                    <Label styleClass="manage-section-title" text="Saved Contacts" />
-                    <Region HBox.hgrow="ALWAYS" />
-                    <Button onAction="#handleAdd" styleClass="add-contact-button" text="Add">
-                        <graphic>
-                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                <Image url="@../images/plus-icon.png" />
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                </HBox>
+            <!-- White Card Container -->
+            <VBox styleClass="white-card-container">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
                 
-                <!-- Doctor Contact Bars Container -->
-                <VBox styleClass="contacts-container">
-                    <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
+                <!-- Saved Contacts Section -->
+                <VBox spacing="10" styleClass="saved-contacts-section">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="manage-section-title" text="Saved Contacts" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button onAction="#handleAdd" styleClass="add-contact-button" text="Add">
+                            <graphic>
+                                <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                    <Image url="@../images/plus-icon.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                    
+                    <!-- Doctor Contact Bars Container -->
+                    <VBox styleClass="contacts-container">
+                        <ListView fx:id="contactsList" styleClass="doctor-contacts-list" />
+                    </VBox>
                 </VBox>
             </VBox>
         </VBox>
