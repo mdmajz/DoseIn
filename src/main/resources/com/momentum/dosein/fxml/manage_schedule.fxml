@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -134,54 +134,50 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox alignment="TOP_CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="0" styleClass="medicine-info-container">
-                        <!-- Medicine Information Label - Now positioned above the container -->
+                    <VBox alignment="TOP_CENTER" maxWidth="270.0" minWidth="270.0" prefWidth="270.0" spacing="10" styleClass="medicine-info-container">
+                        <!-- Medicine Information Label -->
                         <Label styleClass="section-title" text="Medicine Information" />
 
-                        <!-- Container for medicine info - now with proper styling -->
-                        <VBox styleClass="active-alerts-container" alignment="TOP_CENTER" spacing="0">
-                            <VBox minWidth="219.0" prefHeight="187.0" prefWidth="219.0" spacing="12" styleClass="medicine-info-grid">
-                                <!-- Name -->
-                                <HBox spacing="10">
-                                    <Label prefWidth="80" styleClass="info-label" text="Name :" />
-                                    <Label fx:id="nameLabel" styleClass="info-value" text="No medicine selected" wrapText="true" />
-                                </HBox>
+                        <!-- Medicine Information Details -->
+                        <VBox spacing="12" styleClass="medicine-info-grid">
+                            <!-- Name -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="Name :" />
+                                <Label fx:id="nameLabel" styleClass="info-value" text="No medicine selected" wrapText="true" />
+                            </HBox>
 
-                                <!-- Start Date -->
-                                <HBox spacing="10">
-                                    <Label prefWidth="80" styleClass="info-label" text="Start Date :" />
-                                    <Label fx:id="startDateLabel" styleClass="info-value" text="-" />
-                                </HBox>
+                            <!-- Start Date -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="Start Date :" />
+                                <Label fx:id="startDateLabel" styleClass="info-value" text="-" />
+                            </HBox>
 
-                                <!-- End Date -->
-                                <HBox spacing="10">
-                                    <Label prefWidth="80" styleClass="info-label" text="End Date :" />
-                                    <Label fx:id="endDateLabel" styleClass="info-value" text="-" />
-                                </HBox>
+                            <!-- End Date -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="End Date :" />
+                                <Label fx:id="endDateLabel" styleClass="info-value" text="-" />
+                            </HBox>
 
-                                <!-- Additional Information -->
-                                <VBox spacing="5">
-                                    <Label styleClass="info-label" text="Additional Information :" />
-                                    <Label fx:id="noteLabel" styleClass="info-value" text="Select a medicine from the list" wrapText="true" />
-                                </VBox>
+                            <!-- Additional Information -->
+                            <VBox spacing="5">
+                                <Label styleClass="info-label" text="Additional Information :" />
+                                <Label fx:id="noteLabel" styleClass="info-value" text="Select a medicine from the list" wrapText="true" />
+                            </VBox>
 
-                                <!-- Alert Time -->
-                                <VBox spacing="5">
-                                    <Label styleClass="info-label" text="Alert Time:" />
-                                </VBox>
+                            <!-- Alert Time -->
+                            <VBox spacing="5">
+                                <Label styleClass="info-label" text="Alert Time:" />
                             </VBox>
                         </VBox>
 
-                        <!-- Alert Time Scrollable Container -->
-                        <ScrollPane fitToHeight="false" hbarPolicy="AS_NEEDED" prefHeight="139.0" prefWidth="230.0" styleClass="alert-times-scroll" vbarPolicy="NEVER">  <!-- Matches CSS -->
-                            <content>
-                                <HBox fx:id="timesBox" alignment="CENTER_LEFT" maxHeight="41.0" prefHeight="41.0" prefWidth="246.0" styleClass="alert-times-container" />
-                            </content>
-                        </ScrollPane>
+                        <!-- Alert Time Buttons Container -->
+                        <VBox spacing="8" styleClass="alert-times-section">
+                            <HBox fx:id="timesBox" alignment="CENTER_LEFT" spacing="8" styleClass="alert-times-container" />
+                        </VBox>
 
                         <!-- Delete Button -->
                         <HBox alignment="CENTER_RIGHT" styleClass="delete-container">
-                            <Button onAction="#handleDelete" prefHeight="4.0" prefWidth="120" styleClass="delete-button" text="Delete">
+                            <Button onAction="#handleDelete" prefHeight="35" prefWidth="120" styleClass="delete-button" text="Delete">
                                 <graphic>
                                     <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                                         <Image url="@../images/delete-icon.png" />

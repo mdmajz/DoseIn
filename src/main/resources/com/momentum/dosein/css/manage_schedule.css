@@ -1,14 +1,14 @@
-/* manage_schedule.css - Balanced Layout Version */
+/* manage_schedule.css - Updated to match image design */
 
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #B8E0D1;
+    -fx-background-color: #E0F2E7;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-    -fx-background-color: #4BA684;
+    -fx-background-color: #2E6A5B;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
@@ -26,7 +26,7 @@
 }
 
 .logo-container {
-    -fx-background-color: #12594C;
+    -fx-background-color: #2E6A5B;
     -fx-padding: 15px 20px;
     -fx-alignment: center-left;
     -fx-min-width: 200;
@@ -35,7 +35,7 @@
 
 /* Navigation Buttons */
 .nav-button-active {
-    -fx-background-color: #12594C;
+    -fx-background-color: #4CAF50;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -49,11 +49,11 @@
 }
 
 .nav-button-active:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: #45A049;
 }
 
 .nav-item {
-    -fx-background-color: #3D9574;
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -67,11 +67,11 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: rgba(255,255,255,0.1);
 }
 
 .nav-item-contacts {
-    -fx-background-color: #3D9574;
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -85,7 +85,7 @@
 }
 
 .nav-item-contacts:hover {
-    -fx-background-color: #24675B;
+    -fx-background-color: rgba(255,255,255,0.1);
 }
 
 .nav-menu-container {
@@ -94,7 +94,7 @@
 }
 
 .nav-signout {
-    -fx-background-color: #DC6D67;
+    -fx-background-color: #F44336;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -108,7 +108,7 @@
 }
 
 .nav-signout:hover {
-    -fx-background-color: #C55A54;
+    -fx-background-color: #D32F2F;
 }
 
 .signout-container {
@@ -120,7 +120,7 @@
 /* MAIN CONTENT AREA */
 .main-content {
     -fx-spacing: 15;
-    -fx-background-color: #B8E0D1;
+    -fx-background-color: #E0F2E7;
     -fx-padding: 30 40 30 40;
 }
 
@@ -144,7 +144,7 @@
 .greeting-text {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #12594C;
+    -fx-text-fill: #333333;
 }
 
 .slogan-text {
@@ -169,16 +169,22 @@
 .section-title {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #12594C;
+    -fx-text-fill: #333333;
     -fx-padding: 0 0 14 0;
     -fx-spacing: 0;
 }
 
-
-
+/* ACTIVE ALERTS CONTAINER */
+.active-alerts-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+    -fx-pref-width: 250px;
+    -fx-pref-height: 300px;
+    -fx-alignment: top-center;
+}
 
 /* MEDICINE BUTTONS */
-/* Active Alerts Container - Adjusted for wider buttons */
 .medicine-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 8;
@@ -201,14 +207,14 @@
 }
 
 .medicine-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #00594E;
+    -fx-background-color: #4CAF50;
     -fx-background-radius: 5px;
     -fx-opacity: 0.7;
 }
 
 /* MEDICINE INFORMATION CONTAINER */
 .medicine-info-container {
-    -fx-background-color: #C4E3D4;
+    -fx-background-color: transparent;
     -fx-background-radius: 8px;
     -fx-padding: 20;
     -fx-pref-width: 270;
@@ -229,90 +235,36 @@
 .info-label {
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-text-fill: #12594C;
+    -fx-text-fill: #333333;
     -fx-alignment: CENTER_LEFT;
 }
 
 .info-value {
     -fx-font-size: 13px;
-    -fx-text-fill: #12594C;
+    -fx-text-fill: #333333;
     -fx-alignment: CENTER_LEFT;
     -fx-wrap-text: true;
-
 }
 
-/* ALERT TIMES CONTAINER */
-/* Active Alerts Container - Vertical Scroll */
-.active-alerts-container {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-padding: 10px;
-    -fx-pref-width: 200px;
-    -fx-pref-height: 300px;
-
-}
-
-/* Medicine Scroll Pane */
-.medicine-scroll {
-    -fx-background-color: #4BA684;
-    -fx-fit-to-width: true;
-    -fx-pref-height: 280px;
-    -fx-hbar-policy: NEVER;
-    -fx-vbar-policy: AS_NEEDED;
-}
-
-/* Medicine Buttons Container */
-.medicine-buttons-container {
+/* ALERT TIMES SECTION */
+.alert-times-section {
     -fx-spacing: 8px;
-    -fx-padding: 5px;
-    -fx-alignment: top-center;
+    -fx-padding: 5px 0;
 }
 
-/* Vertical Scroll Bar Styling */
-.medicine-scroll .scroll-bar:vertical {
-    -fx-background-color: #C4E3D4;
-    -fx-pref-width: 10px;
-}
-
-.medicine-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #00594E;
-    -fx-background-radius: 5px;
-    -fx-opacity: 0.7;
-}
-
-.medicine-scroll .scroll-bar:vertical .thumb:hover {
-    -fx-opacity: 1;
-}
-
-/* Medicine Button Styling */
-.medicine-button {
-    -fx-background-color: #4BA684;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 6px;
-    -fx-cursor: hand;
-    -fx-pref-width: 150px;
-    -fx-min-width: 150px;
-    -fx-max-width: 150px;
-    -fx-padding: 5 20 5 20;
-    -fx-wrap-text: true; /* Allow text wrapping */
-    -fx-alignment: CENTER;
-}
-.medicine-buttons-container .button:hover {
-    -fx-background-color: #24675B; /* Light blue on hover */
-    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
-    -fx-cursor: hand;
-}
-.medicine-buttons-container .button:active {
-    -fx-background-color: #24675B; /* Light blue on hover */
-    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
-    -fx-cursor: hand;
+.alert-times-container {
+    -fx-spacing: 8px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-width: 245px;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-pref-height: 80px;
+    -fx-min-height: 80px;
 }
 
 /* TIME BUTTONS */
 .time-button {
-    -fx-background-color: #12594C;
+    -fx-background-color: #4CAF50;
     -fx-text-fill: white;
     -fx-font-size: 11px;
     -fx-font-weight: 600;
@@ -327,11 +279,11 @@
 }
 
 .time-button:hover {
-    -fx-background-color: #0F4A3F;
+    -fx-background-color: #45A049;
 }
 
 .time-button:pressed {
-    -fx-background-color: #0A3A31;
+    -fx-background-color: #3D8B40;
 }
 
 /* DELETE CONTAINER */
@@ -342,7 +294,7 @@
 
 /* DELETE BUTTON */
 .delete-button {
-    -fx-background-color: #E57373;
+    -fx-background-color: #F44336;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
@@ -355,11 +307,11 @@
 }
 
 .delete-button:hover {
-    -fx-background-color: #EF5350;
+    -fx-background-color: #D32F2F;
 }
 
 .delete-button:pressed {
-    -fx-background-color: #E53935;
+    -fx-background-color: #C62828;
 }
 
 /* MISC ELEMENTS */
@@ -370,6 +322,7 @@
 .label {
     -fx-wrap-text: true;
 }
+
 .noteLabel {
     -fx-wrap-text: true;
 }
@@ -384,51 +337,32 @@
     -fx-font-style: italic;
 }
 
-/* Focus and selection styles */
-
-
-/* Alert time Scroll Bar */
-/* ALERT TIMES CONTAINER - HORIZONTAL SCROLL ONLY */
-.alert-times-container {
-    -fx-spacing: 8px;
-    -fx-alignment: CENTER_LEFT;
-    /*-fx-padding: 8px 0;  /* Increased vertical padding */
-    -fx-pref-width: 245px;
-    -fx-min-width: 200;
-    -fx-max-width: 200;
-    -fx-pref-height: 80px;  /* Increased from 40px */
-    -fx-min-height: 80px;
-}
-
-/* SCROLL PANE FOR HORIZONTAL SCROLLING */
-.alert-times-scroll {
-    -fx-background-color: transparent;
-    -fx-pref-height: 70px;
-    -fx-min-height: 70px;
-    -fx-fit-to-height: false;
-    -fx-hbar-policy: ALWAYS;
-    -fx-vbar-policy: NEVER;
-    -fx-pannable: false; /* Crucial - prevents all touch/mouse panning */
-}
-
-
-
-/* Completely disable vertical scrolling behavior */
-.alert-times-scroll .scroll-bar:vertical {
-    -fx-opacity: 0;
-    -fx-pref-width: 0;
-    -fx-padding: 0;
-}
-
-/* Disable mouse wheel vertical scrolling */
-.alert-times-scroll {
-    -fx-pannable: false; /* This prevents the vertical panning with mouse wheel */
-}
-
-/* Viewport adjustment */
-.alert-times-scroll .viewport {
-    -fx-pref-height: 80px; /* Match container height */
+/* Medicine Button Styling */
+.medicine-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-pref-width: 150px;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-padding: 5 20 5 20;
+    -fx-wrap-text: true;
     -fx-alignment: CENTER;
+}
+
+.medicine-buttons-container .button:hover {
+    -fx-background-color: #45A049;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
+.medicine-buttons-container .button:active {
+    -fx-background-color: #3D8B40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
 }
 
 
