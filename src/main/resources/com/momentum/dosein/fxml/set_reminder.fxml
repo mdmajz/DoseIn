@@ -105,25 +105,25 @@
                 <!-- Name Field -->
                 <VBox spacing="3">
                     <Label styleClass="field-label" text="Name :" />
-                    <TextField fx:id="nameField" prefHeight="28.0" styleClass="medicine-field" />
+                    <TextField fx:id="nameField" prefHeight="28.0" promptText="Enter medicine name" styleClass="medicine-field" />
                 </VBox>
 
                 <!-- Start and End Date Fields (Side by Side) -->
                 <HBox alignment="CENTER_LEFT" spacing="20">
                     <VBox spacing="3" HBox.hgrow="ALWAYS">
                         <Label styleClass="field-label" text="Start Date :" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="28.0" styleClass="medicine-field" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="28.0" promptText="Select start date" styleClass="medicine-field" />
                     </VBox>
                     <VBox spacing="3" HBox.hgrow="ALWAYS">
                         <Label styleClass="field-label" text="End Date :" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="28.0" styleClass="medicine-field" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="28.0" promptText="Select end date" styleClass="medicine-field" />
                     </VBox>
                 </HBox>
 
                 <!-- Additional Information Field -->
                 <VBox spacing="3">
                     <Label styleClass="field-label" text="Additional Information :" />
-                    <TextField fx:id="noteField" prefHeight="28.0" styleClass="medicine-field" />
+                    <TextField fx:id="noteField" prefHeight="28.0" promptText="Additional information goes here" styleClass="medicine-field" />
                 </VBox>
             </VBox>
 

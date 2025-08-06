@@ -258,9 +258,11 @@
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
-    -fx-background-color: transparent;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 4px;
     -fx-border-color: transparent;
     -fx-alignment: center;
+    -fx-padding: 2px 4px;
 }
 
 .time-colon {
