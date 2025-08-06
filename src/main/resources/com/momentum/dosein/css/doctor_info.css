@@ -170,14 +170,13 @@
     -fx-font-weight: bold;
 }
 
-/* INFO VALUES */
+/* INFO VALUES - Plain text on white background */
 .info-value {
     -fx-font-size: 13px;
     -fx-text-fill: #12594C;
-    -fx-background-color: #B4E8D4;
-    -fx-background-radius: 8px;
+    -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-padding: 8px;
+    -fx-padding: 8px 0px 8px 0px;
     -fx-min-height: 28px;
     -fx-pref-height: 28px;
 }
