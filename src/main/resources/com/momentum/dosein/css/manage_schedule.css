@@ -108,7 +108,6 @@
 
 .nav-menu-container {
     -fx-alignment: center;
-    -fx-halignment: center;
 }
 
 .nav-signout {
@@ -215,8 +214,8 @@
 .medicine-scroll {
     -fx-background-color: transparent;
     -fx-fit-to-width: true;
-    -fx-pref-height: 380px;
-    -fx-min-height: 380px;
+    -fx-pref-height: 330px;
+    -fx-min-height: 330px;
     -fx-hbar-policy: NEVER;
     -fx-vbar-policy: AS_NEEDED;
 }
@@ -281,8 +280,8 @@
     -fx-fit-to-height: true;
     -fx-hbar-policy: as-needed;
     -fx-vbar-policy: never;
-    -fx-max-height: 45px;
-    -fx-min-height: 45px;
+    -fx-max-height: 80px;
+    -fx-min-height: 80px;
 }
 
 .time-scroll-pane .viewport {
