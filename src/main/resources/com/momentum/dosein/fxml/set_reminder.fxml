@@ -112,11 +112,11 @@
                 <HBox alignment="CENTER_LEFT" spacing="20">
                     <VBox spacing="3" HBox.hgrow="ALWAYS">
                         <Label styleClass="field-label" text="Start Date :" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="28.0" promptText="e.g. 12/15/2024" styleClass="medicine-field" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="28.0" promptText="12/15/2024" styleClass="medicine-field" />
                     </VBox>
                     <VBox spacing="3" HBox.hgrow="ALWAYS">
                         <Label styleClass="field-label" text="End Date :" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="28.0" promptText="e.g. 12/30/2024" styleClass="medicine-field" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="28.0" promptText="12/30/2024" styleClass="medicine-field" />
                     </VBox>
                 </HBox>
 
