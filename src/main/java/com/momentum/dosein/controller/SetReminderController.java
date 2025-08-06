@@ -49,11 +49,18 @@ public class SetReminderController {
         hourSpinner.setValueFactory(new IntegerSpinnerValueFactory(1, 12, 12));
         minuteSpinner.setValueFactory(new IntegerSpinnerValueFactory(0, 59, 0));
 
-        // Set date picker format to DD/MM/YYYY
+        // Set date picker format to DD/MM/YYYY and current date prompts
+        java.time.format.DateTimeFormatter formatter = 
+            java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        LocalDate today = LocalDate.now();
+        LocalDate futureDate = today.plusDays(15); // 15 days from today
+        
+        // Set dynamic prompt text with current dates
+        startDatePicker.setPromptText(formatter.format(today));
+        endDatePicker.setPromptText(formatter.format(futureDate));
+        
         startDatePicker.setConverter(new javafx.util.StringConverter<LocalDate>() {
-            private final java.time.format.DateTimeFormatter formatter = 
-                java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            
             @Override
             public String toString(LocalDate date) {
                 return date != null ? formatter.format(date) : "";
@@ -67,9 +74,6 @@ public class SetReminderController {
         });
 
         endDatePicker.setConverter(new javafx.util.StringConverter<LocalDate>() {
-            private final java.time.format.DateTimeFormatter formatter = 
-                java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            
             @Override
             public String toString(LocalDate date) {
                 return date != null ? formatter.format(date) : "";
