@@ -241,7 +241,17 @@
 .time-number-spinner .decrement-arrow-button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-opacity: 0;
+    -fx-opacity: 1;
+}
+
+.time-number-spinner .increment-arrow {
+    -fx-background-color: #12594C;
+    -fx-shape: "M 0 4 L 4 0 L 8 4 Z";
+}
+
+.time-number-spinner .decrement-arrow {
+    -fx-background-color: #12594C;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
 }
 
 .time-number-spinner .text-field {
@@ -319,6 +329,37 @@
     -fx-padding: 8px;
 }
 
+/* HORIZONTAL SCROLL PANE */
+.time-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-fit-to-height: true;
+    -fx-hbar-policy: as-needed;
+    -fx-vbar-policy: never;
+    -fx-max-height: 35px;
+    -fx-min-height: 35px;
+}
+
+.time-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.time-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 2px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 5px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #B4E8D4;
+    -fx-background-radius: 5px;
+}
+
 .time-pills-container {
     -fx-alignment: center-left;
     -fx-spacing: 6;
@@ -354,7 +395,7 @@
 .action-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 15;
-    -fx-padding: 15px 0 20px 0;
+    -fx-padding: 8px 0 15px 0;
 }
 
 .cancel-button {

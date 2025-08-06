@@ -140,10 +140,10 @@
                 <HBox alignment="CENTER" spacing="8" styleClass="time-selector-container">
                     <!-- Hour:Minute Display with colons -->
                     <HBox alignment="CENTER" spacing="3" styleClass="time-display-box">
-                        <Spinner fx:id="hourSpinner" editable="true" prefHeight="40.0" prefWidth="45.0" styleClass="time-number-spinner" />
+                        <Spinner fx:id="hourSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-number-spinner" />
                         <Label styleClass="time-colon" text=":" />
                         <Label styleClass="time-colon" text=":" />
-                        <Spinner fx:id="minuteSpinner" editable="true" prefHeight="40.0" prefWidth="45.0" styleClass="time-number-spinner" />
+                        <Spinner fx:id="minuteSpinner" editable="true" prefHeight="40.0" prefWidth="60.0" styleClass="time-number-spinner" />
                         <Label styleClass="time-caret" text="^" />
                     </HBox>
 
@@ -162,7 +162,9 @@
 
                 <!-- Time Display Area with existing times -->
                 <VBox spacing="5" styleClass="times-display-section">
-                    <HBox fx:id="timeListContainer" spacing="6" styleClass="time-pills-container" />
+                    <ScrollPane fitToHeight="true" styleClass="time-scroll-pane">
+                        <HBox fx:id="timeListContainer" spacing="6" styleClass="time-pills-container" />
+                    </ScrollPane>
                 </VBox>
             </VBox>
 
