@@ -128,22 +128,24 @@
             </VBox>
 
             <!-- Second Card: Alert Time -->
-            <VBox fx:id="alertTimeCard" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="520.0" spacing="8" styleClass="alert-time-card">
+            <VBox fx:id="alertTimeCard" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="520.0" spacing="8" styleClass="alert-time-card">
                 <padding>
                     <Insets bottom="15" left="30" right="30" top="15" />
                 </padding>
-            <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="414.0">
-               <children>
-                  <Label prefHeight="70.0" prefWidth="119.0" styleClass="card-title" text="Alert Time :" />
-      
-                      <!-- Time Display Area with existing times -->
-                      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="39.0" minWidth="-Infinity" prefHeight="70.0" prefWidth="318.0" spacing="5" styleClass="times-display-section">
-                          <ScrollPane fitToHeight="true" hbarPolicy="NEVER" styleClass="time-scroll-pane" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
-                              <HBox fx:id="timeListContainer" spacing="6" styleClass="time-pills-container" />
-                          </ScrollPane>
-                      </VBox>
-               </children>
-            </HBox>
+                <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="414.0">
+                    <children>
+
+                        <!-- Time Display Area with existing times -->
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="39.0" minWidth="-Infinity" prefHeight="70.0" prefWidth="416.0" styleClass="times-display-section">
+                            <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="75.0" prefHeight="75.0" prefWidth="330.0" styleClass="time-scroll-pane" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                                <HBox fx:id="timeListContainer" spacing="6" styleClass="time-pills-container" />
+                        <padding>
+                           <Insets left="10.0" />
+                        </padding>
+                            </ScrollPane>
+                        </VBox>
+                    </children>
+                </HBox>
 
                 <!-- Time Selector -->
                 <HBox alignment="CENTER" prefHeight="45.0" prefWidth="459.0" styleClass="time-selector-container">
