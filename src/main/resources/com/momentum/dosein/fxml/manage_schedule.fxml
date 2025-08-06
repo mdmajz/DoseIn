@@ -90,7 +90,7 @@
 
             <!-- Header Card -->
             <VBox spacing="0" styleClass="welcome-card">
-                <HBox alignment="CENTER_LEFT" prefWidth="578.0" spacing="20" styleClass="welcome-banner">
+                <HBox alignment="CENTER_LEFT" spacing="20" styleClass="welcome-banner">
                     <padding>
                         <Insets bottom="25" left="25" right="50" top="25" />
                     </padding>
@@ -111,7 +111,7 @@
                 </padding>
 
                 <Label style="-fx-padding: 0 0 0 10" styleClass="section-title" text="Active Alerts" />
-                <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="530.0" spacing="20">
+                <HBox alignment="TOP_CENTER" spacing="20">
                     <!-- Active Alerts Section -->
                     <VBox styleClass="active-alerts-container" alignment="TOP_CENTER">
                         <ScrollPane fitToWidth="true"
