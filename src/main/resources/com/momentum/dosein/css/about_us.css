@@ -136,41 +136,75 @@
 }
 
 /* MAIN CONTENT AREA */
-.main-content {
-    -fx-spacing: 25;
-    -fx-padding: 30;
-    -fx-background-color: #B8E0D1;
+.about-root {
+    -fx-background-color: #B4E8D4;
+    -fx-alignment: top-center;
+    -fx-padding: 20 40;
 }
 
-/* ABOUT US SPECIFIC STYLES */
-.about-title {
+/* CARD STYLES */
+.about-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-alignment: top-center;
+}
+
+/* CARD TITLES */
+.card-title {
     -fx-font-size: 24px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
+    -fx-alignment: center;
 }
 
-.about-slogan {
-    -fx-font-size: 12px;
+/* TEAM HEADING */
+.team-heading {
+    -fx-font-size: 20px;
     -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
 }
 
-.about-header {
-    -fx-background-color: white;
-    -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
+/* TEAM IMAGE */
+.team-image {
+    -fx-alignment: center;
 }
 
-.about-content {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-
-.about-text {
+/* TEAM MEMBERS */
+.team-members {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
     -fx-line-spacing: 5px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    -fx-alignment: center;
+    -fx-spacing: 5;
+}
+
+.contact-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.contact-email {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4BA684;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
+}
+
+/* DEPARTMENT INFO */
+.department-info {
+    -fx-font-size: 13px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: 500;
+    -fx-alignment: center;
+    -fx-line-spacing: 3px;
 }
