@@ -6,16 +6,7 @@
     -fx-background-color: #B8E0D1;
 }
 
-/* NAVIGATION BAR - Same as Dashboard */
-.nav-bar {
-    -fx-background-color: #4BA684;
-    -fx-padding: 0;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-alignment: top-center;
-    -fx-pref-width: 200px;
-    -fx-min-width: 200px;
-    -fx-max-width: 200px;
-}
+/* NAVIGATION BAR - Using dashboard.css */
 
 .nav-header {
     -fx-padding: 0 0 20 0;
@@ -28,13 +19,7 @@
     -fx-font-weight: bold;
 }
 
-.logo-container {
-    -fx-background-color: #12594C;
-    -fx-padding: 15 20;
-    -fx-alignment: center-left;
-    -fx-min-width: 200;
-    -fx-pref-width: 200;
-}
+/* LOGO CONTAINER - Using dashboard.css */
 
 /* Navigation Buttons - Same as Dashboard */
 .nav-button-active {
