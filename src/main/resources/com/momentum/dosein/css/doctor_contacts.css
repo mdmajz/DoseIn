@@ -197,6 +197,47 @@
     -fx-max-height: 300;
 }
 
+/* CONTACTS SCROLLPANE */
+.contacts-scrollpane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.contacts-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+.contacts-scrollpane .scroll-bar:vertical {
+    -fx-background-color: #3D9574;
+    -fx-pref-width: 12;
+    -fx-background-radius: 6;
+}
+
+.contacts-scrollpane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.contacts-scrollpane .scroll-bar:vertical .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 6;
+}
+
+.contacts-scrollpane .scroll-bar:vertical .increment-button,
+.contacts-scrollpane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.contacts-scrollpane .scroll-bar:vertical .increment-arrow,
+.contacts-scrollpane .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
 /* DOCTOR CONTACTS LIST */
 .doctor-contacts-list {
     -fx-background-color: transparent;
@@ -205,7 +246,7 @@
     -fx-pref-height: 270;
     -fx-max-height: 270;
     -fx-min-height: 270;
-    -fx-padding: 5;
+    -fx-padding: 10;
 }
 
 .doctor-contacts-list .list-cell {
@@ -219,7 +260,7 @@
     -fx-pref-height: 50;
     -fx-max-height: 50;
     -fx-padding: 8 15 8 15;
-    -fx-margin: 0 0 8 0;
+    -fx-margin: 0 0 10 0;
 }
 
 .doctor-contacts-list .list-cell:selected {
