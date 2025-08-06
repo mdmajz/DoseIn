@@ -359,7 +359,7 @@
     -fx-cursor: hand;
 }
 
-.medicine-buttons-container .button:active {
+.medicine-buttons-container .button:pressed {
     -fx-background-color: #3D8B40;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
     -fx-cursor: hand;
