@@ -9,71 +9,71 @@
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox prefWidth="200" spacing="15" styleClass="nav-bar">
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
             <padding>
-                <Insets bottom="20" left="15" right="15" top="20" />
+                <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
 
             <!-- Logo and App Name -->
-            <HBox alignment="CENTER_LEFT" prefHeight="70" spacing="12" styleClass="nav-header">
-                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="logo-container">
-                    <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                        <Image url="@../images/logo.png" />
+            <HBox fx:id="navHeader" styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
+                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
+                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                        <Image url="@../images/logo.png"/>
                     </ImageView>
-                    <Label styleClass="nav-logo" text="DoseIn" />
+                    <Label text="Doseln" styleClass="nav-logo"/>
                 </HBox>
             </HBox>
 
             <!-- Navigation Menu -->
             <VBox spacing="8" styleClass="nav-menu-container">
-                <Button onAction="#handleDashboard" styleClass="nav-item" text="Dashboard">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/dashboard-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleManageSchedule" styleClass="nav-button-active" text="Manage Schedule">
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-button-active">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/calendar-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/doctor-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency">
+                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/emergency-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us">
+                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/about-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
             </VBox>
 
-            <Region VBox.vgrow="ALWAYS" />
+            <Region VBox.vgrow="ALWAYS"/>
 
             <VBox styleClass="signout-container">
-                <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out">
+                <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
                     <graphic>
-                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
-                            <Image url="@../images/signout-icon.png" />
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>
