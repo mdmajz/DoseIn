@@ -20,7 +20,7 @@
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200" minWidth="200" maxWidth="200">
             <padding>
                 <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
