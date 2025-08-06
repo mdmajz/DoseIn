@@ -108,6 +108,7 @@
 
 .nav-menu-container {
     -fx-alignment: center;
+    -fx-halignment: center;
 }
 
 .nav-signout {
@@ -178,8 +179,8 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-min-width: 530;
     -fx-max-width: 530;
-    -fx-pref-height: 400;
-    -fx-min-height: 400;
+    -fx-pref-height: 450;
+    -fx-min-height: 450;
     -fx-padding: 15;
 }
 
@@ -198,8 +199,8 @@
     -fx-background-radius: 8px;
     -fx-padding: 10px;
     -fx-pref-width: 250px;
-    -fx-pref-height: 350px;
-    -fx-min-height: 350px;
+    -fx-pref-height: 400px;
+    -fx-min-height: 400px;
     -fx-alignment: top-center;
 }
 
@@ -214,8 +215,8 @@
 .medicine-scroll {
     -fx-background-color: transparent;
     -fx-fit-to-width: true;
-    -fx-pref-height: 330px;
-    -fx-min-height: 330px;
+    -fx-pref-height: 380px;
+    -fx-min-height: 380px;
     -fx-hbar-policy: NEVER;
     -fx-vbar-policy: AS_NEEDED;
 }
@@ -240,8 +241,8 @@
     -fx-pref-width: 270;
     -fx-min-width: 270;
     -fx-max-width: 270;
-    -fx-pref-height: 350;
-    -fx-min-height: 350;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
     -fx-alignment: top-center;
 }
 
