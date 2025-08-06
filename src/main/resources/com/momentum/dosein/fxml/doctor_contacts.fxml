@@ -98,19 +98,21 @@
             <!-- Main Content Container with White Background -->
             <VBox spacing="20" styleClass="main-content-container">
                 <HBox alignment="TOP_LEFT" spacing="20">
-                    <!-- Saved Contacts List -->
-                    <VBox spacing="10" styleClass="manage-alerts-pane">
-                        <Label prefHeight="30.0" prefWidth="142.0" styleClass="manage-section-title" text="Saved Contacts" />
-                        <VBox fx:id="contactsContainer" spacing="8" styleClass="contacts-list-container">
-                            <!-- Contact buttons will be added here dynamically -->
+                    <!-- Saved Contacts Section -->
+                    <VBox spacing="15" styleClass="saved-contacts-section">
+                        <Label styleClass="manage-section-title" text="Saved Contacts" />
+                        <VBox spacing="10" styleClass="manage-alerts-pane">
+                            <VBox fx:id="contactsContainer" spacing="8" styleClass="contacts-list-container">
+                                <!-- Contact buttons will be added here dynamically -->
+                            </VBox>
+                            <Button onAction="#handleAdd" styleClass="add-button" text="Add">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../images/plus-icon.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
                         </VBox>
-                        <Button onAction="#handleAdd" styleClass="add-button" text="Add">
-                            <graphic>
-                                <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                    <Image url="@../images/plus-icon.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
                     </VBox>
 
                     <!-- Doctor Information Panel -->

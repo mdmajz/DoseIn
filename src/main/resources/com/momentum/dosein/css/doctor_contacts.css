@@ -148,9 +148,9 @@
     -fx-background-radius: 10px;
     -fx-padding: 25;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-pref-height: 380;
-    -fx-max-height: 380;
-    -fx-min-height: 380;
+    -fx-pref-height: 500;
+    -fx-max-height: 500;
+    -fx-min-height: 500;
 }
 
 /* TITLE & SUBTITLE */
@@ -183,6 +183,13 @@
     -fx-font-weight: bold;
 }
 
+/* SAVED CONTACTS SECTION */
+.saved-contacts-section {
+    -fx-spacing: 15;
+    -fx-pref-width: 250;
+    -fx-min-width: 250;
+}
+
 /* SAVED CONTACTS PANE */
 .manage-alerts-pane {
     -fx-background-color: #C4E3D4;
@@ -191,16 +198,16 @@
     -fx-border-color: #E0E0E0;
     -fx-border-width: 1px;
     -fx-border-radius: 8px;
-    -fx-pref-height: 340;
-    -fx-min-height: 340;
-    -fx-max-height: 340;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
 /* CONTACTS LIST CONTAINER */
 .contacts-list-container {
-    -fx-pref-height: 200;
-    -fx-max-height: 200;
-    -fx-min-height: 200;
+    -fx-pref-height: 300;
+    -fx-max-height: 300;
+    -fx-min-height: 300;
     -fx-spacing: 8;
 }
 
@@ -248,9 +255,9 @@
     -fx-border-color: #E0E0E0;
     -fx-border-width: 1px;
     -fx-border-radius: 8px;
-    -fx-pref-height: 340;
-    -fx-min-height: 340;
-    -fx-max-height: 340;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
 /* PANEL TITLE */
