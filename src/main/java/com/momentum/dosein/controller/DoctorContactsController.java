@@ -8,12 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
 public class DoctorContactsController {
 
-    @FXML private ListView<DoctorContact> contactsList;
+    @FXML private VBox contactsContainer;
     @FXML private Label nameLabel;
     @FXML private Label specialtyLabel;
     @FXML private Label phoneLabel;
@@ -22,24 +23,49 @@ public class DoctorContactsController {
     @FXML private Label noteLabel;
 
     private final DoctorService service = new DoctorService();
+    private DoctorContact selectedContact = null;
 
     @FXML
     public void initialize() {
-        // load persisted contacts
+        loadContacts();
+    }
+
+    private void loadContacts() {
+        // Clear existing buttons
+        contactsContainer.getChildren().clear();
+        
+        // Load persisted contacts
         List<DoctorContact> all = service.getAllContacts();
-        contactsList.getItems().setAll(all);
+        
+        // Create buttons for each contact
+        for (DoctorContact contact : all) {
+            Button contactButton = new Button(contact.getName());
+            contactButton.getStyleClass().add("contact-button");
+            contactButton.setOnAction(e -> selectContact(contact));
+            contactsContainer.getChildren().add(contactButton);
+        }
+    }
 
-        contactsList.setCellFactory(lv -> new ListCell<>() {
-            @Override
-            protected void updateItem(DoctorContact dc, boolean empty) {
-                super.updateItem(dc, empty);
-                setText(empty || dc==null ? null : dc.getName());
+    private void selectContact(DoctorContact contact) {
+        // Remove selection from all buttons
+        for (javafx.scene.Node node : contactsContainer.getChildren()) {
+            if (node instanceof Button) {
+                node.getStyleClass().remove("contact-button-selected");
+                node.getStyleClass().add("contact-button");
             }
-        });
-
-        contactsList.getSelectionModel()
-                .selectedItemProperty()
-                .addListener((obs, oldDc, newDc) -> showDetails(newDc));
+        }
+        
+        // Add selection to clicked button
+        for (javafx.scene.Node node : contactsContainer.getChildren()) {
+            if (node instanceof Button && ((Button) node).getText().equals(contact.getName())) {
+                node.getStyleClass().remove("contact-button");
+                node.getStyleClass().add("contact-button-selected");
+                break;
+            }
+        }
+        
+        selectedContact = contact;
+        showDetails(contact);
     }
 
     private void showDetails(DoctorContact dc) {
@@ -77,14 +103,15 @@ public class DoctorContactsController {
 
     @FXML
     private void handleDelete(ActionEvent e) {
-        DoctorContact sel = contactsList.getSelectionModel().getSelectedItem();
-        if (sel==null) {
+        if (selectedContact == null) {
             new Alert(Alert.AlertType.WARNING,
                     "Select a contact first.").showAndWait();
             return;
         }
-        service.deleteContact(sel);
-        initialize();  // reload list & clear details
+        service.deleteContact(selectedContact);
+        loadContacts();  // reload list & clear details
+        selectedContact = null;
+        showDetails(null);
     }
 
     // sidebar navigation stubs:

@@ -183,7 +183,7 @@
     -fx-font-weight: bold;
 }
 
-/* SAVED ENTRIES PANE */
+/* SAVED CONTACTS PANE */
 .manage-alerts-pane {
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 8px;
@@ -196,13 +196,47 @@
     -fx-max-height: 340;
 }
 
-.manage-listview {
-    -fx-background-radius: 10px;
-    -fx-border-radius: 5px;
-    -fx-background-color: white;
+/* CONTACTS LIST CONTAINER */
+.contacts-list-container {
     -fx-pref-height: 200;
     -fx-max-height: 200;
     -fx-min-height: 200;
+    -fx-spacing: 8;
+}
+
+/* CONTACT BUTTON STYLING */
+.contact-button {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-background-radius: 8px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-cursor: hand;
+}
+
+.contact-button:hover {
+    -fx-background-color: #24675B;
+}
+
+.contact-button-selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-background-radius: 8px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-cursor: hand;
+}
+
+.contact-button-selected:hover {
+    -fx-background-color: #12594C;
 }
 
 /* DOCTOR INFO PANEL */
@@ -239,13 +273,6 @@
     -fx-font-size: 13px;
     -fx-text-fill: #12594C;
     -fx-padding: 0 0 0 15;
-
-}
-
-/* ACTION BUTTONS CONTAINER */
-.action-buttons-container {
-    -fx-padding: 0 0 0 0;
-    -fx-alignment: center;
 }
 
 /* ADD BUTTON */
@@ -259,10 +286,17 @@
     -fx-graphic-text-gap: 8px;
     -fx-content-display: left;
     -fx-cursor: hand;
+    -fx-pref-width: 120;
 }
 
 .add-button:hover {
     -fx-background-color: #3D9574;
+}
+
+/* DELETE BUTTON CONTAINER */
+.delete-button-container {
+    -fx-alignment: center-right;
+    -fx-padding: 0;
 }
 
 /* DELETE BUTTON */
@@ -276,15 +310,15 @@
     -fx-graphic-text-gap: 8px;
     -fx-content-display: left;
     -fx-cursor: hand;
+    -fx-pref-width: 120;
 }
 
 .delete-button:hover {
     -fx-background-color: #EF5350;
 }
 
-
 /* For Additional Information specifically */
-.manage-listview .manage-value {
+.manage-value {
     -fx-wrap-text: true;
     -fx-padding: 0 0 0 15;
     -fx-text-alignment: left;
