@@ -20,7 +20,7 @@
                     <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                         <Image url="@../images/logo.png" />
                     </ImageView>
-                    <Label styleClass="nav-logo" text="Doseln" />
+                    <Label styleClass="nav-logo" text="DoseIn" />
                 </HBox>
             </HBox>
 
@@ -170,9 +170,16 @@
                             </VBox>
                         </VBox>
 
-                        <!-- Alert Time Buttons Container -->
-                        <VBox spacing="8" styleClass="alert-times-section">
-                            <HBox fx:id="timesBox" alignment="CENTER_LEFT" spacing="8" styleClass="alert-times-container" />
+                        <!-- Alert Time Scroll Pane -->
+                        <VBox styleClass="alert-times-section">
+                            <ScrollPane fitToHeight="true"
+                                        hbarPolicy="AS_NEEDED"
+                                        vbarPolicy="NEVER"
+                                        styleClass="time-scroll-pane">
+                                <content>
+                                    <HBox fx:id="timesBox" alignment="CENTER_LEFT" spacing="8" styleClass="time-pills-container" />
+                                </content>
+                            </ScrollPane>
                         </VBox>
 
                         <!-- Delete Button -->

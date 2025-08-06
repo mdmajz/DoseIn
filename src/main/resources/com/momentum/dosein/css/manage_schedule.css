@@ -1,14 +1,14 @@
-/* manage_schedule.css - Updated to match image design */
+/* manage_schedule.css - Updated to match app color scheme */
 
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #E0F2E7;
+    -fx-background-color: #B8E0D1;
 }
 
-/* NAVIGATION BAR */
+/* NAVIGATION BAR - Same as Dashboard */
 .nav-bar {
-    -fx-background-color: #2E6A5B;
+    -fx-background-color: #4BA684;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-alignment: top-center;
@@ -20,22 +20,22 @@
 }
 
 .nav-logo {
-    -fx-font-size: 24px;
+    -fx-font-size: 28px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
 
 .logo-container {
-    -fx-background-color: #2E6A5B;
-    -fx-padding: 15px 20px;
+    -fx-background-color: #12594C;
+    -fx-padding: 15 20;
     -fx-alignment: center-left;
     -fx-min-width: 200;
     -fx-pref-width: 200;
 }
 
-/* Navigation Buttons */
+/* Navigation Buttons - Same as Dashboard */
 .nav-button-active {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #12594C;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -49,11 +49,11 @@
 }
 
 .nav-button-active:hover {
-    -fx-background-color: #45A049;
+    -fx-background-color: #24675B;
 }
 
 .nav-item {
-    -fx-background-color: transparent;
+    -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -67,11 +67,11 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-color: #24675B;
 }
 
 .nav-item-contacts {
-    -fx-background-color: transparent;
+    -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -85,7 +85,7 @@
 }
 
 .nav-item-contacts:hover {
-    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-color: #24675B;
 }
 
 .nav-menu-container {
@@ -94,7 +94,7 @@
 }
 
 .nav-signout {
-    -fx-background-color: #F44336;
+    -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-pref-width: 180px;
@@ -108,7 +108,7 @@
 }
 
 .nav-signout:hover {
-    -fx-background-color: #D32F2F;
+    -fx-background-color: #C55A54;
 }
 
 .signout-container {
@@ -120,7 +120,7 @@
 /* MAIN CONTENT AREA */
 .main-content {
     -fx-spacing: 15;
-    -fx-background-color: #E0F2E7;
+    -fx-background-color: #B8E0D1;
     -fx-padding: 30 40 30 40;
 }
 
@@ -144,7 +144,7 @@
 .greeting-text {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #12594C;
 }
 
 .slogan-text {
@@ -169,7 +169,7 @@
 .section-title {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #12594C;
     -fx-padding: 0 0 14 0;
     -fx-spacing: 0;
 }
@@ -207,7 +207,7 @@
 }
 
 .medicine-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #12594C;
     -fx-background-radius: 5px;
     -fx-opacity: 0.7;
 }
@@ -235,13 +235,13 @@
 .info-label {
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #12594C;
     -fx-alignment: CENTER_LEFT;
 }
 
 .info-value {
     -fx-font-size: 13px;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #12594C;
     -fx-alignment: CENTER_LEFT;
     -fx-wrap-text: true;
 }
@@ -252,19 +252,46 @@
     -fx-padding: 5px 0;
 }
 
-.alert-times-container {
-    -fx-spacing: 8px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-pref-width: 245px;
-    -fx-min-width: 200;
-    -fx-max-width: 200;
-    -fx-pref-height: 80px;
-    -fx-min-height: 80px;
+/* HORIZONTAL SCROLL PANE - Same as Set Reminder */
+.time-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-fit-to-height: true;
+    -fx-hbar-policy: as-needed;
+    -fx-vbar-policy: never;
+    -fx-max-height: 45px;
+    -fx-min-height: 45px;
+}
+
+.time-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.time-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 2px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 5px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #B4E8D4;
+    -fx-background-radius: 5px;
+}
+
+.time-pills-container {
+    -fx-alignment: center-left;
+    -fx-spacing: 6;
+    -fx-padding: 5px;
 }
 
 /* TIME BUTTONS */
 .time-button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #12594C;
     -fx-text-fill: white;
     -fx-font-size: 11px;
     -fx-font-weight: 600;
@@ -279,11 +306,11 @@
 }
 
 .time-button:hover {
-    -fx-background-color: #45A049;
+    -fx-background-color: #0F4A3F;
 }
 
 .time-button:pressed {
-    -fx-background-color: #3D8B40;
+    -fx-background-color: #0A3A31;
 }
 
 /* DELETE CONTAINER */
@@ -294,7 +321,7 @@
 
 /* DELETE BUTTON */
 .delete-button {
-    -fx-background-color: #F44336;
+    -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
@@ -307,11 +334,11 @@
 }
 
 .delete-button:hover {
-    -fx-background-color: #D32F2F;
+    -fx-background-color: #C55A54;
 }
 
 .delete-button:pressed {
-    -fx-background-color: #C62828;
+    -fx-background-color: #B44A44;
 }
 
 /* MISC ELEMENTS */
@@ -339,7 +366,7 @@
 
 /* Medicine Button Styling */
 .medicine-button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 600;
@@ -354,13 +381,13 @@
 }
 
 .medicine-buttons-container .button:hover {
-    -fx-background-color: #45A049;
+    -fx-background-color: #3D9574;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
     -fx-cursor: hand;
 }
 
 .medicine-buttons-container .button:pressed {
-    -fx-background-color: #3D8B40;
+    -fx-background-color: #24675B;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
     -fx-cursor: hand;
 }
