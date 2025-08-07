@@ -37,8 +37,9 @@ public class DashboardController {
 
     private Timeline clock;
     private final ReminderService reminderService = new ReminderService();
-    private final Set<String> shownAlerts = new HashSet<>();
-    private LocalDate alertDate = LocalDate.now();
+    private static final Set<String> SHOWN_ALERTS = new HashSet<>();
+    private static LocalDate ALERT_DATE = LocalDate.now();
+    private int lastCheckedMinute = -1; // Gate for checkAndShowDueReminders
 
     @FXML
     public void initialize() {
@@ -64,12 +65,17 @@ public class DashboardController {
                             timeLabel.setText(LocalTime.now().format(dtf));
                             // Reset shown alerts across days
                             LocalDate todayNow = LocalDate.now();
-                            if (!todayNow.equals(alertDate)) {
-                                alertDate = todayNow;
-                                shownAlerts.clear();
+                            if (!todayNow.equals(ALERT_DATE)) {
+                                ALERT_DATE = todayNow;
+                                SHOWN_ALERTS.clear();
+                                lastCheckedMinute = -1; // reset minute gate
                             }
-                            // Show dialogs for due reminders
-                            checkAndShowDueReminders();
+                            // Run alert check only once per minute
+                            int currentMinute = LocalTime.now().getMinute();
+                            if (currentMinute != lastCheckedMinute) {
+                                lastCheckedMinute = currentMinute;
+                                checkAndShowDueReminders();
+                            }
                             // Refresh reminders every second
                             loadSchedule();
                         }),
@@ -174,11 +180,11 @@ public class DashboardController {
                 String minuteKey = today + "|" + String.format("%02d:%02d", r.getTime().getHour(), r.getTime().getMinute())
                         + "|" + medName + "|" + dosage;
 
-                if (shownAlerts.contains(minuteKey) || emittedThisTick.contains(minuteKey)) {
+                if (SHOWN_ALERTS.contains(minuteKey) || emittedThisTick.contains(minuteKey)) {
                     continue;
                 }
                 emittedThisTick.add(minuteKey);
-                shownAlerts.add(minuteKey);
+                SHOWN_ALERTS.add(minuteKey);
 
                 String timeText = r.getTime().format(DateTimeFormatter.ofPattern("h:mm a"));
                 String med = r.getMedicineName() + (r.getDosage() != null && !r.getDosage().isBlank() ? (" " + r.getDosage()) : "");
