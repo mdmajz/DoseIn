@@ -98,7 +98,7 @@ public class DashboardController {
             boolean isActiveToday = !today.isBefore(r.getStartDate()) &&
                     !today.isAfter(r.getEndDate());
 
-            // Check if time is upcoming (not past current time)
+            // Check if time is upcoming (strictly after current time)
             boolean isUpcoming = r.getTime().isAfter(now);
 
             if (isActiveToday && isUpcoming) {
@@ -109,10 +109,9 @@ public class DashboardController {
         // Sort reminders by time (earliest first)
         validReminders.sort(Comparator.comparing(MedicineReminder::getTime));
 
-        boolean hasReminders = false;
+        if (!validReminders.isEmpty()) {
+            MedicineReminder r = validReminders.get(0); // Only the next upcoming reminder
 
-        for (MedicineReminder r : validReminders) {
-            hasReminders = true;
             HBox card = new HBox(15);
             card.getStyleClass().add("reminder-card");
             card.setAlignment(Pos.CENTER_LEFT);
@@ -145,9 +144,7 @@ public class DashboardController {
 
             card.getChildren().addAll(timeContainer, detailsContainer);
             scheduleContainer.getChildren().add(card);
-        }
-
-        if (!hasReminders) {
+        } else {
             Label emptyLabel = new Label("No upcoming reminders for today");
             emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
             emptyLabel.getStyleClass().add("empty-label");
