@@ -160,17 +160,25 @@ public class DashboardController {
         LocalDate today = LocalDate.now();
         LocalTime now = LocalTime.now();
 
+        // Prevent duplicate dialogs within the same tick if duplicates exist in storage
+        Set<String> emittedThisTick = new HashSet<>();
+
         for (MedicineReminder r : allReminders) {
             boolean isActiveToday = !today.isBefore(r.getStartDate()) && !today.isAfter(r.getEndDate());
             if (!isActiveToday) continue;
 
             // Trigger when hour and minute match current time
             if (r.getTime().getHour() == now.getHour() && r.getTime().getMinute() == now.getMinute()) {
-                String key = today + "|" + r.getTime() + "|" + r.getMedicineName() + "|" + r.getDosage() + "|" + (r.getNote() == null ? "" : r.getNote());
-                if (shownAlerts.contains(key)) {
+                String medName = r.getMedicineName() == null ? "" : r.getMedicineName().trim().toLowerCase();
+                String dosage  = r.getDosage() == null ? "" : r.getDosage().trim().toLowerCase();
+                String minuteKey = today + "|" + String.format("%02d:%02d", r.getTime().getHour(), r.getTime().getMinute())
+                        + "|" + medName + "|" + dosage;
+
+                if (shownAlerts.contains(minuteKey) || emittedThisTick.contains(minuteKey)) {
                     continue;
                 }
-                shownAlerts.add(key);
+                emittedThisTick.add(minuteKey);
+                shownAlerts.add(minuteKey);
 
                 String timeText = r.getTime().format(DateTimeFormatter.ofPattern("h:mm a"));
                 String med = r.getMedicineName() + (r.getDosage() != null && !r.getDosage().isBlank() ? (" " + r.getDosage()) : "");
