@@ -25,6 +25,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Set;
+import java.util.HashSet;
 
 public class DashboardController {
 
@@ -35,6 +37,8 @@ public class DashboardController {
 
     private Timeline clock;
     private final ReminderService reminderService = new ReminderService();
+    private final Set<String> shownAlerts = new HashSet<>();
+    private LocalDate alertDate = LocalDate.now();
 
     @FXML
     public void initialize() {
@@ -58,7 +62,16 @@ public class DashboardController {
                 new KeyFrame(Duration.ZERO,
                         e -> {
                             timeLabel.setText(LocalTime.now().format(dtf));
-                            loadSchedule(); // Refresh reminders every second
+                            // Reset shown alerts across days
+                            LocalDate todayNow = LocalDate.now();
+                            if (!todayNow.equals(alertDate)) {
+                                alertDate = todayNow;
+                                shownAlerts.clear();
+                            }
+                            // Show dialogs for due reminders
+                            checkAndShowDueReminders();
+                            // Refresh reminders every second
+                            loadSchedule();
                         }),
                 new KeyFrame(Duration.seconds(1))
         );
@@ -139,6 +152,36 @@ public class DashboardController {
             emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
             emptyLabel.getStyleClass().add("empty-label");
             scheduleContainer.getChildren().add(emptyLabel);
+        }
+    }
+
+    private void checkAndShowDueReminders() {
+        List<MedicineReminder> allReminders = reminderService.getAllReminders();
+        LocalDate today = LocalDate.now();
+        LocalTime now = LocalTime.now();
+
+        for (MedicineReminder r : allReminders) {
+            boolean isActiveToday = !today.isBefore(r.getStartDate()) && !today.isAfter(r.getEndDate());
+            if (!isActiveToday) continue;
+
+            // Trigger when hour and minute match current time
+            if (r.getTime().getHour() == now.getHour() && r.getTime().getMinute() == now.getMinute()) {
+                String key = today + "|" + r.getTime() + "|" + r.getMedicineName() + "|" + r.getDosage() + "|" + (r.getNote() == null ? "" : r.getNote());
+                if (shownAlerts.contains(key)) {
+                    continue;
+                }
+                shownAlerts.add(key);
+
+                String timeText = r.getTime().format(DateTimeFormatter.ofPattern("h:mm a"));
+                String med = r.getMedicineName() + (r.getDosage() != null && !r.getDosage().isBlank() ? (" " + r.getDosage()) : "");
+                String note = (r.getNote() != null && !r.getNote().isBlank()) ? r.getNote() : "No additional information";
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Medicine Reminder");
+                alert.setHeaderText("It's time: " + timeText);
+                alert.setContentText("Medicine: " + med + "\n" + "Info: " + note);
+                alert.show();
+            }
         }
     }
 
